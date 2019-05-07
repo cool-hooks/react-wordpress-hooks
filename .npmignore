@@ -1,0 +1,10 @@
+src
+
+tsconfig.json
+.travis.yml
+.prettierrc
+
+.eslintrc.js
+index.d.ts
+webpack.config.js
+yarn-error.log
