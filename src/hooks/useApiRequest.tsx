@@ -3,9 +3,9 @@ import { useState, useEffect, useContext } from 'react';
 import { WPContext } from '../context';
 
 export const useApiRequest = ({
-  endpoint = '',
   options,
-  requsetMethod = 'get'
+  requsetMethod = 'get',
+  endpoint = ''
 }: {
   options?: any;
   requsetMethod?: string;
@@ -13,9 +13,9 @@ export const useApiRequest = ({
 }) => {
   const url = useContext(WPContext);
 
-  const [data, setData] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [data, setData] = useState<object[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -29,9 +29,7 @@ export const useApiRequest = ({
           }
         );
 
-        const data = await res.json();
-
-        setData(data);
+        setData(await res.json());
         setLoading(false);
       } catch {
         setLoading(false);
@@ -40,7 +38,7 @@ export const useApiRequest = ({
     };
 
     loadData();
-  }, [endpoint, requsetMethod, url]);
+  }, [endpoint, options, requsetMethod, url]);
 
   return { data, loading, error };
 };
