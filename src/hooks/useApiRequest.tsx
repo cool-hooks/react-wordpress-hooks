@@ -9,7 +9,7 @@ export const useApiRequest = ({
   requsetMethod = 'get',
   endpoint = ''
 }: {
-  options?: any;
+  options?: object | number;
   requsetMethod?: string;
   endpoint?: string;
 }) => {
@@ -26,7 +26,9 @@ export const useApiRequest = ({
 
         const res = await fetch(
           `${url}/wp-json/wp/v2${endpoint ? `/${endpoint}` : ''}${
-            typeof options === 'number' ? `/${options}` : serialize(options)
+            typeof options === 'number' && requsetMethod === 'get'
+              ? `/${options}`
+              : serialize(options)
           }`,
           {
             method: requsetMethod
