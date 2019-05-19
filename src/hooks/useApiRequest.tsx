@@ -2,6 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 
 import { WPContext } from '../context';
 
+import { serialize } from '../utils';
+
 export const useApiRequest = ({
   options,
   requsetMethod = 'get',
@@ -23,7 +25,9 @@ export const useApiRequest = ({
         setLoading(true);
 
         const res = await fetch(
-          `${url}/wp-json/wp/v2${endpoint ? `/${endpoint}` : ''}`,
+          `${url}/wp-json/wp/v2${endpoint ? `/${endpoint}` : ''}${
+            typeof options === 'number' ? `/${options}` : serialize(options)
+          }`,
           {
             method: requsetMethod
           }
