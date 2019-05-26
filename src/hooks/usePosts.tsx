@@ -117,7 +117,11 @@ export const useUpdatePost = (options: UseUpdatePost) => {
 };
 
 export const useDeletePost = (options: UseDeletePost) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'delete'
+  });
 
   return { data, loading, error };
 };

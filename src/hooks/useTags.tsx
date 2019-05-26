@@ -64,13 +64,21 @@ export const useRetriveTag = (options: UseRetriveTag) => {
 };
 
 export const useUpdateTag = (options: UseUpdateTag) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'post'
+  });
 
   return { data, loading, error };
 };
 
 export const useDeleteTag = (options: UseDeleteTag) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'delete'
+  });
 
   return { data, loading, error };
 };

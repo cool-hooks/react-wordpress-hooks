@@ -25,7 +25,11 @@ export const useSettings = () => {
 };
 
 export const useUpdateSetting = (options: UseUpdateSettings) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'post'
+  });
 
   return { data, loading, error };
 };

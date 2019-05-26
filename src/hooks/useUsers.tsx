@@ -90,13 +90,21 @@ export const useRetriveUser = (options: UseRetriveUser) => {
 };
 
 export const useUpdateUser = (options: UseUpdateUser) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'post'
+  });
 
   return { data, loading, error };
 };
 
 export const useDeleteUser = (options: UseDeleteUser) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'delete'
+  });
 
   return { data, loading, error };
 };

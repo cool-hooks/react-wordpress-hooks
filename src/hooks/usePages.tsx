@@ -106,13 +106,21 @@ export const useRetrivePage = (options: UseRetrivePage) => {
 };
 
 export const useUpdatePage = (options: UseUpdatePage) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'post'
+  });
 
   return { data, loading, error };
 };
 
 export const useDeletePage = (options: UseDeletePage) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'delete'
+  });
 
   return { data, loading, error };
 };

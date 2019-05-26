@@ -93,7 +93,11 @@ export const useRetriveComment = (options: UseRetriveComment) => {
 };
 
 export const useUpdateComment = (options: UseUpdateComment) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'post'
+  });
 
   return { data, loading, error };
 };
