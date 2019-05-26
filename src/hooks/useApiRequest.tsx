@@ -13,7 +13,7 @@ export const useApiRequest = ({
   requsetMethod?: string;
   endpoint?: string;
 }) => {
-  const url = useContext(WPContext);
+  const { url, auth } = useContext(WPContext);
 
   const [data, setData] = useState<object[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -31,7 +31,10 @@ export const useApiRequest = ({
               : serialize(options)
           }`,
           {
-            method: requsetMethod
+            method: requsetMethod,
+            headers: {
+              Authorization: `Basic ${btoa(`${auth.email}:${auth.password}`)}`
+            }
           }
         );
 
