@@ -2,16 +2,18 @@ import { useState, useEffect, useContext } from 'react';
 
 import { WPContext } from '../context';
 
+import { serialize } from '../utils';
+
 export const useApiRequest = ({
   options,
   requsetMethod = 'get',
   endpoint = ''
 }: {
-  options?: any;
+  options?: object | number;
   requsetMethod?: string;
   endpoint?: string;
 }) => {
-  const url = useContext(WPContext);
+  const { url, auth } = useContext(WPContext);
 
   const [data, setData] = useState<object[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -23,9 +25,16 @@ export const useApiRequest = ({
         setLoading(true);
 
         const res = await fetch(
-          `${url}/wp-json/wp/v2${endpoint ? `/${endpoint}` : ''}`,
+          `${url}/wp-json/wp/v2${endpoint ? `/${endpoint}` : ''}${
+            typeof options === 'number' && requsetMethod === 'get'
+              ? `/${options}`
+              : serialize(options)
+          }`,
           {
-            method: requsetMethod
+            method: requsetMethod,
+            headers: {
+              Authorization: `Basic ${btoa(`${auth.email}:${auth.password}`)}`
+            }
           }
         );
 

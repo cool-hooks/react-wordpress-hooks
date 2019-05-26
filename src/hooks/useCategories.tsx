@@ -82,7 +82,8 @@ export const useRetriveCategory = (options: UseRetriveCategory) => {
 export const useUpdateCategory = (options: UseUpdateCategory) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint
+    endpoint,
+    requsetMethod: 'post'
   });
 
   return { data, loading, error };
@@ -91,7 +92,8 @@ export const useUpdateCategory = (options: UseUpdateCategory) => {
 export const useDeleteCategory = (options: UseDeleteCategory) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint
+    endpoint,
+    requsetMethod: 'delete'
   });
 
   return { data, loading, error };

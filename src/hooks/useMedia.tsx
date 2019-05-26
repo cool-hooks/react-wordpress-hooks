@@ -101,13 +101,21 @@ export const useRetriveMedia = (options: UseRetriveMedia) => {
 };
 
 export const useUpdateMedia = (options: UseUpdateMedia) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'post'
+  });
 
   return { data, loading, error };
 };
 
 export const useDeleteMedia = (options: UseDeleteMedia) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'delete'
+  });
 
   return { data, loading, error };
 };

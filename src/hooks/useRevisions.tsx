@@ -36,7 +36,11 @@ export const useRetriveRevision = (options: RetriveRevision) => {
 };
 
 export const useDeleteRevision = (options: DeleteRevision) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'delete'
+  });
 
   return { data, loading, error };
 };
