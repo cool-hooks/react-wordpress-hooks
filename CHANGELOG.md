@@ -3,7 +3,7 @@
 ## 1.0.0 alpha 1 (Soon)
 #### New Feature
 **context**
-- `WPContext` with url value
+- `WPContext` with url & auth values
 
 **hooks, hooks, hooks ...moreHooks**
 - hooks for Posts: `usePosts`, `useCreatePost`, `useRetrivePost`, `useUpdatePost`, `useDeletePost`
