@@ -12,7 +12,7 @@
     "watch": "npm run build -- --watch",
     "watch:dev": "npm run build:dev -- --watch",
     "docz:dev": "docz dev",
-    "docz:build": "docz build",
+    "docz:build": "docz build --base /react-wordpress-hooks",
     "deploy": "gh-pages -d .docz/dist",
     "lint": "eslint './src/**/*.tsx' --fix",
     "prettier": "prettier --write 'src/**/*.tsx'"
