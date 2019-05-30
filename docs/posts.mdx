@@ -1,0 +1,46 @@
+---
+route: /hooks/posts
+menu: Hooks
+---
+
+## Posts
+
+### usePosts
+
+[Available options](https://developer.wordpress.org/rest-api/reference/posts/#list-posts)
+
+Default
+
+```jsx
+const { data, loading, error } = usePosts();
+```
+
+Single Post (with specified ID)
+
+```jsx
+const { data, loading, error } = usePosts(/* post id */);
+```
+
+Single Post
+
+```jsx
+const { data, loading, error } = usePosts({
+  // options here
+});
+```
+
+### useCreatePost
+
+[Available options](https://developer.wordpress.org/rest-api/reference/posts/#create-a-post)
+
+### useRetrivePost
+
+[Available options](https://developer.wordpress.org/rest-api/reference/posts/#retrieve-a-post)
+
+### useUpdatePost
+
+[Available options](https://developer.wordpress.org/rest-api/reference/posts/#update-a-post)
+
+### useDeletePost
+
+[Available options](https://developer.wordpress.org/rest-api/reference/posts/#delete-a-post)

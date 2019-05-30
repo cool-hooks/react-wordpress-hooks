@@ -3,6 +3,8 @@ src
 tsconfig.json
 .travis.yml
 .prettierrc
+doczrc.js
+.docz
 
 .eslintrc.js
 index.d.ts

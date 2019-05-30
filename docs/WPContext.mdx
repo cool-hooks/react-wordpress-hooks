@@ -1,0 +1,37 @@
+---
+menu: Context
+name: WP Context
+---
+
+## WPContext
+
+#### Props
+
+| Name     | Type   | Description              |
+| -------- | ------ | ------------------------ |
+| **url**  | string | URL of WordPress website |
+| **auth** | object | user email & password    |
+
+```jsx
+// index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { WPContext } from 'react-wordpress-hooks';
+
+import App from './components';
+
+ReactDOM.render(
+  <WPContext.Provider
+    value={{
+      url: 'https://example.com',
+      auth: {
+        email: 'your.email@example.com',
+        password: 'y0ur-p@ssw0rd-hErE'
+      }
+    }}
+  >
+    <App />
+  </WPContext.Provider>
+);
+```
