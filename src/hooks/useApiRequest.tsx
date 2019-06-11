@@ -17,7 +17,7 @@ export const useApiRequest = ({
 
   const [data, setData] = useState<object[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<string | object | null>(null);
 
   useEffect(() => {
     const loadData = async () => {
@@ -38,16 +38,23 @@ export const useApiRequest = ({
           }
         );
 
-        setData(await res.json());
+        const response = await res.json();
+
         setLoading(false);
-      } catch {
+
+        if (response.code) {
+          setError(response);
+        } else {
+          setData(response);
+        }
+      } catch (err) {
         setLoading(false);
-        setError(true);
+        setError(err);
       }
     };
 
     loadData();
-  }, [endpoint, options, requsetMethod, url]);
+  }, [auth.email, auth.password, endpoint, options, requsetMethod, url]);
 
   return { data, loading, error };
 };

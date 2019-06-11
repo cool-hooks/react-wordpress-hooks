@@ -1,6 +1,10 @@
 # react-wordpress-hooks Changelog
 
-## 1.0.0 alpha 1 (Soon)
+## 0.1.1 (2019-06-11)
+#### Improvement
+- improved response error output
+
+## 0.1.0 (2019-06-11)
 #### New Feature
 **context**
 - `WPContext` with url & auth values
