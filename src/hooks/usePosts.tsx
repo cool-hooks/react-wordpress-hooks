@@ -82,7 +82,7 @@ type UseUpdatePost = {
 };
 
 type UseDeletePost = {
-  id: number;
+  readonly id: number;
   force: boolean;
 };
 
@@ -111,7 +111,11 @@ export const useRetrivePost = (options: UseRetrivePost) => {
 };
 
 export const useUpdatePost = (options: UseUpdatePost) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint,
+    requsetMethod: 'post'
+  });
 
   return { data, loading, error };
 };

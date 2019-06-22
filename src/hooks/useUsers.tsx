@@ -38,7 +38,7 @@ type UseCreateUser = {
 };
 
 type UseRetriveUser = {
-  id: number;
+  readonly id: number;
   context: 'view' | 'embed' | 'edit';
 };
 
