@@ -22,12 +22,12 @@ type UseCreateTag = {
 };
 
 type UseRetriveTag = {
-  id: number;
+  readonly id: number;
   context: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateTag = {
-  id: number;
+  readonly id: number;
   description: string;
   name: string;
   slug: string;
@@ -35,7 +35,7 @@ type UseUpdateTag = {
 };
 
 type UseDeleteTag = {
-  id: number;
+  readonly id: number;
   force: boolean;
 };
 

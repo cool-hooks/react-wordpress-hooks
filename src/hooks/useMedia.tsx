@@ -26,9 +26,9 @@ type UseMedia = {
   parent: number;
   parent_exclude: number[];
   slug: string;
-  status: string;
-  media_type: 'image' | 'video' | 'audio' | 'application';
-  mime_type: string;
+  status: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly media_type: 'image' | 'video' | 'audio' | 'application';
+  readonly mime_type: string;
 };
 
 type UseCreateMedia = {
@@ -49,12 +49,12 @@ type UseCreateMedia = {
 };
 
 type UseRetriveMedia = {
-  id: number;
+  readonly id: number;
   context: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateMedia = {
-  id: number;
+  readonly id: number;
   date: string;
   date_gmt: string;
   slug: string;
@@ -72,7 +72,7 @@ type UseUpdateMedia = {
 };
 
 type UseDeleteMedia = {
-  id: number;
+  readonly id: number;
   force: boolean;
 };
 

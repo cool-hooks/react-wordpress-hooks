@@ -40,13 +40,13 @@ type UseCreateComment = {
 };
 
 type UseRetriveComment = {
-  id: number;
+  readonly id: number;
   context: 'view' | 'embed' | 'edit';
   password: string;
 };
 
 type UseUpdateComment = {
-  id: number;
+  readonly id: number;
   author: number;
   author_email: string;
   author_ip: string;
@@ -63,7 +63,7 @@ type UseUpdateComment = {
 };
 
 type UseDeleteComment = {
-  id: number;
+  readonly id: number;
   force: boolean;
   password: string;
 };

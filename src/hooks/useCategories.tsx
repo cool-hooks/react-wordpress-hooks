@@ -31,12 +31,12 @@ type UseCreateCategory = {
 };
 
 type UseRetriveCategory = {
-  id: number;
+  readonly id: number;
   context: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateCategory = {
-  id: number;
+  readonly id: number;
   description: string;
   name: string;
   slug: string;
@@ -45,7 +45,7 @@ type UseUpdateCategory = {
 };
 
 type UseDeleteCategory = {
-  id: number;
+  readonly id: number;
   force: boolean;
 };
 

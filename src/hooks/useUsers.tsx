@@ -18,7 +18,7 @@ type UseUsers = {
     | 'email'
     | 'url';
   slug: string;
-  roles: any;
+  roles: string[];
 };
 
 type UseCreateUser = {
@@ -32,7 +32,7 @@ type UseCreateUser = {
   locale: string;
   nickname: string;
   slug: string;
-  roles: object;
+  roles: string[];
   password: string;
   meta: object;
 };
@@ -43,7 +43,7 @@ type UseRetriveUser = {
 };
 
 type UseUpdateUser = {
-  id: number;
+  readonly id: number;
   username: string;
   name: string;
   first_name: string;
@@ -54,13 +54,13 @@ type UseUpdateUser = {
   locale: string;
   nickname: string;
   slug: string;
-  roles: object;
+  roles: string[];
   password: string;
   meta: object;
 };
 
 type UseDeleteUser = {
-  id: number;
+  readonly id: number;
   force: boolean;
   reassign: number;
 };

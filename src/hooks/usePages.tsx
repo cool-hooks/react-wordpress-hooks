@@ -11,7 +11,7 @@ type UsePages = {
   before: string;
   exclude: number[];
   include: number[];
-  menu_order: string;
+  menu_order: number;
   offset: number;
   order: 'asc' | 'desc';
   orderby:
@@ -28,7 +28,7 @@ type UsePages = {
   parent: number;
   parent_exclude: number[];
   slug: string;
-  status: string;
+  status: 'publish' | 'future' | 'draft' | 'pending' | 'private';
 };
 
 type UseCreatePage = {
@@ -45,19 +45,19 @@ type UseCreatePage = {
   featured_media: number;
   comment_status: 'open' | 'close';
   ping_status: 'open' | 'close';
-  menu_order: any;
+  menu_order: number;
   meta: object;
-  template: any;
+  template: string;
 };
 
 type UseRetrivePage = {
-  id: number;
+  readonly id: number;
   context: 'view' | 'embed' | 'edit';
   password: string;
 };
 
 type UseUpdatePage = {
-  id: number;
+  readonly id: number;
   date: string;
   date_gmt: string;
   slug: string;
@@ -71,13 +71,13 @@ type UseUpdatePage = {
   featured_media: number;
   comment_status: 'open' | 'close';
   ping_status: 'open' | 'close';
-  menu_order: any;
+  menu_order: number;
   meta: object;
-  template: any;
+  template: string;
 };
 
 type UseDeletePage = {
-  id: number;
+  readonly id: number;
   force: boolean;
 };
 

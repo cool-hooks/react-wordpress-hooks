@@ -24,7 +24,7 @@ type UsePosts = {
     | 'slug'
     | 'title';
   slug: string;
-  status: string;
+  status: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   categories: number[];
   categories_exclude: number[];
   tags: number[];
@@ -48,19 +48,19 @@ type UseCreatePost = {
   ping_status: 'open' | 'close';
   meta: object;
   sticky: boolean;
-  template: any;
+  template: string;
   categories: number[];
   tags: number[];
 };
 
 type UseRetrivePost = {
-  id: number;
+  readonly id: number;
   context: 'view' | 'embed' | 'edit';
   password: string;
 };
 
 type UseUpdatePost = {
-  id: number;
+  readonly id: number;
   date: string;
   date_gmt: string;
   slug: string;
@@ -76,7 +76,7 @@ type UseUpdatePost = {
   ping_status: 'open' | 'close';
   meta: object;
   sticky: boolean;
-  template: any;
+  template: string;
   categories: number[];
   tags: number[];
 };
