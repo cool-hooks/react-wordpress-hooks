@@ -9,12 +9,18 @@ menu: Hooks
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-types/#list-types)
 
-Default
-
 ```jsx
-const { data, loading, error } = useTypes();
+const { data, loading, error } = useTypes({
+  /* WordPress REST API options */
+});
 ```
 
 ### useRetriveType
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-types/#retrieve-a-type)
+
+```jsx
+const { data, loading, error } = useRetriveType({
+  /* WordPress REST API options */
+});
+```

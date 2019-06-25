@@ -9,8 +9,6 @@ menu: Hooks
 
 [Available options](https://developer.wordpress.org/rest-api/reference/settings/#list-settings)
 
-Default
-
 ```jsx
 const { data, loading, error } = useSettings();
 ```
@@ -18,3 +16,9 @@ const { data, loading, error } = useSettings();
 ### useUpdateSetting
 
 [Available options](https://developer.wordpress.org/rest-api/reference/settings/#update-a-settings)
+
+```jsx
+const { data, loading, error } = useUpdateSetting({
+  /* WordPress REST API options */
+});
+```

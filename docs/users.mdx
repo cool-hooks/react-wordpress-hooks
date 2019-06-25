@@ -9,24 +9,68 @@ menu: Hooks
 
 [Available options](https://developer.wordpress.org/rest-api/reference/users/#list-users)
 
-Default
+Default query (latest 10 users):
 
 ```jsx
 const { data, loading, error } = useUsers();
+```
+
+Users meeting the criteria:
+
+```jsx
+const { data, loading, error } = useUsers({
+  /* WordPress REST API options */
+});
+```
+
+Single user (by id):
+
+```jsx
+const { data, loading, error } = useUsers(/* user id */);
+```
+
+Multiple users (by id):
+
+```jsx
+const { data, loading, error } = useUsers(/* array of user ids */);
 ```
 
 ### useCreateUser
 
 [Available options](https://developer.wordpress.org/rest-api/reference/users/#create-a-user)
 
+```jsx
+const { data, loading, error } = useCreateUser({
+  /* WordPress REST API options */
+});
+```
+
 ### useRetriveUser
 
 [Available options](https://developer.wordpress.org/rest-api/reference/users/#retrieve-a-user)
+
+```jsx
+const { data, loading, error } = useRetriveUser({
+  /* WordPress REST API options */
+});
+```
 
 ### useUpdateUser
 
 [Available options](https://developer.wordpress.org/rest-api/reference/users/#update-a-user)
 
+```jsx
+const { data, loading, error } = useUpdateUser({
+  /* WordPress REST API options */
+});
+```
+
 ### useDeleteUser
 
 [Available options](https://developer.wordpress.org/rest-api/reference/users/#delete-a-user)
+
+```jsx
+const { data, loading, error } = useDeleteUser(/* user id */, {
+  /* WordPress REST API options */
+});
+```

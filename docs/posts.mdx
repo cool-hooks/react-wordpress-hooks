@@ -9,38 +9,68 @@ menu: Hooks
 
 [Available options](https://developer.wordpress.org/rest-api/reference/posts/#list-posts)
 
-Default
+Default query (latest 10 posts):
 
 ```jsx
 const { data, loading, error } = usePosts();
 ```
 
-Single Post (with specified ID)
+Posts meeting the criteria:
+
+```jsx
+const { data, loading, error } = usePosts({
+  /* WordPress REST API options */
+});
+```
+
+Single post (by id):
 
 ```jsx
 const { data, loading, error } = usePosts(/* post id */);
 ```
 
-Single Post
+Multiple posts (by id):
 
 ```jsx
-const { data, loading, error } = usePosts({
-  // options here
-});
+const { data, loading, error } = usePosts(/* array of post ids */);
 ```
 
 ### useCreatePost
 
 [Available options](https://developer.wordpress.org/rest-api/reference/posts/#create-a-post)
 
+```jsx
+const { data, loading, error } = useCreatePost({
+  /* WordPress REST API options */
+});
+```
+
 ### useRetrivePost
 
 [Available options](https://developer.wordpress.org/rest-api/reference/posts/#retrieve-a-post)
+
+```jsx
+const { data, loading, error } = useRetrivePost({
+  /* WordPress REST API options */
+});
+```
 
 ### useUpdatePost
 
 [Available options](https://developer.wordpress.org/rest-api/reference/posts/#update-a-post)
 
+```jsx
+const { data, loading, error } = useUpdatePost({
+  /* WordPress REST API options */
+});
+```
+
 ### useDeletePost
 
 [Available options](https://developer.wordpress.org/rest-api/reference/posts/#delete-a-post)
+
+```jsx
+const { data, loading, error } = useDeletePost(/* post id */, {
+  /* WordPress REST API options */
+});
+```
