@@ -77,13 +77,12 @@ type UseUpdatePage = {
 };
 
 type UseDeletePage = {
-  readonly id: number;
   force: boolean;
 };
 
 const endpoint = 'pages';
 
-export const usePages = (options: UsePages) => {
+export const usePages = (options?: UsePages | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
@@ -115,8 +114,9 @@ export const useUpdatePage = (options: UseUpdatePage) => {
   return { data, loading, error };
 };
 
-export const useDeletePage = (options: UseDeletePage) => {
+export const useDeletePage = (id: number, options?: UseDeletePage) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'

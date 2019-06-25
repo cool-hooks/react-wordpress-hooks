@@ -45,13 +45,12 @@ type UseUpdateCategory = {
 };
 
 type UseDeleteCategory = {
-  readonly id: number;
   force: boolean;
 };
 
 const endpoint = 'categories';
 
-export const useCategories = (options: UseCategories) => {
+export const useCategories = (options?: UseCategories | number | number[]) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint
@@ -89,8 +88,9 @@ export const useUpdateCategory = (options: UseUpdateCategory) => {
   return { data, loading, error };
 };
 
-export const useDeleteCategory = (options: UseDeleteCategory) => {
+export const useDeleteCategory = (id: number, options?: UseDeleteCategory) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'

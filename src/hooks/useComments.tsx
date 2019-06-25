@@ -63,14 +63,13 @@ type UseUpdateComment = {
 };
 
 type UseDeleteComment = {
-  readonly id: number;
   force: boolean;
   password: string;
 };
 
 const endpoint = 'comments';
 
-export const useComments = (options: UseComments) => {
+export const useComments = (options?: UseComments | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
@@ -102,8 +101,9 @@ export const useUpdateComment = (options: UseUpdateComment) => {
   return { data, loading, error };
 };
 
-export const useDeleteComment = (options: UseDeleteComment) => {
+export const useDeleteComment = (id: number, options?: UseDeleteComment) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'

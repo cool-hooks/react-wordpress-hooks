@@ -13,7 +13,6 @@ type RetriveRevision = {
 
 type DeleteRevision = {
   parent: number;
-  id: number;
   force: boolean;
 };
 
@@ -35,8 +34,9 @@ export const useRetriveRevision = (options: RetriveRevision) => {
   return { data, loading, error };
 };
 
-export const useDeleteRevision = (options: DeleteRevision) => {
+export const useDeleteRevision = (id: number, options?: DeleteRevision) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'

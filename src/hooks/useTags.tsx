@@ -35,13 +35,12 @@ type UseUpdateTag = {
 };
 
 type UseDeleteTag = {
-  readonly id: number;
   force: boolean;
 };
 
 const endpoint = 'tags';
 
-export const useTags = (options: UseTags) => {
+export const useTags = (options?: UseTags | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
@@ -73,8 +72,9 @@ export const useUpdateTag = (options: UseUpdateTag) => {
   return { data, loading, error };
 };
 
-export const useDeleteTag = (options: UseDeleteTag) => {
+export const useDeleteTag = (id: number, options?: UseDeleteTag) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'

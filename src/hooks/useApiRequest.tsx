@@ -5,10 +5,12 @@ import { WPContext } from '../context';
 import { serialize } from '../utils';
 
 export const useApiRequest = ({
+  id,
   options,
   requsetMethod = 'get',
   endpoint = ''
 }: {
+  id?: number;
   options?: object | number;
   requsetMethod?: string;
   endpoint?: string;
@@ -24,19 +26,28 @@ export const useApiRequest = ({
       try {
         setLoading(true);
 
-        const res = await fetch(
-          `${url}/wp-json/wp/v2${endpoint ? `/${endpoint}` : ''}${
-            typeof options === 'number' && requsetMethod === 'get'
-              ? `/${options}`
-              : serialize(options)
-          }`,
-          {
-            method: requsetMethod,
-            headers: {
-              Authorization: `Basic ${btoa(`${auth.email}:${auth.password}`)}`
-            }
+        const query = [`${url}/wp-json/wp/v2/${endpoint}`];
+
+        if (requsetMethod === 'delete') {
+          query.push(`/${id}`);
+        }
+
+        if (requsetMethod === 'get') {
+          if (typeof options === 'number') {
+            query.push(`/${options}`);
+          } else if (Array.isArray(options)) {
+            query.push(`?include=${options.join(',')}`);
+          } else {
+            query.push(serialize(options));
           }
-        );
+        }
+
+        const res = await fetch(query.join(''), {
+          method: requsetMethod,
+          headers: {
+            Authorization: `Basic ${btoa(`${auth.email}:${auth.password}`)}`
+          }
+        });
 
         const response = await res.json();
 
@@ -54,7 +65,8 @@ export const useApiRequest = ({
     };
 
     loadData();
-  }, [auth.email, auth.password, endpoint, options, requsetMethod, url]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auth.email, auth.password, endpoint, requsetMethod, url]);
 
   return { data, loading, error };
 };

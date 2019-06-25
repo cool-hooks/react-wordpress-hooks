@@ -72,13 +72,12 @@ type UseUpdateMedia = {
 };
 
 type UseDeleteMedia = {
-  readonly id: number;
   force: boolean;
 };
 
 const endpoint = 'media';
 
-export const useMedia = (options: UseMedia) => {
+export const useMedia = (options?: UseMedia | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
@@ -110,8 +109,9 @@ export const useUpdateMedia = (options: UseUpdateMedia) => {
   return { data, loading, error };
 };
 
-export const useDeleteMedia = (options: UseDeleteMedia) => {
+export const useDeleteMedia = (id: number, options?: UseDeleteMedia) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'
