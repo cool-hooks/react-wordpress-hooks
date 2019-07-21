@@ -7,10 +7,10 @@ name: WP Context
 
 #### Props
 
-| Name     | Type   | Description              |
-| -------- | ------ | ------------------------ |
-| **url**  | string | URL of WordPress website |
-| **auth** | object | user email & password    |
+| Name        | Type    | Description              |
+| ----------- | ------- | ------------------------ |
+| **url**     | string  | URL of WordPress website |
+| **headers** | Headers | Fetch headers            |
 
 ```jsx
 // index.js
@@ -21,14 +21,18 @@ import { WPContext } from 'react-wordpress-hooks';
 
 import App from './components';
 
+const headers = new Headers();
+
+headers.append(
+  'Authorization',
+  `Basic ${btoa('your.email@example.com:y0ur-p@ssw0rd-hErE')}`
+);
+
 ReactDOM.render(
   <WPContext.Provider
     value={{
       url: 'https://example.com',
-      auth: {
-        email: 'your.email@example.com',
-        password: 'y0ur-p@ssw0rd-hErE'
-      }
+      headers
     }}
   >
     <App />

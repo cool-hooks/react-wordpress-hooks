@@ -1,5 +1,25 @@
 # react-wordpress-hooks Changelog
 
+## 1.0.0 alpha 1 (2019-07-21)
+#### New Feature
+- options parameter can be an array of IDs
+
+#### Breaking Changes
+- rebuilt delete methods (first parameter is ID, second optional - settings)
+- replaced `auth` with `headers` option in WPContext
+
+#### Repository Changes
+- added type definitions to output files
+
+## 0.1.2 (2019-06-22)
+#### Bug Fix
+- added missing request method for useUpdatePost
+- fixed memory leak on complex query
+- added missing types
+
+#### Repository Changes
+- added `husky`
+
 ## 0.1.1 (2019-06-11)
 #### Improvement
 - improved response error output
