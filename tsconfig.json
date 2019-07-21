@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "allowJs": true,
     "checkJs": false,
+    "declaration": true,
     "jsx": "react",
     "outDir": "./lib",
     "strict": true,
