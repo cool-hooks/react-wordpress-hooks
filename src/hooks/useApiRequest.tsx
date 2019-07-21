@@ -15,7 +15,7 @@ export const useApiRequest = ({
   requsetMethod?: string;
   endpoint?: string;
 }) => {
-  const { url, auth } = useContext(WPContext);
+  const { url, headers } = useContext(WPContext);
 
   const [data, setData] = useState<object[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -44,9 +44,7 @@ export const useApiRequest = ({
 
         const res = await fetch(query.join(''), {
           method: requsetMethod,
-          headers: {
-            Authorization: `Basic ${btoa(`${auth.email}:${auth.password}`)}`
-          }
+          headers
         });
 
         const response = await res.json();
@@ -66,7 +64,7 @@ export const useApiRequest = ({
 
     loadData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [auth.email, auth.password, endpoint, requsetMethod, url]);
+  }, [headers, endpoint, requsetMethod, url]);
 
   return { data, loading, error };
 };
