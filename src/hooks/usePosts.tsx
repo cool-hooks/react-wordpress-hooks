@@ -82,13 +82,12 @@ type UseUpdatePost = {
 };
 
 type UseDeletePost = {
-  readonly id: number;
   force: boolean;
 };
 
 const endpoint = 'posts';
 
-export const usePosts = (options: UsePosts) => {
+export const usePosts = (options?: UsePosts | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
@@ -120,8 +119,9 @@ export const useUpdatePost = (options: UseUpdatePost) => {
   return { data, loading, error };
 };
 
-export const useDeletePost = (options: UseDeletePost) => {
+export const useDeletePost = (id: number, options?: UseDeletePost) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'

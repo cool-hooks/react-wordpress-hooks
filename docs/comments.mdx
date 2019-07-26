@@ -9,24 +9,68 @@ menu: Hooks
 
 [Available options](https://developer.wordpress.org/rest-api/reference/comments/#list-comments)
 
-Default
+Default query (latest 10 comments):
 
 ```jsx
 const { data, loading, error } = useComments();
+```
+
+Comments meeting the criteria:
+
+```jsx
+const { data, loading, error } = useComments({
+  /* WordPress REST API options */
+});
+```
+
+Single comment (by id):
+
+```jsx
+const { data, loading, error } = useComments(/* comment id */);
+```
+
+Multiple comments (by id):
+
+```jsx
+const { data, loading, error } = useComments(/* array of comment ids */);
 ```
 
 ### useCreateComment
 
 [Available options](https://developer.wordpress.org/rest-api/reference/comments/#create-a-comment)
 
+```jsx
+const { data, loading, error } = useCreateComment({
+  /* WordPress REST API options */
+});
+```
+
 ### useRetriveComment
 
 [Available options](https://developer.wordpress.org/rest-api/reference/comments/#retrieve-a-comment)
+
+```jsx
+const { data, loading, error } = useRetriveComment({
+  /* WordPress REST API options */
+});
+```
 
 ### useUpdateComment
 
 [Available options](https://developer.wordpress.org/rest-api/reference/comments/#update-a-comment)
 
+```jsx
+const { data, loading, error } = useUpdateComment({
+  /* WordPress REST API options */
+});
+```
+
 ### useDeleteComment
 
 [Available options](https://developer.wordpress.org/rest-api/reference/comments/#delete-a-comment)
+
+```jsx
+const { data, loading, error } = useDeleteComment(/* comment id */, {
+  /* WordPress REST API options */
+});
+```

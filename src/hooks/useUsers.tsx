@@ -60,14 +60,13 @@ type UseUpdateUser = {
 };
 
 type UseDeleteUser = {
-  readonly id: number;
   force: boolean;
   reassign: number;
 };
 
 const endpoint = 'users';
 
-export const useUsers = (options: UseUsers) => {
+export const useUsers = (options?: UseUsers | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
@@ -99,8 +98,9 @@ export const useUpdateUser = (options: UseUpdateUser) => {
   return { data, loading, error };
 };
 
-export const useDeleteUser = (options: UseDeleteUser) => {
+export const useDeleteUser = (id: number, options?: UseDeleteUser) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'delete'

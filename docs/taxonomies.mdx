@@ -9,12 +9,18 @@ menu: Hooks
 
 [Available options](https://developer.wordpress.org/rest-api/reference/taxonomies/#list-taxonomies)
 
-Default
-
 ```jsx
-const { data, loading, error } = useTaxonomies();
+const { data, loading, error } = useTaxonomies({
+  /* WordPress REST API options */
+});
 ```
 
 ### useRetriveTaxonomy
 
 [Available options](https://developer.wordpress.org/rest-api/reference/taxonomies/#retrieve-a-taxonomy)
+
+```jsx
+const { data, loading, error } = useRetriveTaxonomy({
+  /* WordPress REST API options */
+});
+```

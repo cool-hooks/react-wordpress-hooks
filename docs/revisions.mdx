@@ -9,16 +9,28 @@ menu: Hooks
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-revisions/#list-post-revisions)
 
-Default
-
 ```jsx
-const { data, loading, error } = useRevisions();
+const { data, loading, error } = useRevisions({
+  /* WordPress REST API options */
+});
 ```
 
 ### useRetriveRevision
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-revisions/#retrieve-a-post-revision)
 
+```jsx
+const { data, loading, error } = useRetriveRevision({
+  /* WordPress REST API options */
+});
+```
+
 ### useDeleteRevision
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-revisions/#delete-a-post-revision)
+
+```jsx
+const { data, loading, error } = useDeleteRevision(/* post revision id */, {
+  /* WordPress REST API options */
+});
+```

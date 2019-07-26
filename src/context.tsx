@@ -2,14 +2,8 @@ import React from 'react';
 
 export const WPContext = React.createContext<{
   url: string;
-  auth: {
-    email: string;
-    password: string;
-  };
+  headers?: Headers;
 }>({
   url: '',
-  auth: {
-    email: '',
-    password: ''
-  }
+  headers: undefined
 });
