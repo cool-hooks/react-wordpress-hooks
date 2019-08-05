@@ -5,7 +5,7 @@
     "checkJs": false,
     "declaration": true,
     "jsx": "react",
-    "outDir": "./lib",
+    "outDir": "lib",
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true
