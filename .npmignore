@@ -1,12 +1,11 @@
 src
 
 tsconfig.json
-.travis.yml
 .prettierrc
 doczrc.js
 .docz
 
 .eslintrc.js
 /index.d.ts
-webpack.config.js
 yarn-error.log
+.rpt2_cache
