@@ -1,4 +1,5 @@
 src
+docs
 
 tsconfig.json
 .prettierrc
@@ -7,5 +8,6 @@ doczrc.js
 
 .eslintrc.js
 /index.d.ts
+rollup.config.js
 yarn-error.log
 .rpt2_cache

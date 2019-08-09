@@ -22,7 +22,7 @@ export const useApiRequest = ({
   const [error, setError] = useState<string | object | null>(null);
 
   useEffect(() => {
-    const loadData = async () => {
+    async function loadData() {
       try {
         setLoading(true);
 
@@ -60,7 +60,7 @@ export const useApiRequest = ({
         setLoading(false);
         setError(err);
       }
-    };
+    }
 
     loadData();
     // eslint-disable-next-line react-hooks/exhaustive-deps

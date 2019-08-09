@@ -8,11 +8,13 @@ export default {
   output: [
     {
       file: 'lib/react-wordpress-hooks.esm.js',
-      format: 'es'
+      format: 'es',
+      sourcemap: 'inline'
     },
     {
       file: 'lib/react-wordpress-hooks.cjs.js',
-      format: 'cjs'
+      format: 'cjs',
+      sourcemap: 'inline'
     }
   ],
 
