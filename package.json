@@ -1,6 +1,6 @@
 {
   "name": "react-wordpress-hooks",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0",
   "description": "Set of hooks for WordPress REST API",
   "author": "Jakub Biesiada",
   "license": "MIT",
