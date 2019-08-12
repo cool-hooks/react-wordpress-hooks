@@ -1,6 +1,11 @@
 # react-wordpress-hooks Changelog
 
-## 1.0.0 beta 1 (2019-08-09)
+## 1.0.0 beta 3 (2019-08-12)
+#### Repository Changes
+- removed ES module
+- switched back from `rollup` to `webpack`
+
+## 1.0.0 beta 1 / 1.0.0 beta 2 (2019-08-09)
 #### Repository Changes
 - added ES module
 - switched from `webpack` to `rollup`
