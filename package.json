@@ -4,13 +4,14 @@
   "description": "Set of hooks for WordPress REST API",
   "author": "Jakub Biesiada",
   "license": "MIT",
-  "main": "lib/react-wordpress-hooks.cjs.js",
-  "module": "lib/react-wordpress-hooks.esm.js",
+  "main": "lib/react-wordpress-hooks.min.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "release": "npm run prettier && npm run lint && npm run build",
-    "build": "rollup -c",
+    "release": "rimraf lib/* && npm run prettier && npm run lint && npm run build:dev && npm run build",
+    "build": "webpack --env build",
+    "build:dev": "webpack --env dev",
     "watch": "npm run build -- --watch",
+    "watch:dev": "npm run build:dev -- --watch",
     "deploy": "gh-pages -d .docz/dist",
     "lint": "eslint 'src/**/*.tsx' --fix",
     "prettier": "prettier --write 'src/**/*.tsx'",
@@ -48,11 +49,10 @@
     "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
-    "rollup-plugin-commonjs": "^10.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.1.1",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "typescript": "^3.5.3"
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
