@@ -4,7 +4,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/react-wordpress-hooks.svg?style=flat-square)](https://www.npmjs.com/package/react-wordpress-hooks)
 
 ## About
-This library helps you use WordPress RESTful API in React app. It's provides hooks for all API endpoints and Context to simply access data in every component.
+This library helps you use WordPress RESTful API in React app. It provides hooks for all API endpoints and Context to simply access data in every component.
 
 ## How to Install
 First, install the library in your project by npm:
