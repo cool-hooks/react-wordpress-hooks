@@ -18,7 +18,7 @@ export const useApiRequest = ({
   const { url, headers } = useContext(WPContext);
 
   const [data, setData] = useState<object[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | object | null>(null);
 
   useEffect(() => {
