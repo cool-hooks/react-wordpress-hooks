@@ -40,15 +40,15 @@
 - `WPContext` with url & auth values
 
 **hooks, hooks, hooks ...moreHooks**
-- hooks for Posts: `usePosts`, `useCreatePost`, `useRetrivePost`, `useUpdatePost`, `useDeletePost`
-- hooks for Revisions: `useRevisions`, `useRetriveRevision`, `useDeleteRevision`
-- hooks for Categories: `useCategories`, `useCreateCategory`, `useRetriveCategory`, `useUpdateCategory`, `useDeleteCategory`
-- hooks for Tags: `useTags`, `useCreateTag`, `useRetriveTag`, `useRetriveTag`, `useDeleteTag`
-- hooks for Pages: `usePages`, `useCreatePage`, `useRetrivePage`, `useUpdatePage`, `useDeletePage`
-- hooks for Comments: `useComments`, `useCreateComment`, `useRetriveComment`, `useUpdateComment`, `useDeleteComment`
-- hooks for Taxonomies: `useTaxonomies`, `useRetriveTaxonomy`
-- hooks for Media: `useMedia`, `useCreateMedia`, `useRetriveMedia`, `useUpdateMedia`, `useDeleteMedia`
-- hooks for Users: `useUsers`, `useCreateUser`, `useRetriveUser`, `useUpdateUser`, `useDeleteUser`
-- hooks for Types: `useTypes`, `useRetriveType`
-- hooks for Statuses: `useStatuses`, `useRetriveStatus`
+- hooks for Posts: `usePosts`, `useCreatePost`, `useRetrievePost`, `useUpdatePost`, `useDeletePost`
+- hooks for Post Revisions: `useRevisions`, `useRetrieveRevision`, `useDeleteRevision`
+- hooks for Categories: `useCategories`, `useCreateCategory`, `useRetrieveCategory`, `useUpdateCategory`, `useDeleteCategory`
+- hooks for Tags: `useTags`, `useCreateTag`, `useRetrieveTag`, `useRetrieveTag`, `useDeleteTag`
+- hooks for Pages: `usePages`, `useCreatePage`, `useRetrievePage`, `useUpdatePage`, `useDeletePage`
+- hooks for Comments: `useComments`, `useCreateComment`, `useRetrieveComment`, `useUpdateComment`, `useDeleteComment`
+- hooks for Taxonomies: `useTaxonomies`, `useRetrieveTaxonomy`
+- hooks for Media: `useMedia`, `useCreateMedia`, `useRetrieveMedia`, `useUpdateMedia`, `useDeleteMedia`
+- hooks for Users: `useUsers`, `useCreateUser`, `useRetrieveUser`, `useUpdateUser`, `useDeleteUser`
+- hooks for Types: `useTypes`, `useRetrieveType`
+- hooks for Statuses: `useStatuses`, `useRetrieveStatus`
 - hooks for Settings: `useSettings`, `useUpdateSetting`
