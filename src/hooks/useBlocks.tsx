@@ -45,7 +45,7 @@ type UseCreateBlock = {
   date?: string;
   date_gmt?: string;
   slug?: string;
-  status?: string;
+  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
   title?: object;
   content?: object;
