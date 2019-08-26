@@ -1,17 +1,14 @@
 import { useApiRequest } from './useApiRequest';
 
-type UsePages = {
+type UseBlocks = {
   context?: 'view' | 'embed' | 'edit';
   page?: number;
   per_page?: number;
   search?: string;
   after?: string;
-  author?: number[];
-  author_exclude?: number[];
   before?: string;
   exclude?: number[];
   include?: number[];
-  menu_order?: number;
   offset?: number;
   order?: 'asc' | 'desc';
   orderby?:
@@ -24,85 +21,68 @@ type UsePages = {
     | 'relevance'
     | 'slug'
     | 'include_slugs'
-    | 'title'
-    | 'menu_order';
-  parent?: number[];
-  parent_exclude?: number[];
+    | 'title';
   slug?: string[];
-  status?:
-    | 'publish'
-    | 'future'
-    | 'draft'
-    | 'pending'
-    | 'private'
-    | 'trash'
-    | 'auto-draft'
-    | 'inherit'
-    | 'request-pending'
-    | 'request-confirmed'
-    | 'request-failed'
-    | 'request-completed'
-    | 'any';
+  status?: [
+
+      | 'publish'
+      | 'future'
+      | 'draft'
+      | 'pending'
+      | 'private'
+      | 'trash'
+      | 'auto-draft'
+      | 'inherit'
+      | 'request-pending'
+      | 'request-confirmed'
+      | 'request-failed'
+      | 'request-completed'
+      | 'any'
+  ];
 };
 
-type UseCreatePage = {
+type UseCreateBlock = {
   date?: string;
   date_gmt?: string;
   slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  status?: string;
   password?: string;
-  parent?: number;
   title?: object;
   content?: object;
-  author?: number;
-  excerpt?: object;
-  featured_media?: number;
-  comment_status?: 'open' | 'closed';
-  ping_status?: 'open' | 'closed';
-  menu_order?: number;
-  meta?: object;
   template?: string;
 };
 
-type UseRetrievePage = {
+type UseRetrieveBlock = {
   readonly id?: number;
   context?: 'view' | 'embed' | 'edit';
   password?: string;
 };
 
-type UseUpdatePage = {
+type UseUpdateBlock = {
   readonly id?: number;
   date?: string;
   date_gmt?: string;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
-  parent?: number;
   title?: object;
   content?: object;
-  author?: number;
-  excerpt?: object;
-  featured_media?: number;
-  comment_status?: 'open' | 'closed';
-  ping_status?: 'open' | 'closed';
-  menu_order?: number;
-  meta?: object;
   template?: string;
 };
 
-type UseDeletePage = {
+type UseDeleteBlock = {
   force?: boolean;
 };
 
-const endpoint = 'pages';
+const endpoint = 'blocks';
 
-export const usePages = (options?: UsePages | number | number[]) => {
+export const useBlocks = (options?: UseBlocks) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useCreatePage = (options: UseCreatePage) => {
+export const useCreateBlock = (options: UseCreateBlock) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -112,13 +92,13 @@ export const useCreatePage = (options: UseCreatePage) => {
   return { data, loading, error };
 };
 
-export const useRetrievePage = (options: UseRetrievePage) => {
+export const useRetrieveBlock = (options: UseRetrieveBlock) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useUpdatePage = (options: UseUpdatePage) => {
+export const useUpdateBlock = (options: UseUpdateBlock) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -128,7 +108,7 @@ export const useUpdatePage = (options: UseUpdatePage) => {
   return { data, loading, error };
 };
 
-export const useDeletePage = (id: number, options?: UseDeletePage) => {
+export const useDeleteBlock = (id: number, options?: UseDeleteBlock) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,

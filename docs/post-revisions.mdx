@@ -1,36 +1,36 @@
 ---
-route: /hooks/revisions
+route: /hooks/post-revisions
 menu: Hooks
 ---
 
-## Revisions
+## Post Revisions
 
-### useRevisions
+### usePostRevisions
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-revisions/#list-post-revisions)
 
 ```jsx
-const { data, loading, error } = useRevisions({
+const { data, loading, error } = usePostRevisions({
   /* WordPress REST API options */
 });
 ```
 
-### useRetriveRevision
+### useRetrievePostRevision
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-revisions/#retrieve-a-post-revision)
 
 ```jsx
-const { data, loading, error } = useRetriveRevision({
+const { data, loading, error } = useRetrievePostRevision({
   /* WordPress REST API options */
 });
 ```
 
-### useDeleteRevision
+### useDeletePostRevision
 
 [Available options](https://developer.wordpress.org/rest-api/reference/post-revisions/#delete-a-post-revision)
 
 ```jsx
-const { data, loading, error } = useDeleteRevision(/* post revision id */, {
+const { data, loading, error } = useDeletePostRevision(/* post revision id */, {
   /* WordPress REST API options */
 });
 ```

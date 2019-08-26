@@ -1,24 +1,24 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseRevisions = {
+type UsePostRevisions = {
   parent: number;
   context: 'view' | 'embed' | 'edit';
 };
 
-type RetriveRevision = {
-  parent: number;
-  id: number;
-  context: 'view' | 'embed' | 'edit';
+type RetrievePostRevision = {
+  parent?: number;
+  id?: number;
+  context?: 'view' | 'embed' | 'edit';
 };
 
-type DeleteRevision = {
-  parent: number;
-  force: boolean;
+type DeletePostRevision = {
+  parent?: number;
+  force?: boolean;
 };
 
 const endpoint = 'revisions';
 
-export const useRevisions = (options: UseRevisions) => {
+export const usePostRevisions = (options: UsePostRevisions) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -28,13 +28,16 @@ export const useRevisions = (options: UseRevisions) => {
   return { data, loading, error };
 };
 
-export const useRetriveRevision = (options: RetriveRevision) => {
+export const useRetrievePostRevision = (options: RetrievePostRevision) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useDeleteRevision = (id: number, options?: DeleteRevision) => {
+export const useDeletePostRevision = (
+  id: number,
+  options?: DeletePostRevision
+) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,

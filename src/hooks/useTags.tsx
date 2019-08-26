@@ -1,41 +1,50 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseTags = {
-  context: 'view' | 'embed' | 'edit';
-  page: number;
-  per_page: number;
-  search: number;
-  exclude: number[];
-  include: number[];
-  offset: number;
-  order: 'asc' | 'desc';
-  hide_empty: boolean;
-  post: number;
-  slug: string;
+  context?: 'view' | 'embed' | 'edit';
+  page?: number;
+  per_page?: number;
+  search?: number;
+  exclude?: number[];
+  include?: number[];
+  offset?: number;
+  order?: 'asc' | 'desc';
+  orderby?:
+    | 'id'
+    | 'include'
+    | 'name'
+    | 'slug'
+    | 'include_slugs'
+    | 'term_group'
+    | 'description'
+    | 'count';
+  hide_empty?: boolean;
+  post?: number;
+  slug?: string[];
 };
 
 type UseCreateTag = {
-  description: string;
+  description?: string;
   name: string;
-  slug: string;
-  meta: object;
+  slug?: string;
+  meta?: object;
 };
 
-type UseRetriveTag = {
-  readonly id: number;
-  context: 'view' | 'embed' | 'edit';
+type UseRetrieveTag = {
+  readonly id?: number;
+  context?: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateTag = {
-  readonly id: number;
-  description: string;
-  name: string;
-  slug: string;
-  meta: object;
+  readonly id?: number;
+  description?: string;
+  name?: string;
+  slug?: string;
+  meta?: object;
 };
 
 type UseDeleteTag = {
-  force: boolean;
+  force?: boolean;
 };
 
 const endpoint = 'tags';
@@ -56,7 +65,7 @@ export const useCreateTag = (options: UseCreateTag) => {
   return { data, loading, error };
 };
 
-export const useRetriveTag = (options: UseRetriveTag) => {
+export const useRetrieveTag = (options: UseRetrieveTag) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
