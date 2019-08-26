@@ -11,7 +11,7 @@ type UseSearch = {
 
 const endpoint = 'search';
 
-export const useSearch = (options: UseSearch) => {
+export const useSearch = (options?: UseSearch) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
