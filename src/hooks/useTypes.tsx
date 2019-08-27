@@ -5,6 +5,7 @@ type UseTypes = {
 };
 
 type UseRetrieveType = {
+  type?: string;
   context?: 'view' | 'embed' | 'edit';
 };
 

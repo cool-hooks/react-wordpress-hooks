@@ -5,6 +5,7 @@ type UseStatuses = {
 };
 
 type UseRetrieveStatus = {
+  status?: string;
   context?: 'view' | 'embed' | 'edit';
 };
 

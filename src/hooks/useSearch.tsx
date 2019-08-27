@@ -5,7 +5,7 @@ type UseSearch = {
   page?: number;
   per_page?: number;
   search?: string;
-  type?: string;
+  type?: 'post';
   subtype?: ['post' | 'page' | 'any'];
 };
 

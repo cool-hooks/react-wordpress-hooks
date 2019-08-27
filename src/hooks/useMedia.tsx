@@ -27,7 +27,7 @@ type UseMedia = {
   parent?: number[];
   parent_exclude?: number[];
   slug?: string[];
-  status?: 'inherit' | 'private' | 'trash';
+  status?: ['inherit' | 'private' | 'trash'];
   readonly media_type?: 'image' | 'video' | 'text' | 'application' | 'audio';
   readonly mime_type?: string;
 };

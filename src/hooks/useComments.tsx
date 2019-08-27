@@ -53,7 +53,7 @@ type UseUpdateComment = {
   author_name?: string;
   author_url?: string;
   author_user_agent?: string;
-  content: object;
+  content?: object;
   date?: string;
   date_gmt?: string;
   parent?: number;

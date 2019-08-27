@@ -2,9 +2,11 @@ import { useApiRequest } from './useApiRequest';
 
 type UseTaxonomies = {
   context?: 'view' | 'embed' | 'edit';
+  type?: string;
 };
 
 type UseRetrieveTaxonomy = {
+  taxonomy?: string;
   context?: 'view' | 'embed' | 'edit';
 };
 

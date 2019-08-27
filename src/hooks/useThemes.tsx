@@ -5,7 +5,7 @@ type UseThemes = {
   page?: number;
   per_page?: number;
   search?: string;
-  status: string[];
+  status: ['active'];
 };
 
 const endpoint = 'themes';

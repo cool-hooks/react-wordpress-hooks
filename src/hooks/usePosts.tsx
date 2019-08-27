@@ -54,7 +54,6 @@ type UseCreatePost = {
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
-  // parent: number;
   title?: object;
   content?: object;
   author?: number;
@@ -93,7 +92,6 @@ type UseUpdatePost = {
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
-  // parent: number;
   title?: object;
   content?: object;
   author?: number;

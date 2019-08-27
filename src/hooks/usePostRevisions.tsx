@@ -1,8 +1,23 @@
 import { useApiRequest } from './useApiRequest';
 
 type UsePostRevisions = {
-  parent: number;
-  context: 'view' | 'embed' | 'edit';
+  parent?: number;
+  context?: 'view' | 'embed' | 'edit';
+  page?: number;
+  per_page?: number;
+  search?: string;
+  exclude?: number[];
+  include?: number[];
+  offset?: number;
+  order?: 'asc' | 'desc';
+  orderby?:
+    | 'date'
+    | 'id'
+    | 'include'
+    | 'relevance'
+    | 'slug'
+    | 'include_slugs'
+    | 'title';
 };
 
 type RetrievePostRevision = {

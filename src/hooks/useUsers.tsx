@@ -20,7 +20,7 @@ type UseUsers = {
     | 'url';
   slug?: string[];
   roles?: string[];
-  who?: string;
+  who?: ['authors'];
 };
 
 type UseCreateUser = {
