@@ -1,6 +1,6 @@
 {
   "name": "react-wordpress-hooks",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.1",
   "description": "Set of hooks for WordPress REST API",
   "author": "Jakub Biesiada",
   "license": "MIT",
@@ -39,20 +39,20 @@
     "@typescript-eslint/parser": "^2.0.0",
     "docz": "^1.2.0",
     "docz-theme-default": "^1.2.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "gh-pages": "^2.1.1",
-    "husky": "^3.0.3",
-    "lint-staged": "^9.2.1",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "ts-loader": "^6.0.4",
-    "typescript": "^3.5.3",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6"
+    "typescript": "^3.6.2",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   },
   "peerDependencies": {
     "react": ">=16.8.0"

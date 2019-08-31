@@ -1,35 +1,36 @@
 declare type UseTags = {
-    context: 'view' | 'embed' | 'edit';
-    page: number;
-    per_page: number;
-    search: number;
-    exclude: number[];
-    include: number[];
-    offset: number;
-    order: 'asc' | 'desc';
-    hide_empty: boolean;
-    post: number;
-    slug: string;
+    context?: 'view' | 'embed' | 'edit';
+    page?: number;
+    per_page?: number;
+    search?: number;
+    exclude?: number[];
+    include?: number[];
+    offset?: number;
+    order?: 'asc' | 'desc';
+    orderby?: 'id' | 'include' | 'name' | 'slug' | 'include_slugs' | 'term_group' | 'description' | 'count';
+    hide_empty?: boolean;
+    post?: number;
+    slug?: string[];
 };
 declare type UseCreateTag = {
-    description: string;
+    description?: string;
     name: string;
-    slug: string;
-    meta: object;
+    slug?: string;
+    meta?: object;
 };
-declare type UseRetriveTag = {
-    readonly id: number;
-    context: 'view' | 'embed' | 'edit';
+declare type UseRetrieveTag = {
+    readonly id?: number;
+    context?: 'view' | 'embed' | 'edit';
 };
 declare type UseUpdateTag = {
-    readonly id: number;
-    description: string;
-    name: string;
-    slug: string;
-    meta: object;
+    readonly id?: number;
+    description?: string;
+    name?: string;
+    slug?: string;
+    meta?: object;
 };
 declare type UseDeleteTag = {
-    force: boolean;
+    force?: boolean;
 };
 export declare const useTags: (options?: number | number[] | UseTags | undefined) => {
     data: object[];
@@ -41,7 +42,7 @@ export declare const useCreateTag: (options: UseCreateTag) => {
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetriveTag: (options: UseRetriveTag) => {
+export declare const useRetrieveTag: (options: UseRetrieveTag) => {
     data: object[];
     loading: boolean;
     error: string | object | null;

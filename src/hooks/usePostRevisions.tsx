@@ -31,32 +31,41 @@ type DeletePostRevision = {
   force?: boolean;
 };
 
-const endpoint = 'revisions';
+const endpoints = ['posts', 'revisions'];
 
-export const usePostRevisions = (options: UsePostRevisions) => {
+export const usePostRevisions = (
+  parent: number,
+  options?: UsePostRevisions
+) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint,
-    requsetMethod: 'delete'
+    endpoint: `${endpoints[0]}/${parent}/${endpoints[1]}`
   });
 
   return { data, loading, error };
 };
 
-export const useRetrievePostRevision = (options: RetrievePostRevision) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+export const useRetrievePostRevision = (
+  parent: number,
+  options: RetrievePostRevision
+) => {
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint: `${endpoints[0]}/${parent}/${endpoints[1]}`
+  });
 
   return { data, loading, error };
 };
 
 export const useDeletePostRevision = (
+  parent: number,
   id: number,
   options?: DeletePostRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,
-    endpoint,
+    endpoint: `${endpoints[0]}/${parent}/${endpoints[1]}`,
     requsetMethod: 'delete'
   });
 

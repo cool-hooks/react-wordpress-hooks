@@ -1,5 +1,17 @@
 # react-wordpress-hooks Changelog
 
+## 2.0.0 (Soon)
+#### New Feature
+- hooks for Blocks: `useBlocks`, `useCreateBlock`, `useRetrieveBlock`, `useUpdateBlock`, `useDeleteBlock`
+- hooks for Block Revisions: `useCreateBlockRevision`, `useRetrieveBlockRevision`
+- hooks for Block Renderer: `useRetrieveBlockRenderer`
+- hooks for Search: `useSearch`
+- hooks for Themes: `useThemes`
+
+#### Breaking Changes
+- renamed Post Revisions hooks
+- renamed all retrieve hooks
+
 ## 1.0.0 beta 3 / 1.0.0 (2019-08-12)
 #### Repository Changes
 - removed ES module
