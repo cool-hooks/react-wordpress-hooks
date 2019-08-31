@@ -7,7 +7,7 @@ type UseRetrieveBlockRenderer = {
   post_id?: number;
 };
 
-const endpoint = 'blocks';
+const endpoint = 'block-renderer';
 
 export const useRetrieveBlockRenderer = (options: UseRetrieveBlockRenderer) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
