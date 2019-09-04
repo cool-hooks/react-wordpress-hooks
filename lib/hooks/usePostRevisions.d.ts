@@ -19,7 +19,7 @@ declare type DeletePostRevision = {
     parent?: number;
     force?: boolean;
 };
-export declare const usePostRevisions: (parent: number, options: UsePostRevisions) => {
+export declare const usePostRevisions: (parent: number, options?: UsePostRevisions | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
