@@ -1,0 +1,56 @@
+---
+route: /hooks/blocks
+menu: Hooks
+---
+
+## Blocks
+
+### useBlocks
+
+[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#list-wp_blocks)
+
+Default query (latest 10 blocks):
+
+```jsx
+const { data, loading, error } = useBlocks();
+```
+
+### useCreateBlock
+
+[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#create-a-wp_block)
+
+```jsx
+const { data, loading, error } = useCreateBlock({
+  /* WordPress REST API options */
+});
+```
+
+### useRetrieveBlock
+
+[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#retrieve-a-wp_block)
+
+```jsx
+const { data, loading, error } = useRetrieveBlock({
+  /* WordPress REST API options */
+});
+```
+
+### useUpdateBlock
+
+[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#update-a-wp_block)
+
+```jsx
+const { data, loading, error } = useUpdateBlock({
+  /* WordPress REST API options */
+});
+```
+
+### useDeleteBlock
+
+[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#delete-a-wp_block)
+
+```jsx
+const { data, loading, error } = useDeleteBlock(/* block id */, {
+  /* WordPress REST API options */
+});
+```

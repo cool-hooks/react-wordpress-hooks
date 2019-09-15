@@ -1,5 +1,17 @@
 # react-wordpress-hooks Changelog
 
+## 2.0.0 beta 1 (2019-09-08)
+#### New Feature
+- hooks for Blocks: `useBlocks`, `useCreateBlock`, `useRetrieveBlock`, `useUpdateBlock`, `useDeleteBlock`
+- hooks for Block Revisions: `useCreateBlockRevision`, `useRetrieveBlockRevision`
+- hooks for Block Renderer: `useRetrieveBlockRenderer`
+- hooks for Search: `useSearch`
+- hooks for Themes: `useThemes`
+
+#### Breaking Changes
+- renamed Post Revisions hooks
+- renamed all retrieve hooks
+
 ## 1.0.0 beta 3 / 1.0.0 (2019-08-12)
 #### Repository Changes
 - removed ES module
@@ -40,15 +52,15 @@
 - `WPContext` with url & auth values
 
 **hooks, hooks, hooks ...moreHooks**
-- hooks for Posts: `usePosts`, `useCreatePost`, `useRetrivePost`, `useUpdatePost`, `useDeletePost`
-- hooks for Revisions: `useRevisions`, `useRetriveRevision`, `useDeleteRevision`
-- hooks for Categories: `useCategories`, `useCreateCategory`, `useRetriveCategory`, `useUpdateCategory`, `useDeleteCategory`
-- hooks for Tags: `useTags`, `useCreateTag`, `useRetriveTag`, `useRetriveTag`, `useDeleteTag`
-- hooks for Pages: `usePages`, `useCreatePage`, `useRetrivePage`, `useUpdatePage`, `useDeletePage`
-- hooks for Comments: `useComments`, `useCreateComment`, `useRetriveComment`, `useUpdateComment`, `useDeleteComment`
-- hooks for Taxonomies: `useTaxonomies`, `useRetriveTaxonomy`
-- hooks for Media: `useMedia`, `useCreateMedia`, `useRetriveMedia`, `useUpdateMedia`, `useDeleteMedia`
-- hooks for Users: `useUsers`, `useCreateUser`, `useRetriveUser`, `useUpdateUser`, `useDeleteUser`
-- hooks for Types: `useTypes`, `useRetriveType`
-- hooks for Statuses: `useStatuses`, `useRetriveStatus`
+- hooks for Posts: `usePosts`, `useCreatePost`, `useRetrievePost`, `useUpdatePost`, `useDeletePost`
+- hooks for Post Revisions: `useRevisions`, `useRetrieveRevision`, `useDeleteRevision`
+- hooks for Categories: `useCategories`, `useCreateCategory`, `useRetrieveCategory`, `useUpdateCategory`, `useDeleteCategory`
+- hooks for Tags: `useTags`, `useCreateTag`, `useRetrieveTag`, `useRetrieveTag`, `useDeleteTag`
+- hooks for Pages: `usePages`, `useCreatePage`, `useRetrievePage`, `useUpdatePage`, `useDeletePage`
+- hooks for Comments: `useComments`, `useCreateComment`, `useRetrieveComment`, `useUpdateComment`, `useDeleteComment`
+- hooks for Taxonomies: `useTaxonomies`, `useRetrieveTaxonomy`
+- hooks for Media: `useMedia`, `useCreateMedia`, `useRetrieveMedia`, `useUpdateMedia`, `useDeleteMedia`
+- hooks for Users: `useUsers`, `useCreateUser`, `useRetrieveUser`, `useUpdateUser`, `useDeleteUser`
+- hooks for Types: `useTypes`, `useRetrieveType`
+- hooks for Statuses: `useStatuses`, `useRetrieveStatus`
 - hooks for Settings: `useSettings`, `useUpdateSetting`

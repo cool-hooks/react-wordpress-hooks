@@ -1,85 +1,68 @@
-declare type UseMedia = {
+declare type UseBlocks = {
     context?: 'view' | 'embed' | 'edit';
     page?: number;
     per_page?: number;
     search?: string;
     after?: string;
-    author?: number[];
-    author_exclude?: number[];
     before?: string;
     exclude?: number[];
     include?: number[];
     offset?: number;
     order?: 'asc' | 'desc';
     orderby?: 'author' | 'date' | 'id' | 'include' | 'modified' | 'parent' | 'relevance' | 'slug' | 'include_slugs' | 'title';
-    parent?: number[];
-    parent_exclude?: number[];
     slug?: string[];
-    status?: ['inherit' | 'private' | 'trash'];
-    readonly media_type?: 'image' | 'video' | 'text' | 'application' | 'audio';
-    readonly mime_type?: string;
+    status?: ['publish' | 'future' | 'draft' | 'pending' | 'private' | 'trash' | 'auto-draft' | 'inherit' | 'request-pending' | 'request-confirmed' | 'request-failed' | 'request-completed' | 'any'];
 };
-declare type UseCreateMedia = {
+declare type UseCreateBlock = {
     date?: string;
     date_gmt?: string;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+    password?: string;
     title?: object;
-    author?: number;
-    comment_status?: 'open' | 'closed';
-    ping_status?: 'open' | 'closed';
-    meta?: object;
+    content?: object;
     template?: string;
-    alt_text?: string;
-    caption?: object;
-    description?: object;
-    post?: number;
 };
-declare type UseRetrieveMedia = {
+declare type UseRetrieveBlock = {
     readonly id?: number;
     context?: 'view' | 'embed' | 'edit';
+    password?: string;
 };
-declare type UseUpdateMedia = {
+declare type UseUpdateBlock = {
     readonly id?: number;
     date?: string;
     date_gmt?: string;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+    password?: string;
     title?: object;
-    author?: number;
-    comment_status?: 'open' | 'closed';
-    ping_status?: 'open' | 'closed';
-    meta?: object;
+    content?: object;
     template?: string;
-    alt_text?: string;
-    caption?: object;
-    description?: object;
-    post?: number;
 };
-declare type UseDeleteMedia = {
+declare type UseDeleteBlock = {
     force?: boolean;
 };
-export declare const useMedia: (options?: number | number[] | UseMedia | undefined) => {
+export declare const useBlocks: (options?: UseBlocks | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useCreateMedia: (options: UseCreateMedia) => {
+export declare const useCreateBlock: (options: UseCreateBlock) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrieveMedia: (options: UseRetrieveMedia) => {
+export declare const useRetrieveBlock: (options: UseRetrieveBlock) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useUpdateMedia: (options: UseUpdateMedia) => {
+export declare const useUpdateBlock: (options: UseUpdateBlock) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useDeleteMedia: (id: number, options?: UseDeleteMedia | undefined) => {
+export declare const useDeleteBlock: (id: number, options?: UseDeleteBlock | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;

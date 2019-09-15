@@ -1,51 +1,52 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseCategories = {
-  context: 'view' | 'embed' | 'edit';
-  page: number;
-  per_page: number;
-  search: string;
-  exclude: number[];
-  include: number[];
-  order: 'asc' | 'desc';
-  orderby:
+  context?: 'view' | 'embed' | 'edit';
+  page?: number;
+  per_page?: number;
+  search?: string;
+  exclude?: number[];
+  include?: number[];
+  order?: 'asc' | 'desc';
+  orderby?:
     | 'id'
     | 'include'
     | 'name'
     | 'slug'
+    | 'include_slugs'
     | 'term_group'
     | 'description'
     | 'count';
-  hide_empty: boolean;
-  parent: number;
-  post: number;
-  slug: string;
+  hide_empty?: boolean;
+  parent?: number;
+  post?: number;
+  slug?: string[];
 };
 
 type UseCreateCategory = {
-  description: string;
+  description?: string;
   name: string;
-  slug: string;
-  parent: number;
-  meta: object;
+  slug?: string;
+  parent?: number;
+  meta?: object;
 };
 
-type UseRetriveCategory = {
-  readonly id: number;
-  context: 'view' | 'embed' | 'edit';
+type UseRetrieveCategory = {
+  readonly id?: number;
+  context?: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateCategory = {
-  readonly id: number;
-  description: string;
-  name: string;
-  slug: string;
-  parent: number;
-  meta: object;
+  readonly id?: number;
+  description?: string;
+  name?: string;
+  slug?: string;
+  parent?: number;
+  meta?: object;
 };
 
 type UseDeleteCategory = {
-  force: boolean;
+  force?: boolean;
 };
 
 const endpoint = 'categories';
@@ -69,7 +70,7 @@ export const useCreateCategory = (options: UseCreateCategory) => {
   return { data, loading, error };
 };
 
-export const useRetriveCategory = (options: UseRetriveCategory) => {
+export const useRetrieveCategory = (options: UseRetrieveCategory) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint
