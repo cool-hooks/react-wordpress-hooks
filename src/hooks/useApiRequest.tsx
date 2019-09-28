@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import { WPContext } from '../context';
 
-import { serialize } from '../utils';
+import { serialize, optionsToBody } from '../utils';
 
 export const useApiRequest = ({
   id,
@@ -28,24 +28,45 @@ export const useApiRequest = ({
 
         const query = [`${url}/wp-json/wp/v2/${endpoint}`];
 
-        if (requsetMethod === 'delete') {
-          query.push(`/${id}`);
-        }
+        const settings = {
+          method: requsetMethod,
+          headers
+        };
 
-        if (requsetMethod === 'get') {
-          if (typeof options === 'number') {
-            query.push(`/${options}`);
-          } else if (Array.isArray(options)) {
-            query.push(`?include=${options.join(',')}`);
-          } else {
-            query.push(serialize(options));
+        switch (requsetMethod) {
+          case 'get': {
+            if (typeof options === 'number') {
+              query.push(`/${options}`);
+            } else if (Array.isArray(options)) {
+              query.push(`?include=${options.join(',')}`);
+            } else {
+              query.push(serialize(options as object));
+            }
+
+            break;
+          }
+
+          case 'post':
+          case 'update': {
+            Object.assign(settings, {
+              body: optionsToBody(options as object)
+            });
+
+            break;
+          }
+
+          case 'delete': {
+            query.push(`/${id}`);
+
+            Object.assign(settings, {
+              body: optionsToBody(options as object)
+            });
+
+            break;
           }
         }
 
-        const res = await fetch(query.join(''), {
-          method: requsetMethod,
-          headers
-        });
+        const res = await fetch(query.join(''), settings);
 
         const response = await res.json();
 
