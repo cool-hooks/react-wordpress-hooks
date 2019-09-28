@@ -1,1 +1,2 @@
-export declare const serialize: (object: any) => string;
+export declare const serialize: (options: any) => string;
+export declare const optionsToBody: (options: object) => URLSearchParams;

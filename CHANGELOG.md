@@ -1,5 +1,9 @@
 # react-wordpress-hooks Changelog
 
+## 2.0.0 beta 3 (2019-09-28)
+#### Bug Fix
+- fixed problem with incorrect values for `post`, `update` and `delete` methods
+
 ## 2.0.0 beta 1 (2019-09-08)
 #### New Feature
 - hooks for Blocks: `useBlocks`, `useCreateBlock`, `useRetrieveBlock`, `useUpdateBlock`, `useDeleteBlock`
