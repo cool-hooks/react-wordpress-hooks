@@ -1,6 +1,6 @@
 # react-wordpress-hooks Changelog
 
-## 2.0.0 beta 3 (2019-09-28)
+## 2.0.0 beta 3 / 2.0.0 (2019-09-28)
 #### Bug Fix
 - fixed problem with incorrect values for `post`, `update` and `delete` methods
 
