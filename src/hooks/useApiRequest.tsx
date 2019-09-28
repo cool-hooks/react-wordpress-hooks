@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import { WPContext } from '../context';
 
-import { serialize, optionsToBody } from '../utils';
+import { serializeOptions, passToBody } from '../utils';
 
 export const useApiRequest = ({
   id,
@@ -40,7 +40,7 @@ export const useApiRequest = ({
             } else if (Array.isArray(options)) {
               query.push(`?include=${options.join(',')}`);
             } else {
-              query.push(serialize(options as object));
+              query.push(serializeOptions(options as object));
             }
 
             break;
@@ -49,7 +49,7 @@ export const useApiRequest = ({
           case 'post':
           case 'update': {
             Object.assign(settings, {
-              body: optionsToBody(options as object)
+              body: passToBody(options as object)
             });
 
             break;
@@ -59,7 +59,7 @@ export const useApiRequest = ({
             query.push(`/${id}`);
 
             Object.assign(settings, {
-              body: optionsToBody(options as object)
+              body: passToBody(options as object)
             });
 
             break;

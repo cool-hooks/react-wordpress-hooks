@@ -1,2 +1,2 @@
-export declare const serialize: (options: any) => string;
-export declare const optionsToBody: (options: object) => URLSearchParams;
+export { serializeOptions } from './serializeOptions';
+export { passToBody } from './passToBody';
