@@ -32,13 +32,26 @@ export const useCreateBlockRevision = (
   return { data, loading, error };
 };
 
-export const useRetrieveBlockRevision = (
+export const useRetrieveBlockRevisions = (
   id: number,
   options: UseRetrieveBlockRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint: `${endpoints[0]}/${id}/${endpoints[1]}`
+  });
+
+  return { data, loading, error };
+};
+
+export const useRetrieveBlockRevision = (
+  parent: number,
+  id: number,
+  options: UseRetrieveBlockRevision
+) => {
+  const { data, loading, error } = useApiRequest({
+    options,
+    endpoint: `${endpoints[0]}/${parent}/${endpoints[1]}/${id}`
   });
 
   return { data, loading, error };

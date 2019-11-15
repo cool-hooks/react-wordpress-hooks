@@ -10,7 +10,7 @@ export const useApiRequest = ({
   requsetMethod = 'get',
   endpoint = ''
 }: {
-  id?: number;
+  id?: number | string;
   options?: object | number;
   requsetMethod?: string;
   endpoint?: string;

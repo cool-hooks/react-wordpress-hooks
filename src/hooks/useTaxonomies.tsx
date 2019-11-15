@@ -1,6 +1,6 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseTaxonomies = {
+type UseRetrieveTaxonomies = {
   context?: 'view' | 'embed' | 'edit';
   type?: string;
 };
@@ -12,14 +12,21 @@ type UseRetrieveTaxonomy = {
 
 const endpoint = 'taxonomies';
 
-export const useTaxonomies = (options: UseTaxonomies) => {
+export const useRetrieveTaxonomies = (options: UseRetrieveTaxonomies) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useRetrieveTaxonomy = (options: UseRetrieveTaxonomy) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+export const useRetrieveTaxonomy = (
+  taxonomy: string,
+  options: UseRetrieveTaxonomy
+) => {
+  const { data, loading, error } = useApiRequest({
+    id: taxonomy,
+    options,
+    endpoint
+  });
 
   return { data, loading, error };
 };

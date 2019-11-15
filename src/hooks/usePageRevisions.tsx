@@ -1,6 +1,6 @@
 import { useApiRequest } from './useApiRequest';
 
-type UsePostRevisions = {
+type UsePageRevisions = {
   parent?: number;
   context?: 'view' | 'embed' | 'edit';
   page?: number;
@@ -20,24 +20,24 @@ type UsePostRevisions = {
     | 'title';
 };
 
-type CreatePostRevision = {};
+type CreatePageRevision = {};
 
-type RetrievePostRevision = {
+type RetrievePageRevision = {
   parent?: number;
   id?: number;
   context?: 'view' | 'embed' | 'edit';
 };
 
-type DeletePostRevision = {
+type DeletePageRevision = {
   parent?: number;
   force?: boolean;
 };
 
-const endpoint = 'posts';
+const endpoint = 'pages';
 
-export const usePostRevisions = (
+export const usePageRevisions = (
   parent: number,
-  options?: UsePostRevisions
+  options?: UsePageRevisions
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
@@ -49,7 +49,7 @@ export const usePostRevisions = (
 
 export const useCreatePostRevision = (
   parent: number,
-  options: CreatePostRevision
+  options: CreatePageRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
@@ -60,10 +60,10 @@ export const useCreatePostRevision = (
   return { data, loading, error };
 };
 
-export const useRetrievePostRevision = (
+export const useRetrievePageRevision = (
   parent: number,
   type: 'revisions' | 'autosaves',
-  options: RetrievePostRevision
+  options: RetrievePageRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
@@ -73,10 +73,10 @@ export const useRetrievePostRevision = (
   return { data, loading, error };
 };
 
-export const useDeletePostRevision = (
+export const useDeletePageRevision = (
   parent: number,
   id: number,
-  options?: DeletePostRevision
+  options?: DeletePageRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     id,

@@ -1,6 +1,6 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseStatuses = {
+type UseRetrieveStatuses = {
   context?: 'view' | 'embed' | 'edit';
 };
 
@@ -11,14 +11,21 @@ type UseRetrieveStatus = {
 
 const endpoint = 'statuses';
 
-export const useStatuses = (options: UseStatuses) => {
+export const useRetrieveStatuses = (options: UseRetrieveStatuses) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useRetrieveStatus = (options: UseRetrieveStatus) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+export const useRetrieveStatus = (
+  status: string,
+  options: UseRetrieveStatus
+) => {
+  const { data, loading, error } = useApiRequest({
+    id: status,
+    options,
+    endpoint
+  });
 
   return { data, loading, error };
 };

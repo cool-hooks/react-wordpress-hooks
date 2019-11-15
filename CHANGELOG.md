@@ -1,5 +1,9 @@
 # react-wordpress-hooks Changelog
 
+## 2.1.0 (Soon)
+#### New Feature
+- hooks for Page Revisions: `usePageRevisions`, `useRetrievePageRevision`, `useDeletePageRevision`
+
 ## 2.0.1 (2019-10-13)
 #### Internal
 - cleaned up
