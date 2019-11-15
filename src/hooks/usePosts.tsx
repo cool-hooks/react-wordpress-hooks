@@ -26,20 +26,19 @@ type UsePosts = {
     | 'title';
   slug?: string[];
   status?: [
-
-      | 'publish'
-      | 'future'
-      | 'draft'
-      | 'pending'
-      | 'private'
-      | 'trash'
-      | 'auto-draft'
-      | 'inherit'
-      | 'request-pending'
-      | 'request-confirmed'
-      | 'request-failed'
-      | 'request-completed'
-      | 'any'
+    | 'publish'
+    | 'future'
+    | 'draft'
+    | 'pending'
+    | 'private'
+    | 'trash'
+    | 'auto-draft'
+    | 'inherit'
+    | 'request-pending'
+    | 'request-confirmed'
+    | 'request-failed'
+    | 'request-completed'
+    | 'any'
   ];
   categories?: number[];
   categories_exclude?: number[];

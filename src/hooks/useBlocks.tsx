@@ -24,20 +24,19 @@ type UseBlocks = {
     | 'title';
   slug?: string[];
   status?: [
-
-      | 'publish'
-      | 'future'
-      | 'draft'
-      | 'pending'
-      | 'private'
-      | 'trash'
-      | 'auto-draft'
-      | 'inherit'
-      | 'request-pending'
-      | 'request-confirmed'
-      | 'request-failed'
-      | 'request-completed'
-      | 'any'
+    | 'publish'
+    | 'future'
+    | 'draft'
+    | 'pending'
+    | 'private'
+    | 'trash'
+    | 'auto-draft'
+    | 'inherit'
+    | 'request-pending'
+    | 'request-confirmed'
+    | 'request-failed'
+    | 'request-completed'
+    | 'any'
   ];
 };
 
