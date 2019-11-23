@@ -5,7 +5,6 @@ type UseRetrieveTypes = {
 };
 
 type UseRetrieveType = {
-  type?: string;
   context?: 'view' | 'embed' | 'edit';
 };
 
@@ -17,7 +16,6 @@ export const useRetrieveTypes = (options: UseRetrieveTypes) => {
   return { data, loading, error };
 };
 
-// TODO fix type
 export const useRetrieveType = (type: string, options: UseRetrieveType) => {
   const { data, loading, error } = useApiRequest({
     id: type,

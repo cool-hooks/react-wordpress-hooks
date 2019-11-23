@@ -20,15 +20,45 @@ type UsePageRevisions = {
     | 'title';
 };
 
-type CreatePageRevision = {};
+type UseCreatePageRevision = {
+  parent?: number;
+  date?: string;
+  date_gmt?: string;
+  slug?: string;
+  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  password?: string;
+  title?: object;
+  content?: object;
+  author?: number;
+  excerpt?: object;
+  featured_media?: number;
+  comment_status?: 'open' | 'closed';
+  ping_status?: 'open' | 'closed';
+  format?:
+    | 'standard'
+    | 'aside'
+    | 'chat'
+    | 'gallery'
+    | 'link'
+    | 'image'
+    | 'quote'
+    | 'status'
+    | 'video'
+    | 'audio';
+  meta?: object;
+  sticky?: boolean;
+  template?: string;
+  categories?: number[];
+  tags?: number[];
+};
 
-type RetrievePageRevision = {
+type UseRetrievePageRevision = {
   parent?: number;
   id?: number;
   context?: 'view' | 'embed' | 'edit';
 };
 
-type DeletePageRevision = {
+type UseDeletePageRevision = {
   parent?: number;
   force?: boolean;
 };
@@ -49,7 +79,7 @@ export const usePageRevisions = (
 
 export const useCreatePostRevision = (
   parent: number,
-  options: CreatePageRevision
+  options: UseCreatePageRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
@@ -63,7 +93,7 @@ export const useCreatePostRevision = (
 export const useRetrievePageRevision = (
   parent: number,
   type: 'revisions' | 'autosaves',
-  options: RetrievePageRevision
+  options: UseRetrievePageRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
@@ -76,7 +106,7 @@ export const useRetrievePageRevision = (
 export const useDeletePageRevision = (
   parent: number,
   id: number,
-  options?: DeletePageRevision
+  options?: UseDeletePageRevision
 ) => {
   const { data, loading, error } = useApiRequest({
     id,

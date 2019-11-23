@@ -61,17 +61,17 @@ export declare const useCreateUser: (options: UseCreateUser) => {
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrieveUser: (options: UseRetrieveUser) => {
+export declare const useRetrieveUser: (id: string | undefined, options: UseRetrieveUser) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useUpdateUser: (options: UseUpdateUser) => {
+export declare const useUpdateUser: (id: string | undefined, options: UseUpdateUser) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useDeleteUser: (id: number, options?: UseDeleteUser | undefined) => {
+export declare const useDeleteUser: (id?: string, options?: UseDeleteUser | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;

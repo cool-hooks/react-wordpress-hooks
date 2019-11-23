@@ -1,4 +1,4 @@
-declare type UsePostRevisions = {
+declare type UsePageRevisions = {
     parent?: number;
     context?: 'view' | 'embed' | 'edit';
     page?: number;
@@ -10,7 +10,7 @@ declare type UsePostRevisions = {
     order?: 'asc' | 'desc';
     orderby?: 'date' | 'id' | 'include' | 'relevance' | 'slug' | 'include_slugs' | 'title';
 };
-declare type UseCreatePostRevision = {
+declare type UseCreatePageRevision = {
     parent?: number;
     date?: string;
     date_gmt?: string;
@@ -31,31 +31,31 @@ declare type UseCreatePostRevision = {
     categories?: number[];
     tags?: number[];
 };
-declare type UseRetrievePostRevision = {
+declare type UseRetrievePageRevision = {
     parent?: number;
     id?: number;
     context?: 'view' | 'embed' | 'edit';
 };
-declare type UseDeletePostRevision = {
+declare type UseDeletePageRevision = {
     parent?: number;
     force?: boolean;
 };
-export declare const usePostRevisions: (parent: number, options?: UsePostRevisions | undefined) => {
+export declare const usePageRevisions: (parent: number, options?: UsePageRevisions | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useCreatePostRevision: (parent: number, options: UseCreatePostRevision) => {
+export declare const useCreatePostRevision: (parent: number, options: UseCreatePageRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrievePostRevision: (parent: number, type: "revisions" | "autosaves", options: UseRetrievePostRevision) => {
+export declare const useRetrievePageRevision: (parent: number, type: "revisions" | "autosaves", options: UseRetrievePageRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useDeletePostRevision: (parent: number, id: number, options?: UseDeletePostRevision | undefined) => {
+export declare const useDeletePageRevision: (parent: number, id: number, options?: UseDeletePageRevision | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;

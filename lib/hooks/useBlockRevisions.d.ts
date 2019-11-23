@@ -18,7 +18,12 @@ export declare const useCreateBlockRevision: (id: number, options: UseCreateBloc
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrieveBlockRevision: (id: number, options: UseRetrieveBlockRevision) => {
+export declare const useRetrieveBlockRevisions: (id: number, options: UseRetrieveBlockRevision) => {
+    data: object[];
+    loading: boolean;
+    error: string | object | null;
+};
+export declare const useRetrieveBlockRevision: (parent: number, id: number, options: UseRetrieveBlockRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;

@@ -1,4 +1,4 @@
-declare type UseTaxonomies = {
+declare type UseRetrieveTaxonomies = {
     context?: 'view' | 'embed' | 'edit';
     type?: string;
 };
@@ -6,12 +6,12 @@ declare type UseRetrieveTaxonomy = {
     taxonomy?: string;
     context?: 'view' | 'embed' | 'edit';
 };
-export declare const useTaxonomies: (options: UseTaxonomies) => {
+export declare const useRetrieveTaxonomies: (options: UseRetrieveTaxonomies) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrieveTaxonomy: (options: UseRetrieveTaxonomy) => {
+export declare const useRetrieveTaxonomy: (taxonomy: string, options: UseRetrieveTaxonomy) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
