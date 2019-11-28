@@ -3,6 +3,5 @@ export default {
     colors: {
       primary: '#0073aa'
     }
-  },
-  files: '**/*.{mdx}'
-}
+  }
+};
