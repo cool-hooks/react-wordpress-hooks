@@ -3,6 +3,11 @@
 ## 2.1.0 (Soon)
 #### New Feature
 - hooks for Page Revisions: `usePageRevisions`, `useRetrievePageRevision`, `useDeletePageRevision`
+- 
+- 
+
+#### Repository Changes
+- updated `docz` to v2
 
 ## 2.0.1 (2019-10-13)
 #### Internal
