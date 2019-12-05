@@ -13,8 +13,8 @@
     "watch": "npm run build -- --watch",
     "watch:dev": "npm run build:dev -- --watch",
     "deploy": "gh-pages -d .docz/dist",
-    "lint": "eslint 'src/**/*.tsx' --fix",
-    "prettier": "prettier --write 'src/**/*.tsx'",
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "prettier": "prettier --write 'src/**/*.ts'",
     "docz:dev": "docz dev",
     "docz:build": "docz build --base /react-wordpress-hooks"
   },
@@ -22,21 +22,14 @@
     "type": "git",
     "url": "https://github.com/JB1905/react-wordpress-hooks.git"
   },
-  "keywords": [
-    "WordPress",
-    "hooks",
-    "React",
-    "library",
-    "REST",
-    "API"
-  ],
+  "keywords": ["WordPress", "hooks", "React", "library", "REST", "API"],
   "bugs": {
     "url": "https://github.com/JB1905/react-wordpress-hooks/issues"
   },
   "homepage": "https://github.com/JB1905/react-wordpress-hooks#readme",
   "devDependencies": {
-    "@types/react": "^16.9.13",
-    "@typescript-eslint/parser": "^2.9.0",
+    "@types/react": "^16.9.14",
+    "@typescript-eslint/parser": "^2.10.0",
     "docz": "^2.1.1",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
@@ -50,7 +43,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.7.2",
+    "typescript": "^3.7.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
@@ -63,10 +56,6 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{tsx}": [
-      "npm run prettier",
-      "npm run lint",
-      "git add"
-    ]
+    "src/**/*.{ts}": ["npm run prettier", "npm run lint", "git add"]
   }
 }

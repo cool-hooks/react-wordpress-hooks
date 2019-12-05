@@ -15,7 +15,7 @@ module.exports = env => {
 
   return {
     mode,
-    entry: `${__dirname}/src/index.tsx`,
+    entry: `${__dirname}/src/index.ts`,
     externals: ['react'],
     devtool,
     output: {
@@ -27,11 +27,11 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
+          test: /\.ts?$/,
           loader: 'ts-loader',
           exclude: /node_modules/,
           resolve: {
-            extensions: ['.tsx']
+            extensions: ['.ts']
           }
         }
       ]
