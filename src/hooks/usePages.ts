@@ -46,8 +46,8 @@ type UsePages = {
 };
 
 type UseCreatePage = {
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
@@ -72,8 +72,8 @@ type UseRetrievePage = {
 
 type UseUpdatePage = {
   readonly id?: number;
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;

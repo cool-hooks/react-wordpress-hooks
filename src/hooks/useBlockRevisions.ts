@@ -2,8 +2,8 @@ import { useApiRequest } from './useApiRequest';
 
 type UseCreateBlockRevision = {
   parent?: number;
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: number;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;

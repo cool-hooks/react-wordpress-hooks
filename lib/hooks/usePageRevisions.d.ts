@@ -11,12 +11,12 @@ declare type UsePageRevisions = {
     orderby?: 'date' | 'id' | 'include' | 'relevance' | 'slug' | 'include_slugs' | 'title';
 };
 declare type UseCreatePageRevision = {
-    parent?: number;
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     password?: string;
+    parent?: number;
     title?: object;
     content?: object;
     author?: number;
@@ -24,12 +24,9 @@ declare type UseCreatePageRevision = {
     featured_media?: number;
     comment_status?: 'open' | 'closed';
     ping_status?: 'open' | 'closed';
-    format?: 'standard' | 'aside' | 'chat' | 'gallery' | 'link' | 'image' | 'quote' | 'status' | 'video' | 'audio';
+    menu_order?: number;
     meta?: object;
-    sticky?: boolean;
     template?: string;
-    categories?: number[];
-    tags?: number[];
 };
 declare type UseRetrievePageRevision = {
     parent?: number;
@@ -45,7 +42,7 @@ export declare const usePageRevisions: (parent: number, options?: UsePageRevisio
     loading: boolean;
     error: string | object | null;
 };
-export declare const useCreatePostRevision: (parent: number, options: UseCreatePageRevision) => {
+export declare const useCreatePageRevision: (parent: number, options: UseCreatePageRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;

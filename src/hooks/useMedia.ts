@@ -33,8 +33,8 @@ type UseMedia = {
 };
 
 type UseCreateMedia = {
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   title?: object;
@@ -56,8 +56,8 @@ type UseRetrieveMedia = {
 
 type UseUpdateMedia = {
   readonly id?: number;
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   title?: object;

@@ -20,8 +20,8 @@ declare type UseMedia = {
     readonly mime_type?: string;
 };
 declare type UseCreateMedia = {
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     title?: object;
@@ -41,8 +41,8 @@ declare type UseRetrieveMedia = {
 };
 declare type UseUpdateMedia = {
     readonly id?: number;
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     title?: object;

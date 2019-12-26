@@ -6,6 +6,7 @@ export * from './hooks/useBlockRenderer';
 export * from './hooks/useCategories';
 export * from './hooks/useTags';
 export * from './hooks/usePages';
+export * from './hooks/usePageRevisions';
 export * from './hooks/useComments';
 export * from './hooks/useTaxonomies';
 export * from './hooks/useMedia';

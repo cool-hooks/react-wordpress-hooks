@@ -21,12 +21,12 @@ type UsePageRevisions = {
 };
 
 type UseCreatePageRevision = {
-  parent?: number;
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
+  parent?: number;
   title?: object;
   content?: object;
   author?: number;
@@ -34,22 +34,9 @@ type UseCreatePageRevision = {
   featured_media?: number;
   comment_status?: 'open' | 'closed';
   ping_status?: 'open' | 'closed';
-  format?:
-    | 'standard'
-    | 'aside'
-    | 'chat'
-    | 'gallery'
-    | 'link'
-    | 'image'
-    | 'quote'
-    | 'status'
-    | 'video'
-    | 'audio';
+  menu_order?: number;
   meta?: object;
-  sticky?: boolean;
   template?: string;
-  categories?: number[];
-  tags?: number[];
 };
 
 type UseRetrievePageRevision = {
@@ -77,7 +64,7 @@ export const usePageRevisions = (
   return { data, loading, error };
 };
 
-export const useCreatePostRevision = (
+export const useCreatePageRevision = (
   parent: number,
   options: UseCreatePageRevision
 ) => {

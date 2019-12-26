@@ -12,8 +12,8 @@ declare type UsePostRevisions = {
 };
 declare type UseCreatePostRevision = {
     parent?: number;
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     password?: string;
