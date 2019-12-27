@@ -2,6 +2,7 @@ src
 docs
 
 tsconfig.json
+.travis.yml
 .prettierrc
 doczrc.js
 .docz
