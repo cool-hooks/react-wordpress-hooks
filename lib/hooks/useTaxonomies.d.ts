@@ -3,7 +3,6 @@ declare type UseRetrieveTaxonomies = {
     type?: string;
 };
 declare type UseRetrieveTaxonomy = {
-    taxonomy?: string;
     context?: 'view' | 'embed' | 'edit';
 };
 export declare const useRetrieveTaxonomies: (options: UseRetrieveTaxonomies) => {

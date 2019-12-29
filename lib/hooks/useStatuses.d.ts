@@ -2,7 +2,6 @@ declare type UseRetrieveStatuses = {
     context?: 'view' | 'embed' | 'edit';
 };
 declare type UseRetrieveStatus = {
-    status?: string;
     context?: 'view' | 'embed' | 'edit';
 };
 export declare const useRetrieveStatuses: (options: UseRetrieveStatuses) => {

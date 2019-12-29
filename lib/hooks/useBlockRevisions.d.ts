@@ -13,12 +13,12 @@ declare type UseRetrieveBlockRevision = {
     parent?: number;
     context?: 'view' | 'embed' | 'edit';
 };
-export declare const useCreateBlockRevision: (id: number, options: UseCreateBlockRevision) => {
+export declare const useRetrieveBlockRevisions: (id: number, options: UseRetrieveBlockRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrieveBlockRevisions: (id: number, options: UseRetrieveBlockRevision) => {
+export declare const useCreateBlockRevision: (id: number, options: UseCreateBlockRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
