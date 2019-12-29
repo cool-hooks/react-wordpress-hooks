@@ -6,6 +6,8 @@ node_js:
 deploy:
   provider: script
   script: yarn install && yarn run docz:build && yarn run deploy
+  keep_history: true
+  github_token: $GITHUB_TOKEN
   skip_cleanup: true
   on:
     branch: master
