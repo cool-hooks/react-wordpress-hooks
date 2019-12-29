@@ -6,7 +6,7 @@ type UseRetrieveTaxonomies = {
 };
 
 type UseRetrieveTaxonomy = {
-  taxonomy?: string;
+  // TODO taxonomy?: string;
   context?: 'view' | 'embed' | 'edit';
 };
 

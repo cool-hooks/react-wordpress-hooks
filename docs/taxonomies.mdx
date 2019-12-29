@@ -5,22 +5,23 @@ menu: Hooks
 
 ## Taxonomies
 
-### useTaxonomies
+### useRetrieveTaxonomies
 
-[Available options](https://developer.wordpress.org/rest-api/reference/taxonomies/#list-taxonomies)
+[Available options](https://developer.wordpress.org/rest-api/reference/taxonomies/#retrieve-a-taxonomy)
 
 ```jsx
-const { data, loading, error } = useTaxonomies({
+const { data, loading, error } = useRetrieveTaxonomies({
   /* WordPress REST API options */
 });
 ```
 
 ### useRetrieveTaxonomy
 
-[Available options](https://developer.wordpress.org/rest-api/reference/taxonomies/#retrieve-a-taxonomy)
+[Available options](https://developer.wordpress.org/rest-api/reference/taxonomies/#retrieve-a-taxonomy-2)
 
 ```jsx
-const { data, loading, error } = useRetrieveTaxonomy({
-  /* WordPress REST API options */
-});
+const { data, loading, error } = useRetrieveTaxonomy(
+  /* taxonomy */,
+  { /* WordPress REST API options */ }
+);
 ```

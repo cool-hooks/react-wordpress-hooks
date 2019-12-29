@@ -85,7 +85,7 @@ export const useCreateUser = (options: UseCreateUser) => {
 };
 
 export const useRetrieveUser = (
-  id: string = 'me',
+  id: string = 'me', // TODO fix
   options: UseRetrieveUser
 ) => {
   const { data, loading, error } = useApiRequest({ id, options, endpoint });
