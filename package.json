@@ -36,10 +36,10 @@
   "homepage": "https://github.com/JB1905/react-wordpress-hooks#readme",
   "devDependencies": {
     "@types/react": "^16.9.17",
-    "@typescript-eslint/parser": "^2.13.0",
+    "@typescript-eslint/parser": "^2.14.0",
     "docz": "^2.2.0",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
@@ -51,7 +51,7 @@
     "react-dom": "^16.12.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
-    "webpack": "^4.41.4",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
   "peerDependencies": {

@@ -5,7 +5,6 @@ type UseRetrieveTypes = {
 };
 
 type UseRetrieveType = {
-  // TODO type?: string;
   context?: 'view' | 'embed' | 'edit';
 };
 

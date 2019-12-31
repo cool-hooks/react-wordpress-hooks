@@ -5,7 +5,6 @@ type UseRetrieveStatuses = {
 };
 
 type UseRetrieveStatus = {
-  // TODO status?: string;
   context?: 'view' | 'embed' | 'edit';
 };
 

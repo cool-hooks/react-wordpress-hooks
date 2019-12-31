@@ -84,16 +84,13 @@ export const useCreateUser = (options: UseCreateUser) => {
   return { data, loading, error };
 };
 
-export const useRetrieveUser = (
-  id: string = 'me', // TODO fix
-  options: UseRetrieveUser
-) => {
+export const useRetrieveUser = (id: string, options: UseRetrieveUser) => {
   const { data, loading, error } = useApiRequest({ id, options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useUpdateUser = (id: string = 'me', options: UseUpdateUser) => {
+export const useUpdateUser = (id: string, options: UseUpdateUser) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,
@@ -104,7 +101,7 @@ export const useUpdateUser = (id: string = 'me', options: UseUpdateUser) => {
   return { data, loading, error };
 };
 
-export const useDeleteUser = (id: string = 'me', options?: UseDeleteUser) => {
+export const useDeleteUser = (id: string, options?: UseDeleteUser) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,

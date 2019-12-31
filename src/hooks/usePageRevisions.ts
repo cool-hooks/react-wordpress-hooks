@@ -1,7 +1,5 @@
 import { useApiRequest } from './useApiRequest';
 
-// TODO check hooks
-
 type UsePageRevisions = {
   parent?: number;
   context?: 'view' | 'embed' | 'edit';
