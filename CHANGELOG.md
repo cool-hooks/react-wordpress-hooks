@@ -1,6 +1,6 @@
 # react-wordpress-hooks Changelog
 
-## 3.0.0 beta 1 (2020-xx-xx)
+## 3.0.0 beta 1 (2020-01-02)
 #### New Feature
 - hooks for Page Revisions: `usePageRevisions`, `useRetrievePageRevision`, `useDeletePageRevision`
 - new hook for Block Revisions: `useRetrieveBlockRevision`
