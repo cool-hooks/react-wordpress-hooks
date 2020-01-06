@@ -1,6 +1,6 @@
 # react-wordpress-hooks Changelog
 
-## 3.0.0 beta 2 ()
+## 3.0.0 beta 2 (2020-01-06)
 #### Repository Changes
 - replaced `Webpack` with `Rollup`
 - added module output
