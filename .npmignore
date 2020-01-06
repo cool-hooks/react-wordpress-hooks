@@ -9,6 +9,6 @@ doczrc.js
 
 .eslintrc.js
 /index.d.ts
-webpack.config.js
+rollup.config.js
 yarn-error.log
-.DS_Store
+.rpt2_cache
