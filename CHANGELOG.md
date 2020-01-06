@@ -1,5 +1,10 @@
 # react-wordpress-hooks Changelog
 
+## 3.0.0 beta 2 ()
+#### Repository Changes
+- replaced `Webpack` with `Rollup`
+- added module output
+
 ## 3.0.0 beta 1 (2020-01-02)
 #### New Feature
 - hooks for Page Revisions: `usePageRevisions`, `useRetrievePageRevision`, `useDeletePageRevision`
