@@ -1,11 +1,13 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseBlocks = {
+type UseMedia = {
   context?: 'view' | 'embed' | 'edit';
   page?: number;
   per_page?: number;
   search?: string;
   after?: string;
+  author?: number[];
+  author_exclude?: number[];
   before?: string;
   exclude?: number[];
   include?: number[];
@@ -22,67 +24,67 @@ type UseBlocks = {
     | 'slug'
     | 'include_slugs'
     | 'title';
+  parent?: number[];
+  parent_exclude?: number[];
   slug?: string[];
-  status?: [
-
-      | 'publish'
-      | 'future'
-      | 'draft'
-      | 'pending'
-      | 'private'
-      | 'trash'
-      | 'auto-draft'
-      | 'inherit'
-      | 'request-pending'
-      | 'request-confirmed'
-      | 'request-failed'
-      | 'request-completed'
-      | 'any'
-  ];
+  status?: ['inherit' | 'private' | 'trash'];
+  readonly media_type?: 'image' | 'video' | 'text' | 'application' | 'audio';
+  readonly mime_type?: string;
 };
 
-type UseCreateBlock = {
-  date?: string;
-  date_gmt?: string;
+type UseCreateMedia = {
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  password?: string;
   title?: object;
-  content?: object;
+  author?: number;
+  comment_status?: 'open' | 'closed';
+  ping_status?: 'open' | 'closed';
+  meta?: object;
   template?: string;
+  alt_text?: string;
+  caption?: object;
+  description?: object;
+  post?: number;
 };
 
-type UseRetrieveBlock = {
+type UseRetrieveMedia = {
   readonly id?: number;
   context?: 'view' | 'embed' | 'edit';
-  password?: string;
 };
 
-type UseUpdateBlock = {
+type UseUpdateMedia = {
   readonly id?: number;
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  password?: string;
   title?: object;
-  content?: object;
+  author?: number;
+  comment_status?: 'open' | 'closed';
+  ping_status?: 'open' | 'closed';
+  meta?: object;
   template?: string;
+  alt_text?: string;
+  caption?: object;
+  description?: object;
+  post?: number;
 };
 
-type UseDeleteBlock = {
+type UseDeleteMedia = {
   force?: boolean;
 };
 
-const endpoint = 'blocks';
+const endpoint = 'media';
 
-export const useBlocks = (options?: UseBlocks) => {
+export const useMedia = (options?: UseMedia | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useCreateBlock = (options: UseCreateBlock) => {
+export const useCreateMedia = (options: UseCreateMedia) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -92,13 +94,13 @@ export const useCreateBlock = (options: UseCreateBlock) => {
   return { data, loading, error };
 };
 
-export const useRetrieveBlock = (options: UseRetrieveBlock) => {
+export const useRetrieveMedia = (options: UseRetrieveMedia) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useUpdateBlock = (options: UseUpdateBlock) => {
+export const useUpdateMedia = (options: UseUpdateMedia) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -108,7 +110,7 @@ export const useUpdateBlock = (options: UseUpdateBlock) => {
   return { data, loading, error };
 };
 
-export const useDeleteBlock = (id: number, options?: UseDeleteBlock) => {
+export const useDeleteMedia = (id: number, options?: UseDeleteMedia) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,

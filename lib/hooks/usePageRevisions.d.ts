@@ -1,4 +1,4 @@
-declare type UsePostRevisions = {
+declare type UsePageRevisions = {
     parent?: number;
     context?: 'view' | 'embed' | 'edit';
     page?: number;
@@ -10,13 +10,13 @@ declare type UsePostRevisions = {
     order?: 'asc' | 'desc';
     orderby?: 'date' | 'id' | 'include' | 'relevance' | 'slug' | 'include_slugs' | 'title';
 };
-declare type UseCreatePostRevision = {
-    parent?: number;
+declare type UseCreatePageRevision = {
     date?: string | null;
     date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     password?: string;
+    parent?: number;
     title?: object;
     content?: object;
     author?: number;
@@ -24,38 +24,35 @@ declare type UseCreatePostRevision = {
     featured_media?: number;
     comment_status?: 'open' | 'closed';
     ping_status?: 'open' | 'closed';
-    format?: 'standard' | 'aside' | 'chat' | 'gallery' | 'link' | 'image' | 'quote' | 'status' | 'video' | 'audio';
+    menu_order?: number;
     meta?: object;
-    sticky?: boolean;
     template?: string;
-    categories?: number[];
-    tags?: number[];
 };
-declare type UseRetrievePostRevision = {
+declare type UseRetrievePageRevision = {
     parent?: number;
     id?: number;
     context?: 'view' | 'embed' | 'edit';
 };
-declare type UseDeletePostRevision = {
+declare type UseDeletePageRevision = {
     parent?: number;
     force?: boolean;
 };
-export declare const usePostRevisions: (parent: number, options?: UsePostRevisions | undefined) => {
+export declare const usePageRevisions: (parent: number, options?: UsePageRevisions | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useCreatePostRevision: (parent: number, options: UseCreatePostRevision) => {
+export declare const useCreatePageRevision: (parent: number, options: UseCreatePageRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrievePostRevision: (parent: number, type: "revisions" | "autosaves", options: UseRetrievePostRevision) => {
+export declare const useRetrievePageRevision: (parent: number, type: "revisions" | "autosaves", options: UseRetrievePageRevision) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useDeletePostRevision: (parent: number, id: number, options?: UseDeletePostRevision | undefined) => {
+export declare const useDeletePageRevision: (parent: number, id: number, options?: UseDeletePageRevision | undefined) => {
     data: object[];
     loading: boolean;
     error: string | object | null;

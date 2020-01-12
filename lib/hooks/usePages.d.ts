@@ -19,8 +19,8 @@ declare type UsePages = {
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private' | 'trash' | 'auto-draft' | 'inherit' | 'request-pending' | 'request-confirmed' | 'request-failed' | 'request-completed' | 'any';
 };
 declare type UseCreatePage = {
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     password?: string;
@@ -43,8 +43,8 @@ declare type UseRetrievePage = {
 };
 declare type UseUpdatePage = {
     readonly id?: number;
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     password?: string;

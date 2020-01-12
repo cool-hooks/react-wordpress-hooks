@@ -1,6 +1,6 @@
 import { useApiRequest } from './useApiRequest';
 
-type UsePosts = {
+type UsePages = {
   context?: 'view' | 'embed' | 'edit';
   page?: number;
   per_page?: number;
@@ -11,6 +11,7 @@ type UsePosts = {
   before?: string;
   exclude?: number[];
   include?: number[];
+  menu_order?: number;
   offset?: number;
   order?: 'asc' | 'desc';
   orderby?:
@@ -23,37 +24,34 @@ type UsePosts = {
     | 'relevance'
     | 'slug'
     | 'include_slugs'
-    | 'title';
+    | 'title'
+    | 'menu_order';
+  parent?: number[];
+  parent_exclude?: number[];
   slug?: string[];
-  status?: [
-
-      | 'publish'
-      | 'future'
-      | 'draft'
-      | 'pending'
-      | 'private'
-      | 'trash'
-      | 'auto-draft'
-      | 'inherit'
-      | 'request-pending'
-      | 'request-confirmed'
-      | 'request-failed'
-      | 'request-completed'
-      | 'any'
-  ];
-  categories?: number[];
-  categories_exclude?: number[];
-  tags?: number[];
-  tags_exclude?: number[];
-  sticky?: boolean;
+  status?:
+    | 'publish'
+    | 'future'
+    | 'draft'
+    | 'pending'
+    | 'private'
+    | 'trash'
+    | 'auto-draft'
+    | 'inherit'
+    | 'request-pending'
+    | 'request-confirmed'
+    | 'request-failed'
+    | 'request-completed'
+    | 'any';
 };
 
-type UseCreatePost = {
-  date?: string;
-  date_gmt?: string;
+type UseCreatePage = {
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
+  parent?: number;
   title?: object;
   content?: object;
   author?: number;
@@ -61,37 +59,25 @@ type UseCreatePost = {
   featured_media?: number;
   comment_status?: 'open' | 'closed';
   ping_status?: 'open' | 'closed';
-  format?:
-    | 'standard'
-    | 'aside'
-    | 'chat'
-    | 'gallery'
-    | 'link'
-    | 'image'
-    | 'quote'
-    | 'status'
-    | 'video'
-    | 'audio';
+  menu_order?: number;
   meta?: object;
-  sticky?: boolean;
   template?: string;
-  categories?: number[];
-  tags?: number[];
 };
 
-type UseRetrievePost = {
+type UseRetrievePage = {
   readonly id?: number;
   context?: 'view' | 'embed' | 'edit';
   password?: string;
 };
 
-type UseUpdatePost = {
+type UseUpdatePage = {
   readonly id?: number;
-  date?: string;
-  date_gmt?: string;
+  date?: string | null;
+  date_gmt?: string | null;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
+  parent?: number;
   title?: object;
   content?: object;
   author?: number;
@@ -99,37 +85,24 @@ type UseUpdatePost = {
   featured_media?: number;
   comment_status?: 'open' | 'closed';
   ping_status?: 'open' | 'closed';
-  format?:
-    | 'standard'
-    | 'aside'
-    | 'chat'
-    | 'gallery'
-    | 'link'
-    | 'image'
-    | 'quote'
-    | 'status'
-    | 'video'
-    | 'audio';
+  menu_order?: number;
   meta?: object;
-  sticky?: boolean;
   template?: string;
-  categories?: number[];
-  tags?: number[];
 };
 
-type UseDeletePost = {
+type UseDeletePage = {
   force?: boolean;
 };
 
-const endpoint = 'posts';
+const endpoint = 'pages';
 
-export const usePosts = (options?: UsePosts | number | number[]) => {
+export const usePages = (options?: UsePages | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useCreatePost = (options: UseCreatePost) => {
+export const useCreatePage = (options: UseCreatePage) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -139,13 +112,13 @@ export const useCreatePost = (options: UseCreatePost) => {
   return { data, loading, error };
 };
 
-export const useRetrievePost = (options: UseRetrievePost) => {
+export const useRetrievePage = (options: UseRetrievePage) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useUpdatePost = (options: UseUpdatePost) => {
+export const useUpdatePage = (options: UseUpdatePage) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -155,7 +128,7 @@ export const useUpdatePost = (options: UseUpdatePost) => {
   return { data, loading, error };
 };
 
-export const useDeletePost = (id: number, options?: UseDeletePost) => {
+export const useDeletePage = (id: number, options?: UseDeletePage) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,

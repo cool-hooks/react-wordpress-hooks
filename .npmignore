@@ -2,12 +2,13 @@ src
 docs
 
 tsconfig.json
+.travis.yml
 .prettierrc
 doczrc.js
 .docz
 
 .eslintrc.js
 /index.d.ts
-webpack.config.js
+rollup.config.js
 yarn-error.log
-.DS_Store
+.rpt2_cache

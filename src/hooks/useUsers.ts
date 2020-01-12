@@ -84,14 +84,15 @@ export const useCreateUser = (options: UseCreateUser) => {
   return { data, loading, error };
 };
 
-export const useRetrieveUser = (options: UseRetrieveUser) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
+export const useRetrieveUser = (id: string, options: UseRetrieveUser) => {
+  const { data, loading, error } = useApiRequest({ id, options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useUpdateUser = (options: UseUpdateUser) => {
+export const useUpdateUser = (id: string, options: UseUpdateUser) => {
   const { data, loading, error } = useApiRequest({
+    id,
     options,
     endpoint,
     requsetMethod: 'post'
@@ -100,7 +101,7 @@ export const useUpdateUser = (options: UseUpdateUser) => {
   return { data, loading, error };
 };
 
-export const useDeleteUser = (id: number, options?: UseDeleteUser) => {
+export const useDeleteUser = (id: string, options?: UseDeleteUser) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,

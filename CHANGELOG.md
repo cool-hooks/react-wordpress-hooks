@@ -1,5 +1,26 @@
 # react-wordpress-hooks Changelog
 
+## 3.0.0 beta 2 / 3.0.0 beta 3 (2020-01-06)
+#### Repository Changes
+- replaced `Webpack` with `Rollup`
+- added module output
+
+## 3.0.0 beta 1 (2020-01-02)
+#### New Feature
+- hooks for Page Revisions: `usePageRevisions`, `useRetrievePageRevision`, `useDeletePageRevision`
+- new hook for Block Revisions: `useRetrieveBlockRevision`
+
+#### Breaking Changes
+- updated `useCreateBlockRevisions` & `useRetrieveBlockRevisions` hooks
+- updated `useRetrieveUser`, `useUpdateUser` & `useDeleteUser` hooks
+- renamed `useStatuses` to `useRetrieveStatuses`
+- renamed `useTaxonomies` to `useRetrieveTaxonomies`
+- renamed `useTypes` to `useRetrieveTypes`
+
+#### Repository Changes
+- added auto build documentation
+- updated `docz` to v2
+
 ## 2.0.1 (2019-10-13)
 #### Internal
 - cleaned up

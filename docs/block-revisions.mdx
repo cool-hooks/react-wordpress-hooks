@@ -3,24 +3,38 @@ route: /hooks/block-revisions
 menu: Hooks
 ---
 
-## Block Revisions
+## Block revisions
+
+### useRetrieveBlockRevisions
+
+[Available options](https://developer.wordpress.org/rest-api/reference/wp_block-revisions/#retrieve-a-wp_block-revision)
+
+```jsx
+const { data, loading, error } = useRetrieveBlockRevisions(
+  /* block id */,
+  { /* WordPress REST API options */ }
+);
+```
 
 ### useCreateBlockRevisions
 
 [Available options](https://developer.wordpress.org/rest-api/reference/wp_block-revisions/#create-a-wp_block-revision)
 
 ```jsx
-const { data, loading, error } = useCreateBlockRevisions({
-  /* WordPress REST API options */
-});
+const { data, loading, error } = useCreateBlockRevisions(
+  /* block id */,
+  { /* WordPress REST API options */ }
+);
 ```
 
-### useRetrieveBlockRevisions
+### useRetrieveBlockRevision
 
 [Available options](https://developer.wordpress.org/rest-api/reference/wp_block-revisions/#retrieve-a-wp_block-revision-2)
 
 ```jsx
-const { data, loading, error } = useRetrieveBlockRevisions({
-  /* WordPress REST API options */
-});
+const { data, loading, error } = useRetrieveBlockRevision(
+  /* parent id */,
+  /* block id */,
+  { /* WordPress REST API options */ }
+);
 ```

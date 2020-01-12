@@ -14,8 +14,8 @@ declare type UseBlocks = {
     status?: ['publish' | 'future' | 'draft' | 'pending' | 'private' | 'trash' | 'auto-draft' | 'inherit' | 'request-pending' | 'request-confirmed' | 'request-failed' | 'request-completed' | 'any'];
 };
 declare type UseCreateBlock = {
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     password?: string;
@@ -30,8 +30,8 @@ declare type UseRetrieveBlock = {
 };
 declare type UseUpdateBlock = {
     readonly id?: number;
-    date?: string;
-    date_gmt?: string;
+    date?: string | null;
+    date_gmt?: string | null;
     slug?: string;
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     password?: string;

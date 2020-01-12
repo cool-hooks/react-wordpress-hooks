@@ -1,6 +1,6 @@
 import { useApiRequest } from './useApiRequest';
 
-type UsePages = {
+type UsePosts = {
   context?: 'view' | 'embed' | 'edit';
   page?: number;
   per_page?: number;
@@ -11,7 +11,6 @@ type UsePages = {
   before?: string;
   exclude?: number[];
   include?: number[];
-  menu_order?: number;
   offset?: number;
   order?: 'asc' | 'desc';
   orderby?:
@@ -24,12 +23,9 @@ type UsePages = {
     | 'relevance'
     | 'slug'
     | 'include_slugs'
-    | 'title'
-    | 'menu_order';
-  parent?: number[];
-  parent_exclude?: number[];
+    | 'title';
   slug?: string[];
-  status?:
+  status?: [
     | 'publish'
     | 'future'
     | 'draft'
@@ -42,16 +38,21 @@ type UsePages = {
     | 'request-confirmed'
     | 'request-failed'
     | 'request-completed'
-    | 'any';
+    | 'any'
+  ];
+  categories?: number[];
+  categories_exclude?: number[];
+  tags?: number[];
+  tags_exclude?: number[];
+  sticky?: boolean;
 };
 
-type UseCreatePage = {
+type UseCreatePost = {
   date?: string;
   date_gmt?: string;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
-  parent?: number;
   title?: object;
   content?: object;
   author?: number;
@@ -59,25 +60,37 @@ type UseCreatePage = {
   featured_media?: number;
   comment_status?: 'open' | 'closed';
   ping_status?: 'open' | 'closed';
-  menu_order?: number;
+  format?:
+    | 'standard'
+    | 'aside'
+    | 'chat'
+    | 'gallery'
+    | 'link'
+    | 'image'
+    | 'quote'
+    | 'status'
+    | 'video'
+    | 'audio';
   meta?: object;
+  sticky?: boolean;
   template?: string;
+  categories?: number[];
+  tags?: number[];
 };
 
-type UseRetrievePage = {
+type UseRetrievePost = {
   readonly id?: number;
   context?: 'view' | 'embed' | 'edit';
   password?: string;
 };
 
-type UseUpdatePage = {
+type UseUpdatePost = {
   readonly id?: number;
   date?: string;
   date_gmt?: string;
   slug?: string;
   status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
   password?: string;
-  parent?: number;
   title?: object;
   content?: object;
   author?: number;
@@ -85,24 +98,37 @@ type UseUpdatePage = {
   featured_media?: number;
   comment_status?: 'open' | 'closed';
   ping_status?: 'open' | 'closed';
-  menu_order?: number;
+  format?:
+    | 'standard'
+    | 'aside'
+    | 'chat'
+    | 'gallery'
+    | 'link'
+    | 'image'
+    | 'quote'
+    | 'status'
+    | 'video'
+    | 'audio';
   meta?: object;
+  sticky?: boolean;
   template?: string;
+  categories?: number[];
+  tags?: number[];
 };
 
-type UseDeletePage = {
+type UseDeletePost = {
   force?: boolean;
 };
 
-const endpoint = 'pages';
+const endpoint = 'posts';
 
-export const usePages = (options?: UsePages | number | number[]) => {
+export const usePosts = (options?: UsePosts | number | number[]) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useCreatePage = (options: UseCreatePage) => {
+export const useCreatePost = (options: UseCreatePost) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -112,13 +138,13 @@ export const useCreatePage = (options: UseCreatePage) => {
   return { data, loading, error };
 };
 
-export const useRetrievePage = (options: UseRetrievePage) => {
+export const useRetrievePost = (options: UseRetrievePost) => {
   const { data, loading, error } = useApiRequest({ options, endpoint });
 
   return { data, loading, error };
 };
 
-export const useUpdatePage = (options: UseUpdatePage) => {
+export const useUpdatePost = (options: UseUpdatePost) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
@@ -128,7 +154,7 @@ export const useUpdatePage = (options: UseUpdatePage) => {
   return { data, loading, error };
 };
 
-export const useDeletePage = (id: number, options?: UseDeletePage) => {
+export const useDeletePost = (id: number, options?: UseDeletePost) => {
   const { data, loading, error } = useApiRequest({
     id,
     options,

@@ -1,16 +1,15 @@
-declare type UseTypes = {
+declare type UseRetrieveTypes = {
     context?: 'view' | 'embed' | 'edit';
 };
 declare type UseRetrieveType = {
-    type?: string;
     context?: 'view' | 'embed' | 'edit';
 };
-export declare const useTypes: (options: UseTypes) => {
+export declare const useRetrieveTypes: (options: UseRetrieveTypes) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
 };
-export declare const useRetrieveType: (options: UseRetrieveType) => {
+export declare const useRetrieveType: (type: string, options: UseRetrieveType) => {
     data: object[];
     loading: boolean;
     error: string | object | null;
