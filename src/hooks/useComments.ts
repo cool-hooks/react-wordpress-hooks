@@ -1,70 +1,77 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseComments = {
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  after?: string;
-  author?: number[];
-  author_exclude?: number[];
-  author_email?: string;
-  before?: string;
-  exclude?: number[];
-  include?: number[];
-  offset?: number;
-  order?: 'asc' | 'desc';
-  orderby?: 'date' | 'date_gmt' | 'id' | 'include' | 'post' | 'parent' | 'type';
-  parent?: number[];
-  parent_exclude?: number[];
-  post?: number[];
-  status?: string;
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly after?: string;
+  readonly author?: number[];
+  readonly author_exclude?: number[];
+  readonly author_email?: string;
+  readonly before?: string;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly offset?: number;
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
+    | 'date'
+    | 'date_gmt'
+    | 'id'
+    | 'include'
+    | 'post'
+    | 'parent'
+    | 'type';
+  readonly parent?: number[];
+  readonly parent_exclude?: number[];
+  readonly post?: number[];
+  readonly status?: string;
   readonly type?: string;
-  password?: string;
+  readonly password?: string;
 };
 
 type UseCreateComment = {
-  author?: number;
-  author_email?: string;
-  author_ip?: string;
-  author_name?: string;
-  author_url?: string;
-  author_user_agent?: string;
-  content?: object;
-  date?: string;
-  date_gmt?: string;
-  parent?: number;
-  post?: number;
-  status?: string;
-  meta?: object;
+  readonly author?: number;
+  readonly author_email?: string;
+  readonly author_ip?: string;
+  readonly author_name?: string;
+  readonly author_url?: string;
+  readonly author_user_agent?: string;
+  readonly content?: object;
+  readonly date?: string;
+  readonly date_gmt?: string;
+  readonly parent?: number;
+  readonly post?: number;
+  readonly status?: string;
+  readonly meta?: object;
 };
 
 type UseRetrieveComment = {
   readonly id?: number;
-  context?: 'view' | 'embed' | 'edit';
-  password?: string;
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly password?: string;
 };
 
 type UseUpdateComment = {
   readonly id?: number;
-  author?: number;
-  author_email?: string;
-  author_ip?: string;
-  author_name?: string;
-  author_url?: string;
-  author_user_agent?: string;
-  content?: object;
-  date?: string;
-  date_gmt?: string;
-  parent?: number;
-  post?: number;
-  status?: string;
-  meta?: object;
+  readonly author?: number;
+  readonly author_email?: string;
+  readonly author_ip?: string;
+  readonly author_name?: string;
+  readonly author_url?: string;
+  readonly author_user_agent?: string;
+  readonly content?: object;
+  readonly date?: string;
+  readonly date_gmt?: string;
+  readonly parent?: number;
+  readonly post?: number;
+  readonly status?: string;
+  readonly meta?: object;
 };
 
 type UseDeleteComment = {
-  force?: boolean;
-  password?: string;
+  readonly force?: boolean;
+  readonly password?: string;
 };
 
 const endpoint = 'comments';

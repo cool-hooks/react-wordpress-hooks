@@ -1,14 +1,14 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseCategories = {
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  exclude?: number[];
-  include?: number[];
-  order?: 'asc' | 'desc';
-  orderby?:
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
     | 'id'
     | 'include'
     | 'name'
@@ -17,36 +17,36 @@ type UseCategories = {
     | 'term_group'
     | 'description'
     | 'count';
-  hide_empty?: boolean;
-  parent?: number;
-  post?: number;
-  slug?: string[];
+  readonly hide_empty?: boolean;
+  readonly parent?: number;
+  readonly post?: number;
+  readonly slug?: string[];
 };
 
 type UseCreateCategory = {
-  description?: string;
-  name: string;
-  slug?: string;
-  parent?: number;
-  meta?: object;
+  readonly description?: string;
+  readonly name: string;
+  readonly slug?: string;
+  readonly parent?: number;
+  readonly meta?: object;
 };
 
 type UseRetrieveCategory = {
   readonly id?: number;
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateCategory = {
   readonly id?: number;
-  description?: string;
-  name?: string;
-  slug?: string;
-  parent?: number;
-  meta?: object;
+  readonly description?: string;
+  readonly name?: string;
+  readonly slug?: string;
+  readonly parent?: number;
+  readonly meta?: object;
 };
 
 type UseDeleteCategory = {
-  force?: boolean;
+  readonly force?: boolean;
 };
 
 const endpoint = 'categories';

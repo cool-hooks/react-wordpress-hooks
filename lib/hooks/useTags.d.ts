@@ -1,36 +1,36 @@
 declare type UseTags = {
-    context?: 'view' | 'embed' | 'edit';
-    page?: number;
-    per_page?: number;
-    search?: number;
-    exclude?: number[];
-    include?: number[];
-    offset?: number;
-    order?: 'asc' | 'desc';
-    orderby?: 'id' | 'include' | 'name' | 'slug' | 'include_slugs' | 'term_group' | 'description' | 'count';
-    hide_empty?: boolean;
-    post?: number;
-    slug?: string[];
+    readonly context?: 'view' | 'embed' | 'edit';
+    readonly page?: number;
+    readonly per_page?: number;
+    readonly search?: number;
+    readonly exclude?: number[];
+    readonly include?: number[];
+    readonly offset?: number;
+    readonly order?: 'asc' | 'desc';
+    readonly orderby?: 'id' | 'include' | 'name' | 'slug' | 'include_slugs' | 'term_group' | 'description' | 'count';
+    readonly hide_empty?: boolean;
+    readonly post?: number;
+    readonly slug?: string[];
 };
 declare type UseCreateTag = {
-    description?: string;
-    name: string;
-    slug?: string;
-    meta?: object;
+    readonly description?: string;
+    readonly name: string;
+    readonly slug?: string;
+    readonly meta?: object;
 };
 declare type UseRetrieveTag = {
     readonly id?: number;
-    context?: 'view' | 'embed' | 'edit';
+    readonly context?: 'view' | 'embed' | 'edit';
 };
 declare type UseUpdateTag = {
     readonly id?: number;
-    description?: string;
-    name?: string;
-    slug?: string;
-    meta?: object;
+    readonly description?: string;
+    readonly name?: string;
+    readonly slug?: string;
+    readonly meta?: object;
 };
 declare type UseDeleteTag = {
-    force?: boolean;
+    readonly force?: boolean;
 };
 export declare const useTags: (options?: number | number[] | UseTags | undefined) => {
     data: object[];

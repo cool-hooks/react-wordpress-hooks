@@ -1,15 +1,15 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseUsers = {
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  exclude?: number[];
-  include?: number[];
-  offset?: number;
-  order?: 'asc' | 'desc';
-  orderby?:
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly offset?: number;
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
     | 'id'
     | 'include'
     | 'name'
@@ -18,52 +18,52 @@ type UseUsers = {
     | 'include_slugs'
     | 'email'
     | 'url';
-  slug?: string[];
-  roles?: string[];
-  who?: ['authors'];
+  readonly slug?: string[];
+  readonly roles?: string[];
+  readonly who?: ['authors'];
 };
 
 type UseCreateUser = {
-  username: string;
-  name?: string;
-  first_name?: string;
-  last_name?: string;
-  email: string;
-  url?: string;
-  description?: string;
-  locale?: string;
-  nickname?: string;
-  slug?: string;
-  roles?: string[];
-  password?: string;
-  meta?: object;
+  readonly username: string;
+  readonly name?: string;
+  readonly first_name?: string;
+  readonly last_name?: string;
+  readonly email: string;
+  readonly url?: string;
+  readonly description?: string;
+  readonly locale?: string;
+  readonly nickname?: string;
+  readonly slug?: string;
+  readonly roles?: string[];
+  readonly password?: string;
+  readonly meta?: object;
 };
 
 type UseRetrieveUser = {
   readonly id?: number;
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateUser = {
   readonly id?: number;
-  username?: string;
-  name?: string;
-  first_name?: string;
-  last_name?: string;
-  email?: string;
-  url?: string;
-  description?: string;
-  locale?: string;
-  nickname?: string;
-  slug?: string;
-  roles?: string[];
-  password?: string;
-  meta?: object;
+  readonly username?: string;
+  readonly name?: string;
+  readonly first_name?: string;
+  readonly last_name?: string;
+  readonly email?: string;
+  readonly url?: string;
+  readonly description?: string;
+  readonly locale?: string;
+  readonly nickname?: string;
+  readonly slug?: string;
+  readonly roles?: string[];
+  readonly password?: string;
+  readonly meta?: object;
 };
 
 type UseDeleteUser = {
-  force?: boolean;
-  reassign: number;
+  readonly force?: boolean;
+  readonly reassign: number;
 };
 
 const endpoint = 'users';

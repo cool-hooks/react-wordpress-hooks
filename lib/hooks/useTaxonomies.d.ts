@@ -1,9 +1,9 @@
 declare type UseRetrieveTaxonomies = {
-    context?: 'view' | 'embed' | 'edit';
-    type?: string;
+    readonly context?: 'view' | 'embed' | 'edit';
+    readonly type?: string;
 };
 declare type UseRetrieveTaxonomy = {
-    context?: 'view' | 'embed' | 'edit';
+    readonly context?: 'view' | 'embed' | 'edit';
 };
 export declare const useRetrieveTaxonomies: (options: UseRetrieveTaxonomies) => {
     data: object[];

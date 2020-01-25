@@ -1,8 +1,8 @@
 declare type UseRetrieveTypes = {
-    context?: 'view' | 'embed' | 'edit';
+    readonly context?: 'view' | 'embed' | 'edit';
 };
 declare type UseRetrieveType = {
-    context?: 'view' | 'embed' | 'edit';
+    readonly context?: 'view' | 'embed' | 'edit';
 };
 export declare const useRetrieveTypes: (options: UseRetrieveTypes) => {
     data: object[];

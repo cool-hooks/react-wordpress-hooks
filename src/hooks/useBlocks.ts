@@ -1,17 +1,17 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseBlocks = {
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  after?: string;
-  before?: string;
-  exclude?: number[];
-  include?: number[];
-  offset?: number;
-  order?: 'asc' | 'desc';
-  orderby?:
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly after?: string;
+  readonly before?: string;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly offset?: number;
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
     | 'author'
     | 'date'
     | 'id'
@@ -22,8 +22,8 @@ type UseBlocks = {
     | 'slug'
     | 'include_slugs'
     | 'title';
-  slug?: string[];
-  status?: [
+  readonly slug?: string[];
+  readonly status?: [
     | 'publish'
     | 'future'
     | 'draft'
@@ -41,36 +41,36 @@ type UseBlocks = {
 };
 
 type UseCreateBlock = {
-  date?: string | null;
-  date_gmt?: string | null;
-  slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  password?: string;
-  title?: object;
-  content?: object;
-  template?: string;
+  readonly date?: string | null;
+  readonly date_gmt?: string | null;
+  readonly slug?: string;
+  readonly status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly password?: string;
+  readonly title?: object;
+  readonly content?: object;
+  readonly template?: string;
 };
 
 type UseRetrieveBlock = {
   readonly id?: number;
-  context?: 'view' | 'embed' | 'edit';
-  password?: string;
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly password?: string;
 };
 
 type UseUpdateBlock = {
   readonly id?: number;
-  date?: string | null;
-  date_gmt?: string | null;
-  slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  password?: string;
-  title?: object;
-  content?: object;
-  template?: string;
+  readonly date?: string | null;
+  readonly date_gmt?: string | null;
+  readonly slug?: string;
+  readonly status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly password?: string;
+  readonly title?: object;
+  readonly content?: object;
+  readonly template?: string;
 };
 
 type UseDeleteBlock = {
-  force?: boolean;
+  readonly force?: boolean;
 };
 
 const endpoint = 'blocks';

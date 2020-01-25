@@ -13,11 +13,10 @@ type UseCreateBlockRevision = {
 };
 
 type UseRetrieveBlockRevision = {
-  parent?: number;
   context?: 'view' | 'embed' | 'edit';
 };
 
-const endpoints = 'blocks';
+const endpoint = 'blocks';
 
 export const useRetrieveBlockRevisions = (
   id: number,
@@ -25,7 +24,7 @@ export const useRetrieveBlockRevisions = (
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint: `${endpoints[0]}/${id}/autosaves`
+    endpoint: `${endpoint}/${id}/autosaves`
   });
 
   return { data, loading, error };
@@ -37,7 +36,7 @@ export const useCreateBlockRevision = (
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint: `${endpoints[0]}/${id}/autosaves`,
+    endpoint: `${endpoint}/${id}/autosaves`,
     requsetMethod: 'post'
   });
 
@@ -51,7 +50,7 @@ export const useRetrieveBlockRevision = (
 ) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint: `${endpoints[0]}/${parent}/autosaves/${id}`
+    endpoint: `${endpoint}/${parent}/autosaves/${id}`
   });
 
   return { data, loading, error };

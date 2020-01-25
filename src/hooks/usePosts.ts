@@ -1,19 +1,19 @@
 import { useApiRequest } from './useApiRequest';
 
 type UsePosts = {
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  after?: string;
-  author?: number[];
-  author_exclude?: number[];
-  before?: string;
-  exclude?: number[];
-  include?: number[];
-  offset?: number;
-  order?: 'asc' | 'desc';
-  orderby?:
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly after?: string;
+  readonly author?: number[];
+  readonly author_exclude?: number[];
+  readonly before?: string;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly offset?: number;
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
     | 'author'
     | 'date'
     | 'id'
@@ -24,8 +24,8 @@ type UsePosts = {
     | 'slug'
     | 'include_slugs'
     | 'title';
-  slug?: string[];
-  status?: [
+  readonly slug?: string[];
+  readonly status?: [
     | 'publish'
     | 'future'
     | 'draft'
@@ -40,27 +40,27 @@ type UsePosts = {
     | 'request-completed'
     | 'any'
   ];
-  categories?: number[];
-  categories_exclude?: number[];
-  tags?: number[];
-  tags_exclude?: number[];
-  sticky?: boolean;
+  readonly categories?: number[];
+  readonly categories_exclude?: number[];
+  readonly tags?: number[];
+  readonly tags_exclude?: number[];
+  readonly sticky?: boolean;
 };
 
 type UseCreatePost = {
-  date?: string;
-  date_gmt?: string;
-  slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  password?: string;
-  title?: object;
-  content?: object;
-  author?: number;
-  excerpt?: object;
-  featured_media?: number;
-  comment_status?: 'open' | 'closed';
-  ping_status?: 'open' | 'closed';
-  format?:
+  readonly date?: string;
+  readonly date_gmt?: string;
+  readonly slug?: string;
+  readonly status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly password?: string;
+  readonly title?: object;
+  readonly content?: object;
+  readonly author?: number;
+  readonly excerpt?: object;
+  readonly featured_media?: number;
+  readonly comment_status?: 'open' | 'closed';
+  readonly ping_status?: 'open' | 'closed';
+  readonly format?:
     | 'standard'
     | 'aside'
     | 'chat'
@@ -71,34 +71,34 @@ type UseCreatePost = {
     | 'status'
     | 'video'
     | 'audio';
-  meta?: object;
-  sticky?: boolean;
-  template?: string;
-  categories?: number[];
-  tags?: number[];
+  readonly meta?: object;
+  readonly sticky?: boolean;
+  readonly template?: string;
+  readonly categories?: number[];
+  readonly tags?: number[];
 };
 
 type UseRetrievePost = {
   readonly id?: number;
-  context?: 'view' | 'embed' | 'edit';
-  password?: string;
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly password?: string;
 };
 
 type UseUpdatePost = {
   readonly id?: number;
-  date?: string;
-  date_gmt?: string;
-  slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  password?: string;
-  title?: object;
-  content?: object;
-  author?: number;
-  excerpt?: object;
-  featured_media?: number;
-  comment_status?: 'open' | 'closed';
-  ping_status?: 'open' | 'closed';
-  format?:
+  readonly date?: string;
+  readonly date_gmt?: string;
+  readonly slug?: string;
+  readonly status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly password?: string;
+  readonly title?: object;
+  readonly content?: object;
+  readonly author?: number;
+  readonly excerpt?: object;
+  readonly featured_media?: number;
+  readonly comment_status?: 'open' | 'closed';
+  readonly ping_status?: 'open' | 'closed';
+  readonly format?:
     | 'standard'
     | 'aside'
     | 'chat'
@@ -109,15 +109,15 @@ type UseUpdatePost = {
     | 'status'
     | 'video'
     | 'audio';
-  meta?: object;
-  sticky?: boolean;
-  template?: string;
-  categories?: number[];
-  tags?: number[];
+  readonly meta?: object;
+  readonly sticky?: boolean;
+  readonly template?: string;
+  readonly categories?: number[];
+  readonly tags?: number[];
 };
 
 type UseDeletePost = {
-  force?: boolean;
+  readonly force?: boolean;
 };
 
 const endpoint = 'posts';

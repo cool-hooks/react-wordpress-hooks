@@ -1,15 +1,15 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseTags = {
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: number;
-  exclude?: number[];
-  include?: number[];
-  offset?: number;
-  order?: 'asc' | 'desc';
-  orderby?:
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: number;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly offset?: number;
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
     | 'id'
     | 'include'
     | 'name'
@@ -18,33 +18,33 @@ type UseTags = {
     | 'term_group'
     | 'description'
     | 'count';
-  hide_empty?: boolean;
-  post?: number;
-  slug?: string[];
+  readonly hide_empty?: boolean;
+  readonly post?: number;
+  readonly slug?: string[];
 };
 
 type UseCreateTag = {
-  description?: string;
-  name: string;
-  slug?: string;
-  meta?: object;
+  readonly description?: string;
+  readonly name: string;
+  readonly slug?: string;
+  readonly meta?: object;
 };
 
 type UseRetrieveTag = {
   readonly id?: number;
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateTag = {
   readonly id?: number;
-  description?: string;
-  name?: string;
-  slug?: string;
-  meta?: object;
+  readonly description?: string;
+  readonly name?: string;
+  readonly slug?: string;
+  readonly meta?: object;
 };
 
 type UseDeleteTag = {
-  force?: boolean;
+  readonly force?: boolean;
 };
 
 const endpoint = 'tags';

@@ -10,10 +10,10 @@ export const useApiRequest = ({
   requsetMethod = 'get',
   endpoint = ''
 }: {
-  id?: number | string;
-  options?: object | number;
-  requsetMethod?: string;
-  endpoint?: string;
+  readonly id?: number | string;
+  readonly options?: object | number;
+  readonly requsetMethod?: string;
+  readonly endpoint?: string;
 }) => {
   const { url, headers } = useContext(WPContext);
 

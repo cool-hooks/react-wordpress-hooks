@@ -1,8 +1,8 @@
 declare type UseRetrieveStatuses = {
-    context?: 'view' | 'embed' | 'edit';
+    readonly context?: 'view' | 'embed' | 'edit';
 };
 declare type UseRetrieveStatus = {
-    context?: 'view' | 'embed' | 'edit';
+    readonly context?: 'view' | 'embed' | 'edit';
 };
 export declare const useRetrieveStatuses: (options: UseRetrieveStatuses) => {
     data: object[];

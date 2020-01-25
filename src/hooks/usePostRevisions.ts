@@ -1,16 +1,16 @@
 import { useApiRequest } from './useApiRequest';
 
 type UsePostRevisions = {
-  parent?: number;
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  exclude?: number[];
-  include?: number[];
-  offset?: number;
-  order?: 'asc' | 'desc';
-  orderby?:
+  readonly parent?: number;
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly offset?: number;
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
     | 'date'
     | 'id'
     | 'include'
@@ -21,20 +21,20 @@ type UsePostRevisions = {
 };
 
 type UseCreatePostRevision = {
-  parent?: number;
-  date?: string | null;
-  date_gmt?: string | null;
-  slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  password?: string;
-  title?: object;
-  content?: object;
-  author?: number;
-  excerpt?: object;
-  featured_media?: number;
-  comment_status?: 'open' | 'closed';
-  ping_status?: 'open' | 'closed';
-  format?:
+  readonly parent?: number;
+  readonly date?: string | null;
+  readonly date_gmt?: string | null;
+  readonly slug?: string;
+  readonly status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly password?: string;
+  readonly title?: object;
+  readonly content?: object;
+  readonly author?: number;
+  readonly excerpt?: object;
+  readonly featured_media?: number;
+  readonly comment_status?: 'open' | 'closed';
+  readonly ping_status?: 'open' | 'closed';
+  readonly format?:
     | 'standard'
     | 'aside'
     | 'chat'
@@ -45,22 +45,22 @@ type UseCreatePostRevision = {
     | 'status'
     | 'video'
     | 'audio';
-  meta?: object;
-  sticky?: boolean;
-  template?: string;
-  categories?: number[];
-  tags?: number[];
+  readonly meta?: object;
+  readonly sticky?: boolean;
+  readonly template?: string;
+  readonly categories?: number[];
+  readonly tags?: number[];
 };
 
 type UseRetrievePostRevision = {
-  parent?: number;
-  id?: number;
-  context?: 'view' | 'embed' | 'edit';
+  readonly parent?: number;
+  readonly id?: number;
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 type UseDeletePostRevision = {
-  parent?: number;
-  force?: boolean;
+  readonly parent?: number;
+  readonly force?: boolean;
 };
 
 const endpoint = 'posts';

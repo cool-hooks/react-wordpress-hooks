@@ -1,10 +1,10 @@
 declare type UseSearch = {
-    context?: 'view' | 'embed';
-    page?: number;
-    per_page?: number;
-    search?: string;
-    type?: 'post';
-    subtype?: ['post' | 'page' | 'any'];
+    readonly context?: 'view' | 'embed';
+    readonly page?: number;
+    readonly per_page?: number;
+    readonly search?: string;
+    readonly type?: 'post';
+    readonly subtype?: ['post' | 'page' | 'any'];
 };
 export declare const useSearch: (options?: UseSearch | undefined) => {
     data: object[];

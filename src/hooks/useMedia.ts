@@ -1,19 +1,19 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseMedia = {
-  context?: 'view' | 'embed' | 'edit';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  after?: string;
-  author?: number[];
-  author_exclude?: number[];
-  before?: string;
-  exclude?: number[];
-  include?: number[];
-  offset?: number;
-  order?: 'asc' | 'desc';
-  orderby?:
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly after?: string;
+  readonly author?: number[];
+  readonly author_exclude?: number[];
+  readonly before?: string;
+  readonly exclude?: number[];
+  readonly include?: number[];
+  readonly offset?: number;
+  readonly order?: 'asc' | 'desc';
+  readonly orderby?:
     | 'author'
     | 'date'
     | 'id'
@@ -24,56 +24,56 @@ type UseMedia = {
     | 'slug'
     | 'include_slugs'
     | 'title';
-  parent?: number[];
-  parent_exclude?: number[];
-  slug?: string[];
-  status?: ['inherit' | 'private' | 'trash'];
+  readonly parent?: number[];
+  readonly parent_exclude?: number[];
+  readonly slug?: string[];
+  readonly status?: ['inherit' | 'private' | 'trash'];
   readonly media_type?: 'image' | 'video' | 'text' | 'application' | 'audio';
   readonly mime_type?: string;
 };
 
 type UseCreateMedia = {
-  date?: string | null;
-  date_gmt?: string | null;
-  slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  title?: object;
-  author?: number;
-  comment_status?: 'open' | 'closed';
-  ping_status?: 'open' | 'closed';
-  meta?: object;
-  template?: string;
-  alt_text?: string;
-  caption?: object;
-  description?: object;
-  post?: number;
+  readonly date?: string | null;
+  readonly date_gmt?: string | null;
+  readonly slug?: string;
+  readonly status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly title?: object;
+  readonly author?: number;
+  readonly comment_status?: 'open' | 'closed';
+  readonly ping_status?: 'open' | 'closed';
+  readonly meta?: object;
+  readonly template?: string;
+  readonly alt_text?: string;
+  readonly caption?: object;
+  readonly description?: object;
+  readonly post?: number;
 };
 
 type UseRetrieveMedia = {
   readonly id?: number;
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 type UseUpdateMedia = {
   readonly id?: number;
-  date?: string | null;
-  date_gmt?: string | null;
-  slug?: string;
-  status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
-  title?: object;
-  author?: number;
-  comment_status?: 'open' | 'closed';
-  ping_status?: 'open' | 'closed';
-  meta?: object;
-  template?: string;
-  alt_text?: string;
-  caption?: object;
-  description?: object;
-  post?: number;
+  readonly date?: string | null;
+  readonly date_gmt?: string | null;
+  readonly slug?: string;
+  readonly status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
+  readonly title?: object;
+  readonly author?: number;
+  readonly comment_status?: 'open' | 'closed';
+  readonly ping_status?: 'open' | 'closed';
+  readonly meta?: object;
+  readonly template?: string;
+  readonly alt_text?: string;
+  readonly caption?: object;
+  readonly description?: object;
+  readonly post?: number;
 };
 
 type UseDeleteMedia = {
-  force?: boolean;
+  readonly force?: boolean;
 };
 
 const endpoint = 'media';

@@ -1,12 +1,12 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseRetrieveTaxonomies = {
-  context?: 'view' | 'embed' | 'edit';
-  type?: string;
+  readonly context?: 'view' | 'embed' | 'edit';
+  readonly type?: string;
 };
 
 type UseRetrieveTaxonomy = {
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 const endpoint = 'taxonomies';

@@ -1,4 +1,4 @@
-export const serializeOptions = (options: any): string => {
+export const serializeOptions = (options: object): string => {
   const string: string[] = [];
 
   for (let key in options) {

@@ -10,7 +10,6 @@ declare type UseCreateBlockRevision = {
     template?: string;
 };
 declare type UseRetrieveBlockRevision = {
-    parent?: number;
     context?: 'view' | 'embed' | 'edit';
 };
 export declare const useRetrieveBlockRevisions: (id: number, options: UseRetrieveBlockRevision) => {

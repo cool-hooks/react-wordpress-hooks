@@ -1,12 +1,12 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseSearch = {
-  context?: 'view' | 'embed';
-  page?: number;
-  per_page?: number;
-  search?: string;
-  type?: 'post';
-  subtype?: ['post' | 'page' | 'any'];
+  readonly context?: 'view' | 'embed';
+  readonly page?: number;
+  readonly per_page?: number;
+  readonly search?: string;
+  readonly type?: 'post';
+  readonly subtype?: ['post' | 'page' | 'any'];
 };
 
 const endpoint = 'search';

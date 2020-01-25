@@ -1,11 +1,11 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseRetrieveStatuses = {
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 type UseRetrieveStatus = {
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 const endpoint = 'statuses';

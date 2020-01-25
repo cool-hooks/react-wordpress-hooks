@@ -1,11 +1,11 @@
 import { useApiRequest } from './useApiRequest';
 
 type UseRetrieveTypes = {
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 type UseRetrieveType = {
-  context?: 'view' | 'embed' | 'edit';
+  readonly context?: 'view' | 'embed' | 'edit';
 };
 
 const endpoint = 'types';
