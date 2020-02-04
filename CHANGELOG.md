@@ -1,5 +1,9 @@
 # react-wordpress-hooks Changelog
 
+## 3.0.0 beta 4 (Soon)
+#### Breaking Changes
+- replaced `WPContext` with `WordPressProvider`
+
 ## 3.0.0 beta 2 / 3.0.0 beta 3 (2020-01-06)
 #### Repository Changes
 - replaced `Webpack` with `Rollup`
