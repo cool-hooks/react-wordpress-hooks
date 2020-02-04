@@ -1,9 +1,9 @@
 ---
 menu: Context
-name: WP Context
+name: WordPress Provider
 ---
 
-## WPContext
+## WordPressProvider
 
 #### Props
 
@@ -17,7 +17,7 @@ name: WP Context
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { WPContext } from 'react-wordpress-hooks';
+import { WordPressProvider } from 'react-wordpress-hooks';
 
 import App from './components';
 
@@ -29,13 +29,13 @@ headers.append(
 );
 
 ReactDOM.render(
-  <WPContext.Provider
-    value={{
+  <WordPressProvider
+    config={{
       url: 'https://example.com',
       headers
     }}
   >
     <App />
-  </WPContext.Provider>
+  </WordPressProvider>
 );
 ```

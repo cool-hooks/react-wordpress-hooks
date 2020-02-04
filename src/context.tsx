@@ -5,7 +5,7 @@ interface Config {
   headers?: Headers;
 }
 
-const WordPressContext = React.createContext<Config>({
+export const WordPressContext = React.createContext<Config>({
   url: '',
   headers: undefined
 });
