@@ -1,5 +1,11 @@
 import React from 'react';
-export declare const WPContext: React.Context<{
+interface Config {
     url: string;
-    headers?: Headers | undefined;
-}>;
+    headers?: Headers;
+}
+export declare const WordPressContext: React.Context<Config>;
+export declare const WordPressProvider: ({ children, config }: {
+    children: React.ReactChildren;
+    config: Config;
+}) => JSX.Element;
+export {};

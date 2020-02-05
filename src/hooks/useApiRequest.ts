@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
-import { WPContext } from '../context';
+import { WordPressContext } from '../context';
 
 import { serializeOptions, passToBody } from '../utils';
 
@@ -15,7 +15,7 @@ export const useApiRequest = ({
   readonly requsetMethod?: string;
   readonly endpoint?: string;
 }) => {
-  const { url, headers } = useContext(WPContext);
+  const { url, headers } = useContext(WordPressContext);
 
   const [data, setData] = useState<object[]>([]);
   const [loading, setLoading] = useState(false);

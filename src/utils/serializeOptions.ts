@@ -1,13 +1,13 @@
-export const serializeOptions = (options: object): string => {
-  const string: string[] = [];
+export const serializeOptions = (options: any): string => {
+  const parts: string[] = [];
 
   for (let key in options) {
     if (options.hasOwnProperty(key)) {
-      string.push(
+      parts.push(
         `${encodeURIComponent(key)}=${encodeURIComponent(options[key])}`
       );
     }
   }
 
-  return string.length > 0 ? '?' + string.join('&') : '';
+  return parts.length > 0 ? '?' + parts.join('&') : '';
 };

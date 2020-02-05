@@ -4,6 +4,7 @@
     "module": "esnext",
     "checkJs": false,
     "declaration": true,
+    "jsx": "react",
     "outDir": "lib",
     "strict": true,
     "moduleResolution": "node",
