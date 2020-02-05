@@ -1,6 +1,6 @@
 # react-wordpress-hooks Changelog
 
-## 3.0.0 beta 4 (Soon)
+## 3.0.0 beta 4 (2020-02-05)
 #### Breaking Changes
 - replaced `WPContext` with `WordPressProvider`
 
