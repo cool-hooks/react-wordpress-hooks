@@ -17,9 +17,9 @@ export const useApiRequest = ({
 }) => {
   const { url, headers } = useContext(WordPressContext);
 
-  const [data, setData] = useState<object[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | object | null>(null);
+  const [data, setData] = useState<object[]>([]);
 
   useEffect(() => {
     async function loadData() {
@@ -87,5 +87,5 @@ export const useApiRequest = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [headers, endpoint, requsetMethod, url]);
 
-  return { data, loading, error };
+  return { loading, error, data };
 };
