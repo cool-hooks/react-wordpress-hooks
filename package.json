@@ -35,23 +35,23 @@
   "homepage": "https://github.com/JB1905/react-wordpress-hooks#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "@types/react": "^16.9.19",
-    "@typescript-eslint/parser": "^2.19.0",
+    "@types/react": "^16.9.23",
+    "@typescript-eslint/parser": "^2.23.0",
     "docz": "^2.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
     "gh-pages": "^2.2.0",
-    "husky": "^4.2.1",
-    "lint-staged": "^10.0.7",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "rollup-plugin-terser": "^5.2.0",
-    "rollup-plugin-typescript2": "^0.25.3",
-    "typescript": "^3.7.5"
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
