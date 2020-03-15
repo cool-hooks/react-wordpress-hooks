@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "10"
+  - '10'
 
 cache:
   directories:
@@ -13,6 +13,7 @@ script:
 
 deploy:
   provider: pages
+  skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: .docz/dist
   on:
