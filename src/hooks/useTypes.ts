@@ -20,7 +20,7 @@ export const useRetrieveType = (type: string, options: UseRetrieveType) => {
   const { data, loading, error } = useApiRequest({
     id: type,
     options,
-    endpoint
+    endpoint,
   });
 
   return { data, loading, error };

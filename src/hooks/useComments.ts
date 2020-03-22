@@ -86,7 +86,7 @@ export const useCreateComment = (options: UseCreateComment) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -102,7 +102,7 @@ export const useUpdateComment = (options: UseUpdateComment) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -113,7 +113,7 @@ export const useDeleteComment = (id: number, options?: UseDeleteComment) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };

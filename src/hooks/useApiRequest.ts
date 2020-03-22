@@ -8,7 +8,7 @@ export const useApiRequest = ({
   id,
   options,
   requsetMethod = 'get',
-  endpoint = ''
+  endpoint = '',
 }: {
   readonly id?: number | string;
   readonly options?: object | number;
@@ -30,7 +30,7 @@ export const useApiRequest = ({
 
         const settings = {
           method: requsetMethod,
-          headers
+          headers,
         };
 
         switch (requsetMethod) {
@@ -49,7 +49,7 @@ export const useApiRequest = ({
           case 'post':
           case 'update': {
             Object.assign(settings, {
-              body: passToBody(options as object)
+              body: passToBody(options as object),
             });
 
             break;
@@ -59,7 +59,7 @@ export const useApiRequest = ({
             query.push(`/${id}`);
 
             Object.assign(settings, {
-              body: passToBody(options as object)
+              body: passToBody(options as object),
             });
 
             break;

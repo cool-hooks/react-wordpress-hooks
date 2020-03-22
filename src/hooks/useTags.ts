@@ -59,7 +59,7 @@ export const useCreateTag = (options: UseCreateTag) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -75,7 +75,7 @@ export const useUpdateTag = (options: UseUpdateTag) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -86,7 +86,7 @@ export const useDeleteTag = (id: number, options?: UseDeleteTag) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };

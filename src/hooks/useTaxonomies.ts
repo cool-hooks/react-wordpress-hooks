@@ -24,7 +24,7 @@ export const useRetrieveTaxonomy = (
   const { data, loading, error } = useApiRequest({
     id: taxonomy,
     options,
-    endpoint
+    endpoint,
   });
 
   return { data, loading, error };

@@ -85,7 +85,7 @@ export const useCreateBlock = (options: UseCreateBlock) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -101,7 +101,7 @@ export const useUpdateBlock = (options: UseUpdateBlock) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -112,7 +112,7 @@ export const useDeleteBlock = (id: number, options?: UseDeleteBlock) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };

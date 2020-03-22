@@ -54,7 +54,7 @@ const endpoint = 'categories';
 export const useCategories = (options?: UseCategories | number | number[]) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint
+    endpoint,
   });
 
   return { data, loading, error };
@@ -64,7 +64,7 @@ export const useCreateCategory = (options: UseCreateCategory) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -73,7 +73,7 @@ export const useCreateCategory = (options: UseCreateCategory) => {
 export const useRetrieveCategory = (options: UseRetrieveCategory) => {
   const { data, loading, error } = useApiRequest({
     options,
-    endpoint
+    endpoint,
   });
 
   return { data, loading, error };
@@ -83,7 +83,7 @@ export const useUpdateCategory = (options: UseUpdateCategory) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -94,7 +94,7 @@ export const useDeleteCategory = (id: number, options?: UseDeleteCategory) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };

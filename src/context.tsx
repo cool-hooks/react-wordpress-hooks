@@ -7,12 +7,12 @@ interface Config {
 
 export const WordPressContext = React.createContext<Config>({
   url: '',
-  headers: undefined
+  headers: undefined,
 });
 
 export const WordPressProvider = ({
   children,
-  config
+  config,
 }: {
   children: React.ReactChildren;
   config: Config;

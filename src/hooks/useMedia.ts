@@ -88,7 +88,7 @@ export const useCreateMedia = (options: UseCreateMedia) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -104,7 +104,7 @@ export const useUpdateMedia = (options: UseUpdateMedia) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -115,7 +115,7 @@ export const useDeleteMedia = (id: number, options?: UseDeleteMedia) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };

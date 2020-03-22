@@ -106,7 +106,7 @@ export const useCreatePage = (options: UseCreatePage) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -122,7 +122,7 @@ export const useUpdatePage = (options: UseUpdatePage) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -133,7 +133,7 @@ export const useDeletePage = (id: number, options?: UseDeletePage) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };

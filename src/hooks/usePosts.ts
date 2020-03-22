@@ -132,7 +132,7 @@ export const useCreatePost = (options: UseCreatePost) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -148,7 +148,7 @@ export const useUpdatePost = (options: UseUpdatePost) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -159,7 +159,7 @@ export const useDeletePost = (id: number, options?: UseDeletePost) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };

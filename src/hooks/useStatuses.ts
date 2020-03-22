@@ -23,7 +23,7 @@ export const useRetrieveStatus = (
   const { data, loading, error } = useApiRequest({
     id: status,
     options,
-    endpoint
+    endpoint,
   });
 
   return { data, loading, error };

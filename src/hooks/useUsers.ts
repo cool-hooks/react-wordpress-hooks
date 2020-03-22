@@ -78,7 +78,7 @@ export const useCreateUser = (options: UseCreateUser) => {
   const { data, loading, error } = useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -95,7 +95,7 @@ export const useUpdateUser = (id: string, options: UseUpdateUser) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'post'
+    requsetMethod: 'post',
   });
 
   return { data, loading, error };
@@ -106,7 +106,7 @@ export const useDeleteUser = (id: string, options?: UseDeleteUser) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete'
+    requsetMethod: 'delete',
   });
 
   return { data, loading, error };
