@@ -1,4 +1,4 @@
-export declare const useApiRequest: ({ id, options, requsetMethod, endpoint }: {
+export declare const useApiRequest: ({ id, options, requsetMethod, endpoint, }: {
     readonly id?: string | number | undefined;
     readonly options?: number | object | undefined;
     readonly requsetMethod?: string | undefined;

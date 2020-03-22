@@ -4,7 +4,7 @@ interface Config {
     headers?: Headers;
 }
 export declare const WordPressContext: React.Context<Config>;
-export declare const WordPressProvider: ({ children, config }: {
+export declare const WordPressProvider: ({ children, config, }: {
     children: React.ReactChildren;
     config: Config;
 }) => JSX.Element;
