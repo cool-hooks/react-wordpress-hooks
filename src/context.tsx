@@ -10,13 +10,9 @@ export const WordPressContext = React.createContext<Config>({
   headers: undefined,
 });
 
-export const WordPressProvider = ({
-  children,
-  config,
-}: {
-  children: React.ReactChildren;
+export const WordPressProvider: React.FC<{
   config: Config;
-}) => (
+}> = ({ children, config }) => (
   <WordPressContext.Provider value={config}>
     {children}
   </WordPressContext.Provider>
