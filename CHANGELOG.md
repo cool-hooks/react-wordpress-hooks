@@ -1,5 +1,9 @@
 # react-wordpress-hooks Changelog
 
+## 3.0.2 (2020-04-19)
+#### Repository Changes
+- updated repository URLs
+
 ## 3.0.1 (2020-04-11)
 #### Improvement
 - added missing types
