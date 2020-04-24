@@ -5,5 +5,5 @@ export default {
       primary: '#0073aa',
     },
   },
-  files: 'docs/*.mdx',
+  files: 'docs/*.md',
 };
