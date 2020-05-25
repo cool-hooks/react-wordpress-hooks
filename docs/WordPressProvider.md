@@ -32,7 +32,7 @@ ReactDOM.render(
   <WordPressProvider
     config={{
       url: 'https://example.com',
-      headers
+      headers,
     }}
   >
     <App />
