@@ -9,7 +9,7 @@ type UseWordPress = {
 export const useWordPress = ({
   endpoint,
   options,
-  requsetMethod = 'get',
+  requsetMethod,
 }: UseWordPress) => {
   const { data, loading, error } = useApiRequest({
     endpoint,
