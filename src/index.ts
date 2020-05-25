@@ -17,4 +17,6 @@ export * from './hooks/useSettings';
 export * from './hooks/useThemes';
 export * from './hooks/useSearch';
 
+export * from './hooks/useWordPress';
+
 export { WordPressProvider } from './context';
