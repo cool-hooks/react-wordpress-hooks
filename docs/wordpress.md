@@ -3,11 +3,13 @@ route: /hooks/wordpress
 menu: Hooks
 ---
 
-## 
+## Custom Endpoints
 
 ### useWordPress
 
-Available options
+This hook allows you to use WordPress REST API custom endpoints or create manual requests to WordPress REST API
+
+[Read more about custom enpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/)
 
 ```jsx
 const { data, loading, error } = useWordPress({
