@@ -7,7 +7,7 @@ menu: Hooks
 
 ### useWordPress
 
-This hook allows you to use WordPress REST API custom endpoints or create manual requests to WordPress REST API
+This hook allows you to use custom endpoints or create manual requests to WordPress REST API
 
 [Read more about custom enpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/)
 
