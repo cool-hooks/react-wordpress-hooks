@@ -13,7 +13,7 @@ This hook allows you to use custom endpoints or create manual requests to WordPr
 
 ```jsx
 const { data, loading, error } = useWordPress({
-  // endpoint (e.g.: slides/2)
+  // endpoint (e.g.: slides)
   // options (request option params)
   // requsetMethod: (e.g.: GET, POST)
 });
