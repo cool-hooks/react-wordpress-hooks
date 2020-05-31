@@ -7,7 +7,7 @@ menu: Hooks
 
 ### useBlocks
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#list-wp_blocks)
+[Available options](https://developer.wordpress.org/rest-api/reference/blocks/#list-wp_blocks)
 
 Default query (latest 10 blocks):
 
@@ -37,7 +37,7 @@ const { data, loading, error } = useComments(/* array of block ids */);
 
 ### useCreateBlock
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#create-a-wp_block)
+[Available options](https://developer.wordpress.org/rest-api/reference/blocks/#create-a-wp_block)
 
 ```jsx
 const { data, loading, error } = useCreateBlock({
@@ -47,7 +47,7 @@ const { data, loading, error } = useCreateBlock({
 
 ### useRetrieveBlock
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#retrieve-a-wp_block)
+[Available options](https://developer.wordpress.org/rest-api/reference/blocks/#retrieve-a-wp_block)
 
 ```jsx
 const { data, loading, error } = useRetrieveBlock({
@@ -57,7 +57,7 @@ const { data, loading, error } = useRetrieveBlock({
 
 ### useUpdateBlock
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#update-a-wp_block)
+[Available options](https://developer.wordpress.org/rest-api/reference/blocks/#update-a-wp_block)
 
 ```jsx
 const { data, loading, error } = useUpdateBlock({
@@ -67,7 +67,7 @@ const { data, loading, error } = useUpdateBlock({
 
 ### useDeleteBlock
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_blocks/#delete-a-wp_block)
+[Available options](https://developer.wordpress.org/rest-api/reference/blocks/#delete-a-wp_block)
 
 ```jsx
 const { data, loading, error } = useDeleteBlock(
