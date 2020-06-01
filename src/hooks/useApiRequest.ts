@@ -79,6 +79,7 @@ export const useApiRequest = ({
         }
       } catch (err) {
         setLoading(false);
+
         setError(err);
       }
     }

@@ -8,7 +8,7 @@ menu: Hooks
 
 ### useRetrieveBlockRevisions
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_block-revisions/#retrieve-a-wp_block-revision)
+[Available options](https://developer.wordpress.org/rest-api/reference/block-revisions/#retrieve-a-wp_block-revision)
 
 ```jsx
 const { data, loading, error } = useRetrieveBlockRevisions(
@@ -19,7 +19,7 @@ const { data, loading, error } = useRetrieveBlockRevisions(
 
 ### useCreateBlockRevisions
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_block-revisions/#create-a-wp_block-revision)
+[Available options](https://developer.wordpress.org/rest-api/reference/block-revisions/#create-a-wp_block-revision)
 
 ```jsx
 const { data, loading, error } = useCreateBlockRevisions(
@@ -30,7 +30,7 @@ const { data, loading, error } = useCreateBlockRevisions(
 
 ### useRetrieveBlockRevision
 
-[Available options](https://developer.wordpress.org/rest-api/reference/wp_block-revisions/#retrieve-a-wp_block-revision-2)
+[Available options](https://developer.wordpress.org/rest-api/reference/block-revisions/#retrieve-a-wp_block-revision-2)
 
 ```jsx
 const { data, loading, error } = useRetrieveBlockRevision(

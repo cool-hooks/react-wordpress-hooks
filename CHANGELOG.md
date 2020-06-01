@@ -1,5 +1,11 @@
 # react-wordpress-hooks Changelog
 
+## 3.1.0 (2020-06-01)
+
+#### New Feature
+
+- added `useWordPress` hook
+
 ## 3.0.2 (2020-04-19)
 
 #### Repository Changes
