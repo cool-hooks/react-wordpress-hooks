@@ -1,6 +1,6 @@
 # react-wordpress-hooks Changelog
 
-## 3.1.0 (Soon)
+## 3.1.0 (2020-06-01)
 
 #### New Feature
 
