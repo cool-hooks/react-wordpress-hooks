@@ -1,4 +1,5 @@
 ---
+name: WordPress
 route: /hooks/wordpress
 menu: Hooks
 ---
