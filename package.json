@@ -8,41 +8,43 @@
   "module": "lib/react-wordpress-hooks.esm.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "release": "rimraf lib/* && npm run prettier && npm run lint && npm run build",
+    "prepack": "npm run clean && npm run prettier && npm run lint && npm run build",
+    "clean": "rimraf lib/*",
     "build": "rollup -c",
     "watch": "npm run build -- --watch",
     "deploy": "gh-pages -d .docz/dist",
     "lint": "eslint 'src/**/*.{tsx,ts}' --fix",
     "prettier": "prettier --write 'src/**/*.{tsx,ts}'",
     "docz:dev": "docz dev",
-    "docz:build": "docz build --base /react-wordpress-hooks"
+    "docz:build": "docz build --base /react-wordpress-hooks",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/cool-hooks/react-wordpress-hooks.git"
   },
   "keywords": [
-    "WordPress",
+    "wordpress",
     "hooks",
-    "React",
+    "react",
     "library",
-    "REST",
-    "API"
+    "rest",
+    "api"
   ],
   "bugs": {
     "url": "https://github.com/cool-hooks/react-wordpress-hooks/issues"
   },
   "homepage": "https://github.com/cool-hooks/react-wordpress-hooks#readme",
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^8.1.0",
-    "@types/react": "^16.9.41",
-    "@typescript-eslint/parser": "^3.4.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@types/react": "^16.9.45",
+    "@typescript-eslint/parser": "^3.8.0",
     "docz": "^2.3.1",
-    "eslint": "^7.3.1",
+    "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "gh-pages": "^3.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
@@ -50,8 +52,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "typescript": "^3.9.5"
+    "rollup-plugin-typescript2": "^0.27.2",
+    "typescript": "^3.9.7",
+    "semantic-release": "^17.1.1"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
