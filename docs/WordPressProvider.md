@@ -19,7 +19,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { WordPressProvider } from 'react-wordpress-hooks';
 
-import App from './components/App';
+import App from './App';
 
 const headers = new Headers();
 
