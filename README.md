@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/react-wordpress-hooks?style=flat-square)](https://www.npmjs.com/package/react-wordpress-hooks)
 [![NPM downloads](http://img.shields.io/npm/dm/react-wordpress-hooks?style=flat-square)](https://www.npmjs.com/package/react-wordpress-hooks)
 [![NPM license](https://img.shields.io/npm/l/react-wordpress-hooks?style=flat-square)](https://www.npmjs.com/package/react-wordpress-hooks)
-[![Travis](https://img.shields.io/travis/cool-hooks/react-wordpress-hooks?style=flat-square)](https://travis-ci.org/cool-hooks/react-wordpress-hooks)
+[![Travis](https://img.shields.io/travis/cool-hooks/react-wordpress-hooks/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-wordpress-hooks)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-wordpress-hooks?style=flat-square)](https://bundlephobia.com/result?p=react-wordpress-hooks)
 
 ## About
