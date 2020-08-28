@@ -8,26 +8,29 @@
   "module": "lib/react-wordpress-hooks.esm.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "release": "rimraf lib/* && npm run prettier && npm run lint && npm run build",
+    "prepack": "npm run clean && npm run prettier && npm run lint && npm run build",
+    "clean": "rimraf lib/*",
     "build": "rollup -c",
     "watch": "npm run build -- --watch",
     "deploy": "gh-pages -d .docz/dist",
     "lint": "eslint 'src/**/*.{tsx,ts}' --fix",
     "prettier": "prettier --write 'src/**/*.{tsx,ts}'",
     "docz:dev": "docz dev",
-    "docz:build": "docz build --base /react-wordpress-hooks"
+    "docz:build": "docz build --base /react-wordpress-hooks",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/cool-hooks/react-wordpress-hooks.git"
   },
   "keywords": [
-    "WordPress",
+    "wordpress",
     "hooks",
-    "React",
+    "react",
     "library",
-    "REST",
-    "API"
+    "rest",
+    "api"
   ],
   "bugs": {
     "url": "https://github.com/cool-hooks/react-wordpress-hooks/issues"
@@ -35,8 +38,9 @@
   "homepage": "https://github.com/cool-hooks/react-wordpress-hooks#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@types/react": "^16.9.46",
-    "@typescript-eslint/parser": "^3.9.1",
+    "@types/react": "^16.9.48",
+    "@typescript-eslint/parser": "^3.10.1",
+    "cz-conventional-changelog": "3.3.0",
     "docz": "^2.3.1",
     "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
@@ -45,16 +49,22 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "gh-pages": "^3.1.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.2",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2",
+    "semantic-release": "^17.1.1"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "husky": {
     "hooks": {
