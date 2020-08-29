@@ -10,6 +10,10 @@
 
 This library helps you use WordPress RESTful API in React app. It provides hooks for all API endpoints and Context to simply access data in every component.
 
+### Similar Projects
+
+- [Gutenberg Packages](https://github.com/WordPress/gutenberg/tree/master/packages/)
+
 ## How to Install
 
 First, install the library in your project by npm:
