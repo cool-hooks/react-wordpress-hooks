@@ -1,7 +1,6 @@
 language: node_js
 
-node_js:
-  - '10'
+node_js: node
 
 cache:
   directories:
@@ -10,6 +9,15 @@ cache:
 script:
   - yarn install
   - yarn docz:build
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: yarn semantic-release
 
 deploy:
   provider: pages
