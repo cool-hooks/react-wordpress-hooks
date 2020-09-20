@@ -36,6 +36,7 @@ ReactDOM.render(
     }}
   >
     <App />
-  </WordPressProvider>
+  </WordPressProvider>,
+  document.getElementById('root')
 );
 ```
