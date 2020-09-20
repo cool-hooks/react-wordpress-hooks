@@ -25,4 +25,3 @@ jobs:
           local_dir: .docz/dist
           on:
             branch: master
-  
