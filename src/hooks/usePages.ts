@@ -97,44 +97,34 @@ type UseDeletePage = {
 const endpoint = 'pages';
 
 export const usePages = (options?: UsePages | number | number[]) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useCreatePage = (options: UseCreatePage) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrievePage = (options: UseRetrievePage) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useUpdatePage = (options: UseUpdatePage) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useDeletePage = (id: number, options?: UseDeletePage) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
     requsetMethod: 'delete',
   });
-
-  return { data, loading, error };
 };

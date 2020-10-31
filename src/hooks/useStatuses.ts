@@ -11,20 +11,16 @@ type UseRetrieveStatus = {
 const endpoint = 'statuses';
 
 export const useRetrieveStatuses = (options: UseRetrieveStatuses) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useRetrieveStatus = (
   status: string,
   options: UseRetrieveStatus
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id: status,
     options,
     endpoint,
   });
-
-  return { data, loading, error };
 };

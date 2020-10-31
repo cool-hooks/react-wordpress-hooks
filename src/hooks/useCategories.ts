@@ -52,50 +52,40 @@ type UseDeleteCategory = {
 const endpoint = 'categories';
 
 export const useCategories = (options?: UseCategories | number | number[]) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
   });
-
-  return { data, loading, error };
 };
 
 export const useCreateCategory = (options: UseCreateCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrieveCategory = (options: UseRetrieveCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
   });
-
-  return { data, loading, error };
 };
 
 export const useUpdateCategory = (options: UseUpdateCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useDeleteCategory = (id: number, options?: UseDeleteCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
     requsetMethod: 'delete',
   });
-
-  return { data, loading, error };
 };

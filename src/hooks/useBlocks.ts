@@ -76,44 +76,34 @@ type UseDeleteBlock = {
 const endpoint = 'blocks';
 
 export const useBlocks = (options?: UseBlocks) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useCreateBlock = (options: UseCreateBlock) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrieveBlock = (options: UseRetrieveBlock) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useUpdateBlock = (options: UseUpdateBlock) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useDeleteBlock = (id: number, options?: UseDeleteBlock) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
     requsetMethod: 'delete',
   });
-
-  return { data, loading, error };
 };

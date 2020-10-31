@@ -79,44 +79,34 @@ type UseDeleteMedia = {
 const endpoint = 'media';
 
 export const useMedia = (options?: UseMedia | number | number[]) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useCreateMedia = (options: UseCreateMedia) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrieveMedia = (options: UseRetrieveMedia) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useUpdateMedia = (options: UseUpdateMedia) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useDeleteMedia = (id: number, options?: UseDeleteMedia) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
     requsetMethod: 'delete',
   });
-
-  return { data, loading, error };
 };

@@ -123,44 +123,34 @@ type UseDeletePost = {
 const endpoint = 'posts';
 
 export const usePosts = (options?: UsePosts | number | number[]) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useCreatePost = (options: UseCreatePost) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrievePost = (options: UseRetrievePost) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useUpdatePost = (options: UseUpdatePost) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useDeletePost = (id: number, options?: UseDeletePost) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
     requsetMethod: 'delete',
   });
-
-  return { data, loading, error };
 };

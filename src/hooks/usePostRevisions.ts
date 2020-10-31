@@ -69,25 +69,21 @@ export const usePostRevisions = (
   parent: number,
   options?: UsePostRevisions
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint: `${endpoint}/${parent}/revisions`,
   });
-
-  return { data, loading, error };
 };
 
 export const useCreatePostRevision = (
   parent: number,
   options: UseCreatePostRevision
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint: `${endpoint}/${parent}/autosaves`,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrievePostRevision = (
@@ -95,12 +91,10 @@ export const useRetrievePostRevision = (
   type: 'revisions' | 'autosaves',
   options: UseRetrievePostRevision
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint: `${endpoint}/${parent}/${type}`,
   });
-
-  return { data, loading, error };
 };
 
 export const useDeletePostRevision = (
@@ -108,12 +102,10 @@ export const useDeletePostRevision = (
   id: number,
   options?: UseDeletePostRevision
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint: `${endpoint}/${parent}/revisions`,
     requsetMethod: 'delete',
   });
-
-  return { data, loading, error };
 };

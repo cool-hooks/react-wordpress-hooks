@@ -12,10 +12,8 @@ export const useRetrieveBlockRenderer = (
   name: string,
   options: UseRetrieveBlockRenderer
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint: `${endpoint}/${name}`,
   });
-
-  return { data, loading, error };
 };

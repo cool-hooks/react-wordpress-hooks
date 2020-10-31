@@ -19,17 +19,13 @@ type UseUpdateSettings = {
 const endpoint = 'settings';
 
 export const useSettings = () => {
-  const { data, loading, error } = useApiRequest({ endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ endpoint });
 };
 
 export const useUpdateSetting = (options: UseUpdateSettings) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
     requsetMethod: 'post',
   });
-
-  return { data, loading, error };
 };

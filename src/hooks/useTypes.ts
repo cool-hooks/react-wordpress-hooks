@@ -11,17 +11,13 @@ type UseRetrieveType = {
 const endpoint = 'types';
 
 export const useRetrieveTypes = (options: UseRetrieveTypes) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useRetrieveType = (type: string, options: UseRetrieveType) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id: type,
     options,
     endpoint,
   });
-
-  return { data, loading, error };
 };
