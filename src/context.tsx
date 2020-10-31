@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface Config {
-  url: string;
-  headers?: Headers;
+  readonly url: string;
+  readonly headers?: Headers;
 }
 
 export const WordPressContext = React.createContext<Config>({
@@ -10,9 +10,12 @@ export const WordPressContext = React.createContext<Config>({
   headers: undefined,
 });
 
-export const WordPressProvider: React.FC<{
-  config: Config;
-}> = ({ children, config }) => (
+interface Props {
+  readonly children: React.ReactNode;
+  readonly config: Config;
+}
+
+export const WordPressProvider = ({ children, config }: Props) => (
   <WordPressContext.Provider value={config}>
     {children}
   </WordPressContext.Provider>
