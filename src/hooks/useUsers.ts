@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseUsers = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -76,7 +78,7 @@ export const useCreateUser = (options: UseCreateUser) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -89,7 +91,7 @@ export const useUpdateUser = (id: string, options: UseUpdateUser) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -98,6 +100,6 @@ export const useDeleteUser = (id: string, options?: UseDeleteUser) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };

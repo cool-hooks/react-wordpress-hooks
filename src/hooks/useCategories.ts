@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseCategories = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -62,7 +64,7 @@ export const useCreateCategory = (options: UseCreateCategory) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -77,7 +79,7 @@ export const useUpdateCategory = (options: UseUpdateCategory) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -86,6 +88,6 @@ export const useDeleteCategory = (id: number, options?: UseDeleteCategory) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };

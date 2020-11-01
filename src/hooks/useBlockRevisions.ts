@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseCreateBlockRevision = {
   parent?: number;
   date?: string | null;
@@ -35,7 +37,7 @@ export const useCreateBlockRevision = (
   return useApiRequest({
     options,
     endpoint: `${endpoint}/${id}/autosaves`,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 

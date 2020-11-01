@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UsePosts = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -130,7 +132,7 @@ export const useCreatePost = (options: UseCreatePost) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -142,7 +144,7 @@ export const useUpdatePost = (options: UseUpdatePost) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -151,6 +153,6 @@ export const useDeletePost = (id: number, options?: UseDeletePost) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };

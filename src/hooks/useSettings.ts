@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseUpdateSettings = {
   readonly title?: string;
   readonly description?: string;
@@ -26,6 +28,6 @@ export const useUpdateSetting = (options: UseUpdateSettings) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };

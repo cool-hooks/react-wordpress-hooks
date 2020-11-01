@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UsePostRevisions = {
   readonly parent?: number;
   readonly context?: 'view' | 'embed' | 'edit';
@@ -82,7 +84,7 @@ export const useCreatePostRevision = (
   return useApiRequest({
     options,
     endpoint: `${endpoint}/${parent}/autosaves`,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -106,6 +108,6 @@ export const useDeletePostRevision = (
     id,
     options,
     endpoint: `${endpoint}/${parent}/revisions`,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };

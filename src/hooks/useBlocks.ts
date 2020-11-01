@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseBlocks = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -83,7 +85,7 @@ export const useCreateBlock = (options: UseCreateBlock) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -95,7 +97,7 @@ export const useUpdateBlock = (options: UseUpdateBlock) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -104,6 +106,6 @@ export const useDeleteBlock = (id: number, options?: UseDeleteBlock) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };

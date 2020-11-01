@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseTags = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -57,7 +59,7 @@ export const useCreateTag = (options: UseCreateTag) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -69,7 +71,7 @@ export const useUpdateTag = (options: UseUpdateTag) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -78,6 +80,6 @@ export const useDeleteTag = (id: number, options?: UseDeleteTag) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };

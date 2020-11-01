@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseComments = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -84,7 +86,7 @@ export const useCreateComment = (options: UseCreateComment) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -96,7 +98,7 @@ export const useUpdateComment = (options: UseUpdateComment) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -105,6 +107,6 @@ export const useDeleteComment = (id: number, options?: UseDeleteComment) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };

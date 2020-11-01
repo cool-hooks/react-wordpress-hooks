@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseMedia = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -86,7 +88,7 @@ export const useCreateMedia = (options: UseCreateMedia) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -98,7 +100,7 @@ export const useUpdateMedia = (options: UseUpdateMedia) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
 };
 
@@ -107,6 +109,6 @@ export const useDeleteMedia = (id: number, options?: UseDeleteMedia) => {
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
 };
