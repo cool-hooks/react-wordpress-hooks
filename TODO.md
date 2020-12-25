@@ -1,5 +1,0 @@
-- Add HOCs
-- Add tests
-- Show error ERR_HTTP2_PROTOCOL_ERROR when use basic auth
-- Add support for multiple WordPress APIs
-- Return respone header with the data
