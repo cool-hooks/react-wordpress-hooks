@@ -1,6 +1,4 @@
-export const serializeOptions = <T extends Record<string, string>>(
-  options: T
-) => {
+export const serializeOptions = (options: object) => {
   const parts: string[] = [];
 
   Object.entries(options).map(([key, value]) => {

@@ -1,4 +1,4 @@
-export const passToBody = <T extends Record<string, string>>(options: T) => {
+export const passToBody = (options: object) => {
   const urlencoded = new URLSearchParams();
 
   Object.entries(options).map(([key, value]) => {
