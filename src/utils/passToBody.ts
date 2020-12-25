@@ -1,15 +1,14 @@
 export const passToBody = (options: object) => {
+  // TODO
   if (!options) {
     return options;
   }
 
-  const params = Object.entries(options);
-
   const urlencoded = new URLSearchParams();
 
-  for (let [key, value] of params) {
+  Object.entries(options).map(([key, value]) => {
     urlencoded.append(key, value);
-  }
+  });
 
   return urlencoded;
 };

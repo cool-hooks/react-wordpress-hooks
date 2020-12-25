@@ -17,6 +17,8 @@ interface WPResponse {
   status?: number;
   statusText?: string;
   headers?: Headers;
+  // config: any;
+  // request: any;
 }
 
 export const useApiRequest = ({
@@ -25,7 +27,7 @@ export const useApiRequest = ({
   requsetMethod = RequestMethod.Get,
   endpoint = '',
 }: Params) => {
-  const { url, headers } = useContext(WordPressContext);
+  const { url, headers } = useContext(WordPressContext); // TODO check if provider added (safeContext)
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | object | undefined>(undefined);
@@ -60,7 +62,7 @@ export const useApiRequest = ({
             } else if (Array.isArray(options)) {
               query.push(`?include=${options.join(',')}`);
             } else {
-              query.push(serializeOptions(options));
+              query.push(serializeOptions(options as any));
             }
 
             break;
