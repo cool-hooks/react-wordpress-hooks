@@ -1,4 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
+import { useSafeContext } from 'react-safe-context-hooks';
 
 import { WordPressContext } from '../context';
 
@@ -17,8 +18,6 @@ interface WPResponse {
   status?: number;
   statusText?: string;
   headers?: Headers;
-  // config: any;
-  // request: any;
 }
 
 export const useApiRequest = ({
@@ -27,7 +26,7 @@ export const useApiRequest = ({
   requsetMethod = RequestMethod.Get,
   endpoint = '',
 }: Params) => {
-  const { url, headers } = useContext(WordPressContext); // TODO check if provider added (safeContext)
+  const { url, headers } = useSafeContext(WordPressContext);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | object | undefined>(undefined);
@@ -62,7 +61,7 @@ export const useApiRequest = ({
             } else if (Array.isArray(options)) {
               query.push(`?include=${options.join(',')}`);
             } else {
-              query.push(serializeOptions(options as any));
+              query.push(serializeOptions(options));
             }
 
             break;

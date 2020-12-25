@@ -55,8 +55,8 @@
     "react-dom": "^16.13.1",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
-    "typescript": "^4.0.5",
-    "semantic-release": "^17.2.2"
+    "semantic-release": "^17.2.2",
+    "typescript": "^4.0.5"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
@@ -76,5 +76,8 @@
       "npm run prettier",
       "npm run lint"
     ]
+  },
+  "dependencies": {
+    "react-safe-context-hooks": "^1.0.0"
   }
 }
