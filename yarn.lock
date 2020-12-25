@@ -13508,6 +13508,11 @@ react-resize-detector@^4.2.1:
     raf-schd "^4.0.2"
     resize-observer-polyfill "^1.5.1"
 
+react-safe-context-hooks@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-safe-context-hooks/-/react-safe-context-hooks-1.0.0.tgz#585e9d327ce5cdeafeb8e3d440e00340fafcaf5e"
+  integrity sha512-al9avSJm9qV5Gz+T2qf0SCCV04YHyRkDQQo3miTqea2bR3oI6yb67OMhNtr0Cc5ei+7R1dv+BX3bcyFB7n4alQ==
+
 react-simple-code-editor@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.10.0.tgz#73e7ac550a928069715482aeb33ccba36efe2373"

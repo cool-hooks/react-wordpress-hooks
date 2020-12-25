@@ -36,6 +36,9 @@
     "url": "https://github.com/cool-hooks/react-wordpress-hooks/issues"
   },
   "homepage": "https://github.com/cool-hooks/react-wordpress-hooks#readme",
+  "dependencies": {
+    "react-safe-context-hooks": "^1.0.0"
+  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@types/react": "^17.0.0",

@@ -1,16 +1,9 @@
-// TODO clean up
-export const serializeOptions = <T extends Record<string, string>>(
-  options: T
-): string => {
+export const serializeOptions = (options: object) => {
   const parts: string[] = [];
 
-  for (const key in options) {
-    if (options.hasOwnProperty(key)) {
-      parts.push(
-        `${encodeURIComponent(key)}=${encodeURIComponent(options[key])}`
-      );
-    }
-  }
+  Object.entries(options).map(([key, value]) => {
+    parts.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+  });
 
-  return parts.length > 0 ? '?' + parts.join('&') : '';
+  return parts.length > 0 ? `?${parts.join('&')}` : '';
 };
