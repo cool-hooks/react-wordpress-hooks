@@ -60,7 +60,7 @@ export const useApiRequest = ({
             } else if (Array.isArray(options)) {
               query.push(`?include=${options.join(',')}`);
             } else {
-              query.push(serializeOptions(options));
+              query.push(serializeOptions(options as any));
             }
 
             break;
