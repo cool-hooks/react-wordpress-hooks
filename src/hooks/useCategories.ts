@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseCategories = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -52,50 +54,40 @@ type UseDeleteCategory = {
 const endpoint = 'categories';
 
 export const useCategories = (options?: UseCategories | number | number[]) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
   });
-
-  return { data, loading, error };
 };
 
 export const useCreateCategory = (options: UseCreateCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrieveCategory = (options: UseRetrieveCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
   });
-
-  return { data, loading, error };
 };
 
 export const useUpdateCategory = (options: UseUpdateCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };
 
 export const useDeleteCategory = (id: number, options?: UseDeleteCategory) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
-
-  return { data, loading, error };
 };

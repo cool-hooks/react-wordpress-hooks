@@ -11,7 +11,5 @@ type UseThemes = {
 const endpoint = 'themes';
 
 export const useThemes = (options?: UseThemes) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };

@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseUsers = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -69,45 +71,35 @@ type UseDeleteUser = {
 const endpoint = 'users';
 
 export const useUsers = (options?: UseUsers | number | number[]) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useCreateUser = (options: UseCreateUser) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrieveUser = (id: string, options: UseRetrieveUser) => {
-  const { data, loading, error } = useApiRequest({ id, options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ id, options, endpoint });
 };
 
 export const useUpdateUser = (id: string, options: UseUpdateUser) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };
 
 export const useDeleteUser = (id: string, options?: UseDeleteUser) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
-
-  return { data, loading, error };
 };

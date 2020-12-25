@@ -4,22 +4,38 @@ import { WordPressContext } from '../context';
 
 import { serializeOptions, passToBody } from '../utils';
 
-export const useApiRequest = ({
-  id,
-  options,
-  requsetMethod = 'get',
-  endpoint = '',
-}: {
+import { RequestMethod } from '../enums/RequestMethod';
+
+interface Params {
   readonly id?: number | string;
   readonly options?: object | number;
   readonly requsetMethod?: string;
   readonly endpoint?: string;
-}) => {
+}
+
+interface WPResponse {
+  status?: number;
+  statusText?: string;
+  headers?: Headers;
+}
+
+export const useApiRequest = ({
+  id,
+  options,
+  requsetMethod = RequestMethod.Get,
+  endpoint = '',
+}: Params) => {
   const { url, headers } = useContext(WordPressContext);
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | object | null>(null);
+  const [error, setError] = useState<string | object | undefined>(undefined);
   const [data, setData] = useState<object[]>([]);
+
+  const [response, setResponse] = useState<WPResponse | undefined>({
+    status: undefined,
+    statusText: undefined,
+    headers: undefined,
+  });
 
   useEffect(() => {
     async function loadData() {
@@ -33,34 +49,42 @@ export const useApiRequest = ({
           headers,
         };
 
+        if (!options) {
+          return;
+        }
+
         switch (requsetMethod) {
-          case 'get': {
+          case RequestMethod.Get: {
             if (typeof options === 'number') {
               query.push(`/${options}`);
             } else if (Array.isArray(options)) {
               query.push(`?include=${options.join(',')}`);
             } else {
-              query.push(serializeOptions(options as object));
+              query.push(serializeOptions(options as any));
             }
 
             break;
           }
 
-          case 'post':
-          case 'update': {
-            Object.assign(settings, {
-              body: passToBody(options as object),
-            });
+          case RequestMethod.Post:
+          case RequestMethod.Update: {
+            if (typeof options === 'object') {
+              Object.assign(settings, {
+                body: passToBody(options),
+              });
+            }
 
             break;
           }
 
-          case 'delete': {
-            query.push(`/${id}`);
+          case RequestMethod.Delete: {
+            if (typeof options === 'object') {
+              query.push(`/${id}`);
 
-            Object.assign(settings, {
-              body: passToBody(options as object),
-            });
+              Object.assign(settings, {
+                body: passToBody(options),
+              });
+            }
 
             break;
           }
@@ -68,14 +92,20 @@ export const useApiRequest = ({
 
         const res = await fetch(query.join(''), settings);
 
-        const response = await res.json();
+        const parsedResponse = await res.json();
 
         setLoading(false);
 
-        if (response.code) {
-          setError(response);
+        setResponse({
+          status: res.status,
+          statusText: res.statusText,
+          headers: res.headers,
+        });
+
+        if (parsedResponse.code) {
+          setError(parsedResponse);
         } else {
-          setData(response);
+          setData(parsedResponse);
         }
       } catch (err) {
         setLoading(false);
@@ -88,5 +118,5 @@ export const useApiRequest = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [headers, endpoint, requsetMethod, url]);
 
-  return { loading, error, data };
+  return { ...response, loading, error, data };
 };

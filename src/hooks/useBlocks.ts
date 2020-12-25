@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseBlocks = {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -76,44 +78,34 @@ type UseDeleteBlock = {
 const endpoint = 'blocks';
 
 export const useBlocks = (options?: UseBlocks) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useCreateBlock = (options: UseCreateBlock) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrieveBlock = (options: UseRetrieveBlock) => {
-  const { data, loading, error } = useApiRequest({ options, endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ options, endpoint });
 };
 
 export const useUpdateBlock = (options: UseUpdateBlock) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };
 
 export const useDeleteBlock = (id: number, options?: UseDeleteBlock) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     id,
     options,
     endpoint,
-    requsetMethod: 'delete',
+    requsetMethod: RequestMethod.Delete,
   });
-
-  return { data, loading, error };
 };

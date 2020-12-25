@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseUpdateSettings = {
   readonly title?: string;
   readonly description?: string;
@@ -19,17 +21,13 @@ type UseUpdateSettings = {
 const endpoint = 'settings';
 
 export const useSettings = () => {
-  const { data, loading, error } = useApiRequest({ endpoint });
-
-  return { data, loading, error };
+  return useApiRequest({ endpoint });
 };
 
 export const useUpdateSetting = (options: UseUpdateSettings) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };

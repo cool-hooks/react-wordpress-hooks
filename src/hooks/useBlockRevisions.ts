@@ -1,5 +1,7 @@
 import { useApiRequest } from './useApiRequest';
 
+import { RequestMethod } from '../enums/RequestMethod';
+
 type UseCreateBlockRevision = {
   parent?: number;
   date?: string | null;
@@ -22,25 +24,21 @@ export const useRetrieveBlockRevisions = (
   id: number,
   options: UseRetrieveBlockRevision
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint: `${endpoint}/${id}/autosaves`,
   });
-
-  return { data, loading, error };
 };
 
 export const useCreateBlockRevision = (
   id: number,
   options: UseCreateBlockRevision
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint: `${endpoint}/${id}/autosaves`,
-    requsetMethod: 'post',
+    requsetMethod: RequestMethod.Post,
   });
-
-  return { data, loading, error };
 };
 
 export const useRetrieveBlockRevision = (
@@ -48,10 +46,8 @@ export const useRetrieveBlockRevision = (
   id: number,
   options: UseRetrieveBlockRevision
 ) => {
-  const { data, loading, error } = useApiRequest({
+  return useApiRequest({
     options,
     endpoint: `${endpoint}/${parent}/autosaves/${id}`,
   });
-
-  return { data, loading, error };
 };

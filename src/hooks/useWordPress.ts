@@ -6,16 +6,6 @@ type UseWordPress = {
   readonly requsetMethod?: string;
 };
 
-export const useWordPress = ({
-  endpoint,
-  options,
-  requsetMethod,
-}: UseWordPress) => {
-  const { data, loading, error } = useApiRequest({
-    endpoint,
-    options,
-    requsetMethod,
-  });
-
-  return { data, loading, error };
+export const useWordPress = (params: UseWordPress) => {
+  return useApiRequest(params);
 };

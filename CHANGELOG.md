@@ -1,5 +1,11 @@
 # react-wordpress-hooks Changelog
 
+## 3.2.0 (2020-12-25)
+
+#### New Feature
+
+- added extended API response: `headers`, `status` & `statusText`
+
 ## 3.1.0 (2020-06-01)
 
 #### New Feature
