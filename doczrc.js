@@ -7,6 +7,9 @@ export default {
           bg: '#0073aa',
         },
       },
+      sidebar: {
+         navLinkActive: '#0073aa',
+      },
     },
   },
   files: 'docs/*.md',
