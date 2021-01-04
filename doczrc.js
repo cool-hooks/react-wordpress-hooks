@@ -9,7 +9,7 @@ export default {
         },
       },
       sidebar: {
-         navLinkActive: '#0073aa',
+        navLinkActive: '#0073aa',
       },
     },
   },
