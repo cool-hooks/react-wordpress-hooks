@@ -1,15 +1,22 @@
+const colors = {
+  primary: '#0073aa',
+  header: {
+    button: {
+      bg: '#0073aa',
+    },
+  },
+  sidebar: {
+    navLinkActive: '#0073aa',
+  },
+};
+
 export default {
   title: 'React WordPress Hooks',
   themeConfig: {
     colors: {
-      primary: '#0073aa',
-      header: {
-        button: {
-          bg: '#0073aa',
-        },
-      },
-      sidebar: {
-        navLinkActive: '#0073aa',
+      ...colors,
+      modes: {
+        dark: colors,
       },
     },
   },
