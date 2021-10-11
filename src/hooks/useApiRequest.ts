@@ -5,7 +5,7 @@ import { WordPressContext } from '../context';
 
 import { serializeOptions, passToBody } from '../utils';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
 interface Params {
   readonly id?: number | string;
@@ -15,9 +15,9 @@ interface Params {
 }
 
 interface WPResponse {
-  status?: number;
-  statusText?: string;
-  headers?: Headers;
+ readonly status?: number;
+ readonly statusText?: string;
+ readonly headers?: Headers;
 }
 
 export const useApiRequest = ({
@@ -45,6 +45,7 @@ export const useApiRequest = ({
 
         const query = [`${url}/wp-json/wp/v2/${endpoint}`];
 
+        // TODO type
         const settings = {
           method: requsetMethod,
           headers,
@@ -89,6 +90,9 @@ export const useApiRequest = ({
 
             break;
           }
+
+          // TODO
+          // default:
         }
 
         const res = await fetch(query.join(''), settings);

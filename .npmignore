@@ -1,12 +1,11 @@
 src
 docs
-
+# TODO
 tsconfig.json
 .travis.yml
 .prettierrc
 doczrc.js
 .docz
-
 .eslintrc.js
 rollup.config.js
 yarn-error.log

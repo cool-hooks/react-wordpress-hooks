@@ -5,10 +5,9 @@ interface Config {
   readonly headers?: Headers;
 }
 
-export const WordPressContext = React.createContext<Config>({
-  url: '',
-  headers: undefined,
-});
+export const WordPressContext = React.createContext<Config | undefined>(undefined);
+
+WordPressContext.displayName = "WordPressContext"
 
 interface Props {
   readonly children: React.ReactNode;
