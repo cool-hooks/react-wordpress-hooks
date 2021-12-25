@@ -1,10 +1,10 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseWordPress = {
+interface UseWordPress {
   readonly endpoint: string;
   readonly options?: number | object;
-  readonly requsetMethod?: string;
-};
+  readonly requestMethod?: string;
+}
 
 export const useWordPress = (params: UseWordPress) => {
   return useApiRequest(params);

@@ -19,7 +19,5 @@ export default {
     },
   ],
   plugins: [resolve(), typescript(), terser()],
-  // TODO
-  // TODO || => ??
   external: Object.keys(pkg.peerDependencies || {}),
 };

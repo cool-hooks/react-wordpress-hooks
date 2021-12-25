@@ -1,6 +1,6 @@
 src
 docs
-# TODO
+.husky
 tsconfig.json
 .travis.yml
 .prettierrc

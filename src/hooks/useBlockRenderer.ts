@@ -1,10 +1,10 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseRetrieveBlockRenderer = {
+interface UseRetrieveBlockRenderer {
   context?: 'view' | 'edit';
   attributes?: object;
   post_id?: number;
-};
+}
 
 const endpoint = 'block-renderer';
 

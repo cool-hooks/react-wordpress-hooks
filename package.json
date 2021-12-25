@@ -8,9 +8,10 @@
   "module": "lib/react-wordpress-hooks.esm.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "prepack": "npm run clean && npm run prettier && npm run lint && npm run build",
+    "prepack": "npm run prettier && npm run lint && npm run build",
     "clean": "rimraf lib/*",
     "build": "rollup -c",
+    "prebuild": "npm run clean",
     "watch": "npm run build -- --watch",
     "deploy": "gh-pages -d .docz/dist",
     "lint": "eslint 'src/**/*.{tsx,ts}' --fix",
@@ -27,13 +28,12 @@
     "url": "https://github.com/cool-hooks/react-wordpress-hooks.git"
   },
   "keywords": [
-    // TODO
-    "wordpress",
-    "hooks",
     "react",
+    "api",
+    "hooks",
+    "wordpress",
     "library",
-    "rest",
-    "api"
+    "rest"
   ],
   "bugs": {
     "url": "https://github.com/cool-hooks/react-wordpress-hooks/issues"
@@ -43,26 +43,26 @@
     "react-safe-context-hooks": "^1.0.1"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "@types/react": "^17.0.20",
-    "@typescript-eslint/parser": "^4.31.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@types/react": "^17.0.34",
+    "@typescript-eslint/parser": "^5.3.1",
     "cz-conventional-changelog": "3.3.0",
     "docz": "^2.3.1",
-    "eslint": "^7.32.0",
+    "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "gh-pages": "^3.2.3",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.3.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.0.0",
+    "prettier": "^2.4.1",
+    "react": "^17.0.2",
+    "rollup": "^2.60.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
-    "typescript": "^4.4.2",
-    "semantic-release": "^17.4.7"
+    "semantic-release": "^18.0.0",
+    "typescript": "^4.4.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0"

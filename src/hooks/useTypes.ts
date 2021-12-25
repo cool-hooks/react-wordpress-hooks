@@ -1,12 +1,12 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseRetrieveTypes = {
+interface UseRetrieveTypes {
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
-type UseRetrieveType = {
+interface UseRetrieveType {
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
 const endpoint = 'types';
 

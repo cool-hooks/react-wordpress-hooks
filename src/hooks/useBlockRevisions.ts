@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseCreateBlockRevision = {
+interface UseCreateBlockRevision {
   parent?: number;
   date?: string | null;
   date_gmt?: string | null;
@@ -12,11 +12,11 @@ type UseCreateBlockRevision = {
   title?: object;
   content?: object;
   template?: string;
-};
+}
 
-type UseRetrieveBlockRevision = {
+interface UseRetrieveBlockRevision {
   context?: 'view' | 'embed' | 'edit';
-};
+}
 
 const endpoint = 'blocks';
 
@@ -37,7 +37,7 @@ export const useCreateBlockRevision = (
   return useApiRequest({
     options,
     endpoint: `${endpoint}/${id}/autosaves`,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 

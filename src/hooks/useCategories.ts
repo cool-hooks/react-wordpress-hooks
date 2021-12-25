@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseCategories = {
+interface UseCategories {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
   readonly per_page?: number;
@@ -23,33 +23,33 @@ type UseCategories = {
   readonly parent?: number;
   readonly post?: number;
   readonly slug?: string[];
-};
+}
 
-type UseCreateCategory = {
+interface UseCreateCategory {
   readonly description?: string;
   readonly name: string;
   readonly slug?: string;
   readonly parent?: number;
   readonly meta?: object;
-};
+}
 
-type UseRetrieveCategory = {
+interface UseRetrieveCategory {
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
-type UseUpdateCategory = {
+interface UseUpdateCategory {
   readonly id?: number;
   readonly description?: string;
   readonly name?: string;
   readonly slug?: string;
   readonly parent?: number;
   readonly meta?: object;
-};
+}
 
-type UseDeleteCategory = {
+interface UseDeleteCategory {
   readonly force?: boolean;
-};
+}
 
 const endpoint = 'categories';
 
@@ -64,7 +64,7 @@ export const useCreateCategory = (options: UseCreateCategory) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -79,7 +79,7 @@ export const useUpdateCategory = (options: UseUpdateCategory) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -88,6 +88,6 @@ export const useDeleteCategory = (id: number, options?: UseDeleteCategory) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };

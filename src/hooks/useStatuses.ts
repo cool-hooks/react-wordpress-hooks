@@ -1,12 +1,12 @@
 import { useApiRequest } from './useApiRequest';
 
-type UseRetrieveStatuses = {
+interface UseRetrieveStatuses {
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
-type UseRetrieveStatus = {
+interface UseRetrieveStatus {
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
 const endpoint = 'statuses';
 

@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseMedia = {
+interface UseMedia {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
   readonly per_page?: number;
@@ -32,9 +32,9 @@ type UseMedia = {
   readonly status?: ['inherit' | 'private' | 'trash'];
   readonly media_type?: 'image' | 'video' | 'text' | 'application' | 'audio';
   readonly mime_type?: string;
-};
+}
 
-type UseCreateMedia = {
+interface UseCreateMedia {
   readonly date?: string | null;
   readonly date_gmt?: string | null;
   readonly slug?: string;
@@ -49,14 +49,14 @@ type UseCreateMedia = {
   readonly caption?: object;
   readonly description?: object;
   readonly post?: number;
-};
+}
 
-type UseRetrieveMedia = {
+interface UseRetrieveMedia {
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
-type UseUpdateMedia = {
+interface UseUpdateMedia {
   readonly id?: number;
   readonly date?: string | null;
   readonly date_gmt?: string | null;
@@ -72,11 +72,11 @@ type UseUpdateMedia = {
   readonly caption?: object;
   readonly description?: object;
   readonly post?: number;
-};
+}
 
-type UseDeleteMedia = {
+interface UseDeleteMedia {
   readonly force?: boolean;
-};
+}
 
 const endpoint = 'media';
 
@@ -88,7 +88,7 @@ export const useCreateMedia = (options: UseCreateMedia) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -100,7 +100,7 @@ export const useUpdateMedia = (options: UseUpdateMedia) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -109,6 +109,6 @@ export const useDeleteMedia = (id: number, options?: UseDeleteMedia) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };

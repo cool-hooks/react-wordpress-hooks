@@ -24,4 +24,4 @@ jobs:
           github_token: $GITHUB_TOKEN
           local_dir: .docz/dist
           on:
-            branch: master
+            branch: main

@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseTags = {
+interface UseTags {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
   readonly per_page?: number;
@@ -23,31 +23,31 @@ type UseTags = {
   readonly hide_empty?: boolean;
   readonly post?: number;
   readonly slug?: string[];
-};
+}
 
-type UseCreateTag = {
+interface UseCreateTag {
   readonly description?: string;
   readonly name: string;
   readonly slug?: string;
   readonly meta?: object;
-};
+}
 
-type UseRetrieveTag = {
+interface UseRetrieveTag {
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
-type UseUpdateTag = {
+interface UseUpdateTag {
   readonly id?: number;
   readonly description?: string;
   readonly name?: string;
   readonly slug?: string;
   readonly meta?: object;
-};
+}
 
-type UseDeleteTag = {
+interface UseDeleteTag {
   readonly force?: boolean;
-};
+}
 
 const endpoint = 'tags';
 
@@ -59,7 +59,7 @@ export const useCreateTag = (options: UseCreateTag) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -71,7 +71,7 @@ export const useUpdateTag = (options: UseUpdateTag) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -80,6 +80,6 @@ export const useDeleteTag = (id: number, options?: UseDeleteTag) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };

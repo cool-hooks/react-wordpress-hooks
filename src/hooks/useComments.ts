@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseComments = {
+interface UseComments {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
   readonly per_page?: number;
@@ -30,9 +30,9 @@ type UseComments = {
   readonly status?: string;
   readonly type?: string;
   readonly password?: string;
-};
+}
 
-type UseCreateComment = {
+interface UseCreateComment {
   readonly author?: number;
   readonly author_email?: string;
   readonly author_ip?: string;
@@ -46,15 +46,15 @@ type UseCreateComment = {
   readonly post?: number;
   readonly status?: string;
   readonly meta?: object;
-};
+}
 
-type UseRetrieveComment = {
+interface UseRetrieveComment {
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
   readonly password?: string;
-};
+}
 
-type UseUpdateComment = {
+interface UseUpdateComment {
   readonly id?: number;
   readonly author?: number;
   readonly author_email?: string;
@@ -69,12 +69,12 @@ type UseUpdateComment = {
   readonly post?: number;
   readonly status?: string;
   readonly meta?: object;
-};
+}
 
-type UseDeleteComment = {
+interface UseDeleteComment {
   readonly force?: boolean;
   readonly password?: string;
-};
+}
 
 const endpoint = 'comments';
 
@@ -86,7 +86,7 @@ export const useCreateComment = (options: UseCreateComment) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -98,7 +98,7 @@ export const useUpdateComment = (options: UseUpdateComment) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -107,6 +107,6 @@ export const useDeleteComment = (id: number, options?: UseDeleteComment) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };

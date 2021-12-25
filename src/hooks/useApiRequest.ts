@@ -10,20 +10,21 @@ import { RequestMethod } from '../constants/RequestMethod';
 interface Params {
   readonly id?: number | string;
   readonly options?: object | number;
-  readonly requsetMethod?: string;
+  readonly requestMethod?: string;
   readonly endpoint?: string;
 }
 
-interface WPResponse {
- readonly status?: number;
- readonly statusText?: string;
- readonly headers?: Headers;
+interface WordPressResponse {
+  readonly status?: number;
+  readonly statusText?: string;
+  readonly headers?: Headers;
 }
 
+// TODO refactor
 export const useApiRequest = ({
   id,
   options,
-  requsetMethod = RequestMethod.Get,
+  requestMethod = RequestMethod.Get,
   endpoint = '',
 }: Params) => {
   const { url, headers } = useSafeContext(WordPressContext);
@@ -32,7 +33,7 @@ export const useApiRequest = ({
   const [error, setError] = useState<string | object | undefined>(undefined);
   const [data, setData] = useState<object[]>([]);
 
-  const [response, setResponse] = useState<WPResponse | undefined>({
+  const [response, setResponse] = useState<WordPressResponse | undefined>({
     status: undefined,
     statusText: undefined,
     headers: undefined,
@@ -47,7 +48,7 @@ export const useApiRequest = ({
 
         // TODO type
         const settings = {
-          method: requsetMethod,
+          method: requestMethod,
           headers,
         };
 
@@ -55,7 +56,7 @@ export const useApiRequest = ({
           return;
         }
 
-        switch (requsetMethod) {
+        switch (requestMethod) {
           case RequestMethod.Get: {
             if (typeof options === 'number') {
               query.push(`/${options}`);
@@ -121,7 +122,7 @@ export const useApiRequest = ({
 
     loadData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [headers, endpoint, requsetMethod, url]);
+  }, [headers, endpoint, requestMethod, url]);
 
   return { ...response, loading, error, data };
 };

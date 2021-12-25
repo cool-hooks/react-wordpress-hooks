@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UsePosts = {
+interface UsePosts {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
   readonly per_page?: number;
@@ -47,9 +47,9 @@ type UsePosts = {
   readonly tags?: number[];
   readonly tags_exclude?: number[];
   readonly sticky?: boolean;
-};
+}
 
-type UseCreatePost = {
+interface UseCreatePost {
   readonly date?: string;
   readonly date_gmt?: string;
   readonly slug?: string;
@@ -78,15 +78,15 @@ type UseCreatePost = {
   readonly template?: string;
   readonly categories?: number[];
   readonly tags?: number[];
-};
+}
 
-type UseRetrievePost = {
+interface UseRetrievePost {
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
   readonly password?: string;
-};
+}
 
-type UseUpdatePost = {
+interface UseUpdatePost {
   readonly id?: number;
   readonly date?: string;
   readonly date_gmt?: string;
@@ -116,11 +116,11 @@ type UseUpdatePost = {
   readonly template?: string;
   readonly categories?: number[];
   readonly tags?: number[];
-};
+}
 
-type UseDeletePost = {
+interface UseDeletePost {
   readonly force?: boolean;
-};
+}
 
 const endpoint = 'posts';
 
@@ -132,7 +132,7 @@ export const useCreatePost = (options: UseCreatePost) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -144,7 +144,7 @@ export const useUpdatePost = (options: UseUpdatePost) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -153,6 +153,6 @@ export const useDeletePost = (id: number, options?: UseDeletePost) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };

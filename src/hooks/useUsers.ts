@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseUsers = {
+interface UseUsers {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
   readonly per_page?: number;
@@ -23,9 +23,9 @@ type UseUsers = {
   readonly slug?: string[];
   readonly roles?: string[];
   readonly who?: ['authors'];
-};
+}
 
-type UseCreateUser = {
+interface UseCreateUser {
   readonly username: string;
   readonly name?: string;
   readonly first_name?: string;
@@ -39,14 +39,14 @@ type UseCreateUser = {
   readonly roles?: string[];
   readonly password?: string;
   readonly meta?: object;
-};
+}
 
-type UseRetrieveUser = {
+interface UseRetrieveUser {
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
-type UseUpdateUser = {
+interface UseUpdateUser {
   readonly id?: number;
   readonly username?: string;
   readonly name?: string;
@@ -61,12 +61,12 @@ type UseUpdateUser = {
   readonly roles?: string[];
   readonly password?: string;
   readonly meta?: object;
-};
+}
 
-type UseDeleteUser = {
+interface UseDeleteUser {
   readonly force?: boolean;
   readonly reassign: number;
-};
+}
 
 const endpoint = 'users';
 
@@ -78,7 +78,7 @@ export const useCreateUser = (options: UseCreateUser) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -91,7 +91,7 @@ export const useUpdateUser = (id: string, options: UseUpdateUser) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -100,6 +100,6 @@ export const useDeleteUser = (id: string, options?: UseDeleteUser) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };

@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UsePostRevisions = {
+interface UsePostRevisions {
   readonly parent?: number;
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
@@ -20,9 +20,9 @@ type UsePostRevisions = {
     | 'slug'
     | 'include_slugs'
     | 'title';
-};
+}
 
-type UseCreatePostRevision = {
+interface UseCreatePostRevision {
   readonly parent?: number;
   readonly date?: string | null;
   readonly date_gmt?: string | null;
@@ -52,18 +52,18 @@ type UseCreatePostRevision = {
   readonly template?: string;
   readonly categories?: number[];
   readonly tags?: number[];
-};
+}
 
-type UseRetrievePostRevision = {
+interface UseRetrievePostRevision {
   readonly parent?: number;
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
-};
+}
 
-type UseDeletePostRevision = {
+interface UseDeletePostRevision {
   readonly parent?: number;
   readonly force?: boolean;
-};
+}
 
 const endpoint = 'posts';
 
@@ -84,7 +84,7 @@ export const useCreatePostRevision = (
   return useApiRequest({
     options,
     endpoint: `${endpoint}/${parent}/autosaves`,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -108,6 +108,6 @@ export const useDeletePostRevision = (
     id,
     options,
     endpoint: `${endpoint}/${parent}/revisions`,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };

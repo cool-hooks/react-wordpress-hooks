@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseUpdateSettings = {
+interface UseUpdateSettings {
   readonly title?: string;
   readonly description?: string;
   readonly timezone?: string;
@@ -16,7 +16,7 @@ type UseUpdateSettings = {
   readonly posts_per_page?: number;
   readonly default_ping_status?: 'open' | 'closed';
   readonly default_comment_status?: 'open' | 'closed';
-};
+}
 
 const endpoint = 'settings';
 
@@ -28,6 +28,6 @@ export const useUpdateSetting = (options: UseUpdateSettings) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };

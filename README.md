@@ -3,16 +3,16 @@
 [![NPM version](https://img.shields.io/npm/v/react-wordpress-hooks?style=flat-square)](https://www.npmjs.com/package/react-wordpress-hooks)
 [![NPM downloads](https://img.shields.io/npm/dm/react-wordpress-hooks?style=flat-square)](https://www.npmjs.com/package/react-wordpress-hooks)
 [![NPM license](https://img.shields.io/npm/l/react-wordpress-hooks?style=flat-square)](https://www.npmjs.com/package/react-wordpress-hooks)
-[![Travis](https://img.shields.io/travis/cool-hooks/react-wordpress-hooks/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-wordpress-hooks) // TODO
+[![Travis](https://img.shields.io/travis/com/cool-hooks/react-wordpress-hooks/main?style=flat-square)](https://app.travis-ci.com/github/cool-hooks/react-wordpress-hooks)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-wordpress-hooks?style=flat-square)](https://bundlephobia.com/result?p=react-wordpress-hooks)
 
 ## About
 
-This library helps you use WordPress RESTful API in React app. It provides hooks for all API endpoints and Context to simply access data in every component.
+This library helps you use the WordPress RESTful API in the React app. It provides hooks for all API endpoints and Context to simply access data in every component.
 
 ### Similar Projects
 
-- [Gutenberg Packages](https://github.com/WordPress/gutenberg/tree/master/packages/)
+- [Gutenberg Packages](https://github.com/WordPress/gutenberg/tree/trunk/packages/)
 
 ## How to Install
 

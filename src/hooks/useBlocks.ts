@@ -1,8 +1,8 @@
 import { useApiRequest } from './useApiRequest';
 
-import { RequestMethod } from '../enums/RequestMethod';
+import { RequestMethod } from '../constants/RequestMethod';
 
-type UseBlocks = {
+interface UseBlocks {
   readonly context?: 'view' | 'embed' | 'edit';
   readonly page?: number;
   readonly per_page?: number;
@@ -40,9 +40,9 @@ type UseBlocks = {
     | 'request-completed'
     | 'any'
   ];
-};
+}
 
-type UseCreateBlock = {
+interface UseCreateBlock {
   readonly date?: string | null;
   readonly date_gmt?: string | null;
   readonly slug?: string;
@@ -51,15 +51,15 @@ type UseCreateBlock = {
   readonly title?: object;
   readonly content?: object;
   readonly template?: string;
-};
+}
 
-type UseRetrieveBlock = {
+interface UseRetrieveBlock {
   readonly id?: number;
   readonly context?: 'view' | 'embed' | 'edit';
   readonly password?: string;
-};
+}
 
-type UseUpdateBlock = {
+interface UseUpdateBlock {
   readonly id?: number;
   readonly date?: string | null;
   readonly date_gmt?: string | null;
@@ -69,11 +69,11 @@ type UseUpdateBlock = {
   readonly title?: object;
   readonly content?: object;
   readonly template?: string;
-};
+}
 
-type UseDeleteBlock = {
+interface UseDeleteBlock {
   readonly force?: boolean;
-};
+}
 
 const endpoint = 'blocks';
 
@@ -85,7 +85,7 @@ export const useCreateBlock = (options: UseCreateBlock) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -97,7 +97,7 @@ export const useUpdateBlock = (options: UseUpdateBlock) => {
   return useApiRequest({
     options,
     endpoint,
-    requsetMethod: RequestMethod.Post,
+    requestMethod: RequestMethod.Post,
   });
 };
 
@@ -106,6 +106,6 @@ export const useDeleteBlock = (id: number, options?: UseDeleteBlock) => {
     id,
     options,
     endpoint,
-    requsetMethod: RequestMethod.Delete,
+    requestMethod: RequestMethod.Delete,
   });
 };
